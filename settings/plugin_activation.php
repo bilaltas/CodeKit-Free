@@ -31,23 +31,25 @@ if( !get_role( 'cc_admin' ) ) {
 	// Add the new role
 	add_role('cc_admin', 'Custom Codes Admin', $caps);
 
-	// Assign to the current user
-	add_action( 'admin_init', 'cc_add_role_to_current_user' );
-
 
 }
+
 
 
 // Add the new role to current user
 function cc_add_role_to_current_user() {
 
-	if ( current_user_can('administrator') && !current_user_can('cc_admin') ) {
+
+	$args = array('role' => 'cc_admin');
+	$cc_admins = get_users($args);
+	if ( count($cc_admins) == 0 && !current_user_can('cc_admin') ) {
 
 		// ASSIGN CURRENT USER THE ROLE
 		$u = wp_get_current_user();
 		$u->add_role( 'cc_admin' );
 
 	}
+
 
 }
 add_action( 'admin_init', 'cc_add_role_to_current_user' );
