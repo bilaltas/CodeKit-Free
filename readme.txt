@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.0.3 (2016-08-13 22:41 EET) =
+* Bug fixes related to tabs
+
 = 0.0.2 (2016-08-13 20:29 EET) =
 * Bug fixes
 * "Saving.." overlay added

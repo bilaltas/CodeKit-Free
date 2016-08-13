@@ -108,13 +108,13 @@ function cc_editor_page() {
 	<div class="custom-tabs bottom-tabs css-tabs">
 
 		<?php if ( $cc_admin && current_user_can('administrator') ) { ?>
-		<a href="#" class="functions-php" data-select-file="functions" data-previous-tab=""><i class="fa fa-code"></i> Theme Functions</a>
+		<a href="#" class="functions-php" data-select-file="functions"><i class="fa fa-code"></i> Theme Functions</a>
 		<?php } ?>
 
 		<?php if ($cc_sass) { ?>
-		<a href="#" class="mixins" data-select-file="mixins" data-previous-tab=""><i class="fa fa-codepen"></i> Mixins</a>
+		<a href="#" class="mixins" data-select-file="mixins"><i class="fa fa-codepen"></i> Mixins</a>
 		<?php } ?>
-		<a href="#" class="css-output-tab" data-select-file="<?=$cc_admin ? "panel" : "custom_public"?>" data-previous-tab=""><i class="fa fa-css3"></i> CSS Output</a>
+		<a href="#" class="css-output-tab" data-select-file="<?=$cc_admin ? "panel" : "custom_public"?>"><i class="fa fa-css3"></i> CSS Output</a>
 
 	</div>
 	<!-- BOTTOM TABS END -->
