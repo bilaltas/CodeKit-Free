@@ -7,7 +7,6 @@
 	- Someone else is currently editing feature! (Hartbeat API)
 	- Record how many times clicked (?)
 	- Revisions feature (PRO FEATURE!)
-	- Which users won't see the admin codes option!!
 	
 	Responsivity Tool (PRO FEATURE!):
 	- Add "Edit SASS/CSS on This Device" button
@@ -19,5 +18,5 @@
 	- New Setting: Activate the debugger for an user?
 	
 	
-	Bugs:
-	- Admin codes only shown to non-Administrators?!
+	Known Bugs:
+	- 

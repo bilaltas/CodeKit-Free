@@ -21,7 +21,7 @@ function cc_get_the_latest_released_version() {
 // SETTINGS LINK IN THE PLUGINS PAGE
 function cc_settings_link($actions, $file) {
 if(false !== strpos($file, 'custom-codes') && current_user_can('administrator'))
- $actions['settings'] = '<a href="admin.php?page=cc-customer-options">Customer Settings</a>';
+ $actions['settings'] = '<a href="'.admin_url('admin.php?page=custom-codes').'">Custom Codes</a>';
 return $actions;
 }
 add_filter('plugin_action_links', 'cc_settings_link', 2, 2);

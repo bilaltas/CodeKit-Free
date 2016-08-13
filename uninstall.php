@@ -48,7 +48,7 @@ if ( !is_admin() ) { // Front-End
 
 		function cc_admin_panel_codes() {
 
-			if ( !current_user_can('administrator') ) { // FIX THIS - EXCEPTIONS
+			if ( !current_user_can('administrator') ) {
 
 				// CSS File
 				if( file_exists(WP_CONTENT_DIR .'/custom_codes/admin_panel.css') )
@@ -99,6 +99,7 @@ if ( !function_exists('cc_include_custom_functions') ) { // Both
 
 
 	//Remove the plugin's settings
+	if ( get_option( 'cc_admin_roles' ) ) delete_option( 'cc_admin_roles' );
 	if ( get_option( 'cc_admin_notes' ) ) delete_option( 'cc_admin_notes' );
 	if ( get_option( 'cc_style_mode' ) ) delete_option( 'cc_style_mode' );
 	if ( get_option( 'cc_store_files' ) ) delete_option( 'cc_store_files' );
@@ -106,6 +107,10 @@ if ( !function_exists('cc_include_custom_functions') ) { // Both
 	if ( get_option( 'cc_tablet_p' ) ) delete_option( 'cc_tablet_p' );
 	if ( get_option( 'cc_phone_l' ) ) delete_option( 'cc_phone_l' );
 	if ( get_option( 'cc_phone_p' ) ) delete_option( 'cc_phone_p' );
+
+
+	// Remove the new role
+	remove_role( 'cc_admin' );
 
 }
 

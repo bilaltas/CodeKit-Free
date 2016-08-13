@@ -40,7 +40,18 @@ if ( !is_admin() ) { // Front-End
 
 		function cc_admin_panel_codes() {
 
-			if ( !current_user_can('administrator') ) { // FIX THIS - EXCEPTIONS
+			$cc_admin_active = false;
+			foreach ( cc_pull_option( 'cc_admin_roles', array() ) as $cc_role ) {
+
+				if ( current_user_can($cc_role) ) {
+					$cc_admin_active = true;
+					break;
+				}
+
+			}
+
+
+			if ( !current_user_can('cc_admin') && $cc_admin_active ) {
 
 				// CSS File
 				if( file_exists(WP_CONTENT_DIR .'/custom_codes/admin_panel.css') )

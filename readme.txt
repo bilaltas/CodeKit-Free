@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.0.4 (2016-08-14 00:19 EET) =
+* Roles selector for admin side CSS and JS
+
 = 0.0.3 (2016-08-13 22:41 EET) =
 * Bug fixes related to tabs
 
