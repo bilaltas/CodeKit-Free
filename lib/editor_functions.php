@@ -2,6 +2,9 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+// Sample Content
+require_once( dirname(__file__).'/editor_defaults.php' );
+
 
 
 function cc_restrictions() {
@@ -12,55 +15,6 @@ function cc_restrictions() {
 
 }
 if ( $cc_admin ) add_action('admin_init', 'cc_restrictions');
-
-
-
-// SAMPLE CONTENTS
-function cc_empty_codes($lang, $file_name = "") {
-	global $cc_result_level;
-
-
-	// SASS/CSS SAMPLE CONTENT
-	if ( $lang == "sass" || $lang == "css" )
-		return '/* Write your '.$cc_result_level.' '.strtoupper($lang).' '.$file_name.' here! */';
-
-
-
-	// JS SAMPLE CONTENT
-	elseif ( $lang == "js" )
-		return
-'jQuery(document).ready(function($){
-    /* Write your '.$cc_result_level.' '.$file_name.' jQuery here! */
-
-}); // document ready';
-
-
-
-	// PHP SAMPLE CONTENT
-	elseif ( $lang == "php" )
-		return
-'<?php
-
-/* BE CAREFUL:
-   Codes written here can crash the site!
-   EDITING THIS FILE MANUALLY VIA FTP IS RECOMMENDED */
-
-// THIS MUST STAY HERE FOR WORDPRESS SECURITY REASONS
-defined( "ABSPATH" ) or die( "No script kiddies please!" );
-
-/* IMPORTANT:
-   If you see a BLANK PAGE when you open the site, please fix the
-   /wp-content/custom_codes/admin_functions.php file\'s errors manually! */
-
-/* Write your '.$cc_result_level.' '.strtoupper($lang).' '.$file_name.' down here! */';
-
-
-
-	// OTHER FILE SAMPLE CONTENT
-	else
-		return '/* Write your '.$cc_result_level.' '.strtoupper($lang).' '.$file_name.' here! */';
-
-}
 
 
 
@@ -133,6 +87,7 @@ function cc_add_custom_editor($lang, $file_name, $extra_classes="", $putsample =
 }
 
 
+
 /*
 // NON-AJAX SAVER - NEEDS TO BE FIXED
 function cc_saver () {
@@ -178,7 +133,6 @@ function cc_saver () {
 }
 if ( isset($_POST['action']) && $_POST['action'] == "cc_save" ) add_action('admin_init', 'cc_saver');
 */
-
 
 
 

@@ -10,6 +10,10 @@ function cc_editor_page() {
 	global $cc_sass, $cc_scss, $cc_admin, $cc_editor_theme;
 ?>
 
+<!-- SAVING OVERLAY -->
+<div id="cc-saving-overlay"><span>SAVING...</span></div>
+
+
 <!-- PAGE WRAP -->
 <div class="wrap fixedthis">
 

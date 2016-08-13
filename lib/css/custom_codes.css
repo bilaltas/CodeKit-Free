@@ -5,7 +5,35 @@
 .code-editor.not-active + .CodeMirror, .code-editor.main-file + .CodeMirror { z-index: -10; }
 .code-editor.active + .CodeMirror { z-index: 999; }
 
-.saving { opacity: 0.8; }
+
+#cc-saving-overlay {
+    background-color: rgba(158,158,158,0.25);
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+}
+
+#cc-saving-overlay.saving {
+    display: block;
+}
+
+#cc-saving-overlay span {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 100px;
+    line-height: 150px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -75px;
+}
 
 
 

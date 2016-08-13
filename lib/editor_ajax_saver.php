@@ -2,6 +2,8 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+// Sample Content
+require_once( dirname(__file__).'/editor_defaults.php' );
 
 
 // SASS

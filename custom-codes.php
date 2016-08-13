@@ -5,8 +5,8 @@ Plugin URI: http://www.bilaltas.net/
 Description: Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 Author: Bilal TAS
 Author URI: http://bilaltas.net
-Version: 0.0.1
-Last Updated: 2016-06-27 14:36 EET
+Version: 0.0.2
+Last Updated: 2016-08-13 20:29 EET
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
@@ -33,12 +33,10 @@ require_once( dirname( CC_FILE ).'/lib/release_codes.php' );
 
 
 
-/*
 // CHECK FOR PLUGIN UPDATES
 require 'plugin-update-checker/plugin-update-checker.php';
 $cc_UpdateChecker = PucFactory::buildUpdateChecker(
-	'http://bilaltas.net/cc_updates/?action=get_metadata&slug=custom-codes', //Metadata URL.
+	'http://bilaltas.net/updates_cc/?action=get_metadata&slug=custom-codes', //Metadata URL.
 	__FILE__, //Full path to the main plugin file.
 	'custom-codes' //Plugin slug. Usually it's the same as the name of the directory.
 );
-*/
