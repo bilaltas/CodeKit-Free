@@ -10,7 +10,7 @@ require_once( dirname(__file__).'/editor_defaults.php' );
 function cc_restrictions() {
 	global $cc_user_ID;
 
-	if ( !current_user_can('administrator') )
+	if ( !current_user_can('cc_full_access') )
 		die('You have no access to edit admin custom codes!');
 
 }

@@ -19,7 +19,7 @@ function cc_editor_page() {
 
 	<?php
 
-		if ( current_user_can('administrator') ) {
+		if ( current_user_can('cc_full_access') ) {
 
 			// ADMIN PANEL SWITCHER LINK
 			if ( $cc_admin ) {
@@ -93,7 +93,7 @@ function cc_editor_page() {
 		cc_add_custom_editor($cc_sass ? "sass" : "css", "retina"  , "mousetrap");
 
 		// functions.php Editor
-		if ( $cc_admin && current_user_can('administrator') ) cc_add_custom_editor("php", "functions", "functions-php");
+		if ( $cc_admin && current_user_can('cc_full_access') ) cc_add_custom_editor("php", "functions", "functions-php");
 
 		// Mixins
 		if ($cc_sass) cc_add_custom_editor("sass", "mixins", "mousetrap");
@@ -107,7 +107,7 @@ function cc_editor_page() {
 	<!-- BOTTOM TABS -->
 	<div class="custom-tabs bottom-tabs css-tabs">
 
-		<?php if ( $cc_admin && current_user_can('administrator') ) { ?>
+		<?php if ( $cc_admin && current_user_can('cc_full_access') ) { ?>
 		<a href="#" class="functions-php" data-select-file="functions"><i class="fa fa-code"></i> Theme Functions</a>
 		<?php } ?>
 

@@ -18,19 +18,13 @@ register_activation_hook( CC_FILE, 'cc_plugin_activate' );
 
 
 
-// ADD THE CUSTOMER ROLE AND CAPABILITIES WHEN INSTALL
+// ADD THE CUSTOM CODES ADMIN ROLE AND CAPABILITIES WHEN INSTALL
 if( !get_role( 'cc_admin' ) ) {
 
-
-	// Copy all administrator capabilities
-	$admin = get_role('administrator');
-	$caps = $admin->capabilities;
-	//$caps['newcap'] = true;
-
+	$caps['cc_full_access'] = true;
 
 	// Add the new role
 	add_role('cc_admin', 'Custom Codes Admin', $caps);
-
 
 }
 
@@ -39,14 +33,20 @@ if( !get_role( 'cc_admin' ) ) {
 // Add the new role to current user
 function cc_add_role_to_current_user() {
 
+	$cc_admins = get_users(['role' => 'cc_admin']);
 
-	$args = array('role' => 'cc_admin');
-	$cc_admins = get_users($args);
-	if ( count($cc_admins) == 0 && !current_user_can('cc_admin') ) {
+	// If no one is cc_admin and I'm the administrator, make me the cc_admin
+	if ( count($cc_admins) == 0 && !current_user_can('cc_admin') && current_user_can('administrator') ) {
 
 		// ASSIGN CURRENT USER THE ROLE
 		$u = wp_get_current_user();
 		$u->add_role( 'cc_admin' );
+
+	} elseif ( current_user_can('cc_admin') && !current_user_can('administrator') ) {
+
+		// ASSIGN CURRENT USER THE ADMIN ROLE
+		$u = wp_get_current_user();
+		$u->add_role( 'administrator' );
 
 	}
 

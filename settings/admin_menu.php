@@ -7,12 +7,10 @@ function cc_admin_menu() {
     global $cc_page, $cc_sass;
 
 
-	if ( current_user_can('administrator') ) {
-
 	    $cc_page_main = add_menu_page (
 	        'Custom Codes',
 	        'Custom Codes',
-	        'administrator',
+	        'cc_full_access',
 	        'custom-codes',
 	        'cc_editor_page',
 	        plugin_dir_url( CC_FILE ).'lib/images/cc_dev_icon.png',
@@ -23,7 +21,7 @@ function cc_admin_menu() {
 		    	'custom-codes',
 		    	'Custom '.($cc_sass ? 'SASS' : 'CSS').' & JS',
 		    	'Public Side Codes',
-		    	'administrator',
+		    	'cc_full_access',
 		    	'custom-codes',
 		    	'cc_editor_page'
 		    );
@@ -34,12 +32,11 @@ function cc_admin_menu() {
 				'custom-codes',									// admin page slug
 				'Custom '.($cc_sass ? 'SASS' : 'CSS').' & JS',  // page title
 				'Admin Side Codes', 							// menu title
-				'administrator',               					// capability required to see the page
+				'cc_full_access',               					// capability required to see the page
 				'custom-codes&admin_panel=true',           		// admin page slug, e.g. options-general.php?page=cc_options
 				'cc_editor_page'             					// callback function to display the options page
 			);
 
-	}
 
 }
 add_action( 'admin_menu', 'cc_admin_menu' );
@@ -49,7 +46,8 @@ add_action( 'admin_menu', 'cc_admin_menu' );
 // ADMIN BAR MENU
 function cc_wp_toolbar( $wp_admin_bar ) {
 	global $cc_sass;
-	if ( current_user_can('administrator') ) {
+
+	if ( current_user_can('cc_full_access') ) {
 
 		$args = array(
 			'id'    => 'cc_toolbar_custom_codes',
@@ -66,7 +64,7 @@ function cc_wp_toolbar( $wp_admin_bar ) {
 				'href'		=>	admin_url('admin.php?page=custom-codes'),
 				'parent'	=>	'cc_toolbar_custom_codes',
 			);
-			if ( current_user_can('administrator') ) $wp_admin_bar->add_node($args);
+			if ( current_user_can('cc_full_access') ) $wp_admin_bar->add_node($args);
 
 			$args = array(
 				'id'		=>	'cc_toolbar_custom_codes_admin',
@@ -74,16 +72,17 @@ function cc_wp_toolbar( $wp_admin_bar ) {
 				'href'		=>	admin_url('admin.php?page=custom-codes&admin_panel=true'),
 				'parent'	=>	'cc_toolbar_custom_codes',
 			);
-			if ( current_user_can('administrator') ) $wp_admin_bar->add_node($args);
+			if ( current_user_can('cc_full_access') ) $wp_admin_bar->add_node($args);
 
 	}
+
 }
 add_action( 'admin_bar_menu', 'cc_wp_toolbar', 9999 );
 
 // Toolbar Style
 function cc_toolbar_custom_codes_style() {
 
-	if ( current_user_can('administrator') ) {
+	if ( current_user_can('cc_full_access') ) {
 
 		echo "
 			<style type='text/css'>

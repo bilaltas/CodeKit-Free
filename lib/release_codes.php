@@ -131,7 +131,7 @@ function format_error( $errno, $errstr, $errfile, $errline ) {
   </tbody>
   </table>";
 
-  $content = "Something went wrong, please contact your administrator!";
+  $content = "Something went wrong, please contact your admin!";
 
   return $content;
 }

@@ -97,8 +97,8 @@ if ( !function_exists('cc_include_custom_functions') ) { // Both
 	@chmod(get_stylesheet_directory(). "/functions.php", 0644);
 
 
-
 	//Remove the plugin's settings
+	if ( get_option( 'cc_permission_roles' ) ) delete_option( 'cc_permission_roles' );
 	if ( get_option( 'cc_admin_roles' ) ) delete_option( 'cc_admin_roles' );
 	if ( get_option( 'cc_admin_notes' ) ) delete_option( 'cc_admin_notes' );
 	if ( get_option( 'cc_style_mode' ) ) delete_option( 'cc_style_mode' );
@@ -107,6 +107,15 @@ if ( !function_exists('cc_include_custom_functions') ) { // Both
 	if ( get_option( 'cc_tablet_p' ) ) delete_option( 'cc_tablet_p' );
 	if ( get_option( 'cc_phone_l' ) ) delete_option( 'cc_phone_l' );
 	if ( get_option( 'cc_phone_p' ) ) delete_option( 'cc_phone_p' );
+
+
+	// Remove the capability
+	foreach ( $wp_roles->roles as $role_name => $role_details ) {
+
+		$role = get_role( $role_name );
+		$role->remove_cap( 'cc_full_access' );
+
+	}
 
 
 	// Remove the new role

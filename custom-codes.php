@@ -5,8 +5,8 @@ Plugin URI: http://www.bilaltas.net/
 Description: Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 Author: Bilal TAS
 Author URI: http://bilaltas.net
-Version: 0.0.6
-Last Updated: 2016-08-14 01:18 EET
+Version: 0.0.7
+Last Updated: 2016-08-21 20:00 EET
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
@@ -17,8 +17,9 @@ define( 'CC_DEBUG', false );
 
 if ( is_admin() ) { // Back-End
 
-	require_once( dirname( CC_FILE ).'/settings/plugin_activation.php' ); // ADD NEW ROLES!
+	require_once( dirname( CC_FILE ).'/settings/plugin_activation.php' );
 	require_once( dirname( CC_FILE ).'/settings/helper_functions.php' );
+	require_once( dirname( CC_FILE ).'/settings/permission_update.php' );
 	require_once( dirname( CC_FILE ).'/settings/settings.php' );
 
 	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset($_POST['cc_editor_contents']) )

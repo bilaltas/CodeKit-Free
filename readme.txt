@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.0.7 (2016-08-21 20:00 EET) =
+* Roles selector to show the plugin
+
 = 0.0.6 (2016-08-14 01:18 EET) =
 * Bug fixes
 

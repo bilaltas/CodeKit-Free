@@ -17,6 +17,8 @@ $cc_result_level = $custom_codes_public ? "Public" : "Admin";
 // REGISTER SETTINGS
 function cc_register_custom_codes_settings() {
 
+	register_setting( 'cc_permission_settings' , 'cc_permission_roles' );
+
 	register_setting( 'cc_admin_settings' , 'cc_admin_roles' );
 
 	register_setting( 'cc_notes_settings' , 'cc_admin_notes' );
@@ -47,6 +49,7 @@ if (
 	( isset($_GET['page']) && $_GET['page'] == "custom-codes" )
 ) {
 
+	$cc_permission_roles = cc_pull_option( 'cc_permission_roles', array('cc_admin', 'administrator') );
 	$cc_admin_roles = cc_pull_option( 'cc_admin_roles', array() );
 	$cc_admin_notes = cc_pull_option( 'cc_admin_notes', '' );
 	$cc_store_custom_files = cc_pull_option( 'cc_store_files', 'true' ) == 'true' ? true : false;
@@ -99,6 +102,12 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 	        'id'      => 'custom-codes-responsivity-settings', // This should be unique for the screen.
 	        'title'   => 'Responsivity Settings',
 	        'callback' => 'cc_responsivity_settings_tab'
+	    ) );
+
+	    $screen -> add_help_tab( array(
+	        'id'      => 'custom-codes-permission-settings', // This should be unique for the screen.
+	        'title'   => 'Permission Settings',
+	        'callback' => 'cc_permissions_tab'
 	    ) );
 
 	}
@@ -293,7 +302,7 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 			<?php settings_fields( 'cc_notes_settings' ); ?>
 			<?php do_settings_sections( 'cc_notes_settings' ); ?>
 
-			<textarea id="custom-codes-admin-notes" name="cc_admin_notes[<?=get_current_user_id()?>]" rows="10" placeholder="Write something you shouldn't forget..."><?=is_array($cc_admin_notes) ? $cc_admin_notes[get_current_user_id()] : $cc_admin_notes?></textarea>
+			<textarea id="custom-codes-admin-notes" name="cc_admin_notes[<?=get_current_user_id()?>]" rows="10" placeholder="Write something you shouldn't forget..."><?=is_array($cc_admin_notes) && isset($cc_admin_notes[get_current_user_id()]) ? $cc_admin_notes[get_current_user_id()] : ""?></textarea>
 			<input id="custom-codes-admin-notes-saver" value="Save" type="submit" class="button-primary">
 		</form>
 
@@ -336,7 +345,134 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 
-	// ADMIN NOTES
+	// ADMIN PERMISSIONS
+	function cc_permissions_tab() {
+		global $wp_roles, $cc_permission_roles;
+		?>
+
+		<p>Select roles to allow users editing Custom Codes:<br/>
+			<small>("Custom Codes Admin" role always has access.)</small>
+		</p>
+
+
+		<form method="post" action="options.php" id="custom-codes-permissions-form" enctype="multipart/form-data">
+			<?php settings_fields( 'cc_permission_settings' ); ?>
+			<?php do_settings_sections( 'cc_permission_roles' ); ?>
+
+			<?php
+
+
+	$cc_roles_list = array();
+	$cc_current_user_roles = array();
+	$cc_selected_roles = array();
+	foreach ( $wp_roles->roles as $role => $role_details ) {
+
+		// Extract the Custom Codes Admin
+		if ( $role == "cc_admin" ) continue;
+
+		// Already recorded?
+		$selected = in_array($role, $cc_permission_roles) ? "selected" : "";
+		if ( $selected == "selected" ) {
+			$cc_selected_roles[$role] = array(
+				'name' => $role_details['name']
+			);
+		}
+
+		// Extract the current and selected roles
+		if ( !current_user_can('cc_admin') && current_user_can($role) ) {
+			$cc_current_user_roles[$role] = array(
+				'name' => $role_details['name'],
+				'selected' => $selected
+			);
+			continue;
+		}
+
+		$cc_roles_list[$role] = array(
+			'name' => $role_details['name'],
+			'selected' => $selected
+		);
+
+	}
+
+
+	// INCLUDE THE CURRENT USER SELECTED ROLES AS HIDDEN
+	foreach ( $cc_current_user_roles as $role => $role_details ) {
+
+		// Include the current and selected roles
+		if ( !current_user_can('cc_admin') && $role_details['selected'] == "selected" ) echo '<input type="hidden" name="cc_permission_roles[]" value="'.$role.'">';
+
+
+	}
+
+
+	// SHOW THE ROLE SELECTOR
+	echo '<p><select id="cc_permission_roles" name="cc_permission_roles[]" size="'.(count($cc_roles_list)+1).'" multiple>';
+		echo '<option class="mandatory-option" disabled="" selected="">Custom Codes Admin</option>';
+		foreach ( $cc_roles_list as $role => $role_details ) {
+
+			$role_name = $role_details['name'];
+
+			echo '<option value="'.$role.'" '.$role_details['selected'].'>'.$role_name.'</option>';
+
+		}
+	echo '</select></p>';
+
+
+
+			?>
+
+			<input id="custom-codes-permissions-saver" value="Save" type="submit" class="button-primary">
+		</form>
+
+		<p><small>These chosen roles will be able to see the Custom Codes admin menu. If none of them is chosen, <br/>all the users in Administrator and Custom Codes Admin roles will be able to use/delete the plugin.</small></p>
+
+		<script>
+			jQuery(document).ready(function($){
+
+				var button_nt = $('#custom-codes-permissions-saver');
+
+				$('#cc_permission_roles').on('change', function() {
+
+					$(this).children('option.mandatory-option').prop('selected', true);
+
+
+					if ( $(this).children('option:selected').length == 1 )
+						$(this).children('option[value="administrator"]').prop('selected', true);
+
+
+					if ( !button_nt.prop('disabled') )
+						button_nt.val('Save');
+
+				});
+
+				$('#custom-codes-permissions-form').submit(function() {
+					var form = $(this);
+					var roles = $('#cc_permission_roles');
+					var data =  form.serialize();
+
+					roles.prop("disabled", true);
+					button_nt.prop("disabled", true).val('Saving...');
+
+		            $.post( 'options.php', data ).error(function() {
+		                alert('An error occured. Please try again.');
+		            }).success( function() {
+		                roles.prop("disabled", false);
+		                button_nt.prop("disabled", false).val('Saved!');
+		            });
+
+		            return false;
+
+				});
+
+			});
+		</script>
+
+		<?php
+	}
+
+
+
+	// ADMIN CODES ROLES
 	function cc_admin_permissions_tab() {
 		global $wp_roles, $cc_admin_roles;
 		?>
@@ -363,7 +499,7 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 		// Already recorded?
 		$selected = in_array($role, $cc_admin_roles) ? "selected" : "";
-		if ( in_array($role, $cc_admin_roles) ) {
+		if ( $selected == "selected" ) {
 			$cc_selected_roles[$role] = array(
 				'name' => $role_details['name']
 			);
@@ -378,10 +514,8 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 
-
-
 	// SHOW THE ROLE SELECTOR
-	echo '<select id="cc_admin_roles" name="cc_admin_roles[]" size="'.count($cc_roles_list).'" multiple>';
+	echo '<p><select id="cc_admin_roles" name="cc_admin_roles[]" size="'.count($cc_roles_list).'" multiple>';
 		foreach ( $cc_roles_list as $role => $role_details ) {
 
 			$role_name = $role_details['name'];
@@ -389,8 +523,7 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 			echo '<option value="'.$role.'" '.$role_details['selected'].'>'.$role_name.'</option>';
 
 		}
-	echo '</select><br/>';
-
+	echo '</select></p>';
 
 			?>
 
@@ -401,6 +534,13 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 			jQuery(document).ready(function($){
 
 				var button_nt = $('#custom-codes-admin-permissions-saver');
+
+				$('#cc_admin_roles').on('change', function() {
+
+					if ( !button_nt.prop('disabled') )
+						button_nt.val('Save');
+
+				});
 
 				$('#custom-codes-admin-permissions-form').submit(function() {
 					var form = $(this);

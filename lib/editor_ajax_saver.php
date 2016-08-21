@@ -2,6 +2,7 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+
 // Sample Content
 require_once( dirname(__file__).'/editor_defaults.php' );
 
@@ -31,9 +32,12 @@ function cc_saver_ajax() {
 	$data = $_POST;
 
 
+
+
+
 	// Security Check
 	if (
-		!current_user_can('administrator') ||
+		!current_user_can('cc_full_access') ||
 		!isset($data['cc_editor_contents']) ||
 		!wp_verify_nonce( $data['cc_nonce'], 'cc-nonce')
 	) {
@@ -71,7 +75,7 @@ function cc_saver_ajax() {
 
 
 		// Permission Check
-		if ( substr($custom_codes_file_name, 0, 6) == "admin_" && !current_user_can('administrator') ) {
+		if ( substr($custom_codes_file_name, 0, 6) == "admin_" && !current_user_can('cc_full_access') ) {
 			$cc_json_result['error'][] = "Permission check failed";
 			echo json_encode($cc_json_result);
 			exit();

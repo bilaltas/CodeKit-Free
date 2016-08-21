@@ -4,7 +4,7 @@
 
 	Custom Codes Feature:
 	- "Serve minified" option
-	- Someone else is currently editing feature! (Hartbeat API)
+	- Someone else is currently editing feature!? (Hartbeat API?)
 	- Record how many times clicked (?)
 	- Revisions feature (PRO FEATURE!)
 	
