@@ -145,6 +145,10 @@ function cc_load() {
 		wp_enqueue_script( 'cc-codemirror-js', plugin_dir_url( __FILE__ ) .'includes/codemirror/lib/codemirror.js', array(), '20150913', true );
 
 
+		// EMMET
+		wp_enqueue_script( 'cc-emmet-js', plugin_dir_url( __FILE__ ) .'includes/emmet/dist/emmet.js', array(), '20150913', true );
+
+
 		// MODES
 		wp_enqueue_script( 'cc-codemirror-htmlmixed-js', plugin_dir_url( __FILE__ ) .'includes/codemirror/mode/htmlmixed/htmlmixed.js', array(), '20150913', true );
 		wp_enqueue_script( 'cc-codemirror-xml-js', plugin_dir_url( __FILE__ ) .'includes/codemirror/mode/xml/xml.js', array(), '20150913', true );

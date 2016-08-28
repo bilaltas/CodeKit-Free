@@ -180,6 +180,7 @@ function cc_editor_page() {
 					<li><b>Full Screen Mode:</b> Command/Ctrl + E</li>
 					<li><b>Exit Full Screen Mode:</b> Esc</li>
 					<li><b>Arrange Space Hierarchy:</b> (Select codes, then) Shift + Tab</li>
+					<li><b>Emmet Abbreviations:</b> Write Abs. + Tab</li>
 				</ul>
 			</span>
 		</span>

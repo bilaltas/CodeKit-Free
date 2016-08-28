@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.0.8 (2016-08-28 17:51 EET) =
+* Emmet features added
+
 = 0.0.7 (2016-08-21 20:00 EET) =
 * Roles selector to show the plugin
 
