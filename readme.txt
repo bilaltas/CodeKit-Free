@@ -1,8 +1,8 @@
 === Custom SASS, CSS, JS and PHP ===
 Contributors: bilaltas
 Tags: custom, codes, custom codes, development, developer, sass, css, js, php
-Requires at least: 3.0
-Tested up to: 4.5.4
+Requires at least: 4.0
+Tested up to: 4.6
 
 Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 
@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.0.9 (2016-08-28 18:01 EET) =
+* Tested on Wordpress 4.6
+
 = 0.0.8 (2016-08-28 17:51 EET) =
 * Emmet features added
 
