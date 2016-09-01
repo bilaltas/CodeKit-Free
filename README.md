@@ -5,12 +5,14 @@
 	Custom Codes Feature:
 	- "Serve minified" option
 	- Someone else is currently editing feature!? (Hartbeat API?)
+	 - Current version is different than the saved version. Someone might be already edited. ( A) Open the newest version, B) Save the current one, C) Show the differences)
 	- Record how many times saved (?)
 	- Revisions feature (PRO FEATURE!)
 	- New Setting: Play sound when saved!
 	
 	Responsivity Tool (PRO FEATURE!):
 	- Add "Edit SASS/CSS on This Device" button
+	- Admin Bar Menu: Open this page on responsivity tool (Might be icon?)
 	
 	Custom Fonts Feature (PRO FEATURE!):
 	- Ability to upload new fonts from the plugin

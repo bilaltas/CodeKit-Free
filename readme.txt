@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.1 (2016-09-01 15:43 EET) =
+* New ideas added
+
 = 0.0.9 (2016-08-28 18:01 EET) =
 * Tested on Wordpress 4.6
 
