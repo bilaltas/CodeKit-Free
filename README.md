@@ -9,6 +9,7 @@
 	- Record how many times saved (?)
 	- Revisions feature (PRO FEATURE!)
 	- New Setting: Play sound when saved!
+	- Saving timeout?!
 	
 	Responsivity Tool (PRO FEATURE!):
 	- Add "Edit SASS/CSS on This Device" button
@@ -36,4 +37,5 @@
 	
 	
 	Known Bugs:
-	- 
+	- Started not opening on Google Chrome!?
+	- Saving... timeout!?

@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.1.2 (2016-09-05 13:02 EET) =
+* CodeMirror and Sass updated to latest versions
+
 = 0.1.1 (2016-09-01 17:30 EET) =
 * Plugin Update Checker updated
 
