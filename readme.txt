@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.1.3 (2016-09-06 13:21 EET) =
+* Bug on Google Chrome Stable 53.0.2785.89 fixed
+
 = 0.1.2 (2016-09-05 13:02 EET) =
 * CodeMirror and Sass updated to latest versions
 

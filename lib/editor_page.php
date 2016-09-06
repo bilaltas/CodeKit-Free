@@ -4,6 +4,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
 require_once( dirname( CC_FILE ).'/lib/editor_functions.php' );
+require_once( dirname( CC_FILE ).'/lib/editor_includes.php' );
 
 
 function cc_editor_page() {
@@ -204,6 +205,12 @@ function cc_editor_page() {
 
 
 
+
+<script>
+	jQuery(window).load(function(){
+		jQuery('.CodeMirror').css('position', 'absolute'); // FOR GOOGLE CHROME STABLE 53.0.2785.89 BUG!
+	});
+</script>
 
 
 

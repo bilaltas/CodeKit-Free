@@ -280,7 +280,7 @@ span.hider {
 .CodeMirror {
     max-width: none;
     border: 1px solid #ddd;
-    position: absolute;
+/*  position: absolute; FOR GOOGLE CHROME STABLE 53.0.2785.89 BUG! */
     bottom: 20px;
     top: 60px;
 }

@@ -37,5 +37,4 @@
 	
 	
 	Known Bugs:
-	- Started not opening on Google Chrome!?
 	- Saving... timeout!?
