@@ -158,7 +158,6 @@ function cc_editor_page() {
 
 
 
-
 	<!-- SAVE SECTION -->
 	<div class="saver-container">
 
@@ -202,15 +201,6 @@ function cc_editor_page() {
 
 	</div>
 	<!-- SAVE SECTION END -->
-
-
-
-
-<script>
-	jQuery(window).load(function(){
-		jQuery('.CodeMirror').css('position', 'absolute'); // FOR GOOGLE CHROME STABLE 53.0.2785.89 BUG!
-	});
-</script>
 
 
 

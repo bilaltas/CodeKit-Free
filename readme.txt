@@ -2,7 +2,7 @@
 Contributors: bilaltas
 Tags: custom, codes, custom codes, development, developer, sass, css, js, php
 Requires at least: 4.0
-Tested up to: 4.6
+Tested up to: 4.6.1
 
 Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 
@@ -19,6 +19,10 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.1.4 (2016-09-08 12:57 EET) =
+* Bug fixes
+* Tested on Wordpress 4.6.1
+
 = 0.1.3 (2016-09-06 13:21 EET) =
 * Bug on Google Chrome Stable 53.0.2785.89 fixed
 
