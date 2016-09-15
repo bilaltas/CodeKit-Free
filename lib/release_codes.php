@@ -80,7 +80,6 @@ if ( !is_admin() ) { // Front-End
 
 
 
-/*
 register_shutdown_function( "fatal_handler" );
 
 function fatal_handler() {
@@ -105,7 +104,7 @@ function format_error( $errno, $errstr, $errfile, $errline ) {
   $trace = print_r( debug_backtrace( false ), true );
 
   $content = "
-  <table>
+  <table border='1'>
   <thead><th>Item</th><th>Description</th></thead>
   <tbody>
   <tr>
@@ -113,7 +112,7 @@ function format_error( $errno, $errstr, $errfile, $errline ) {
     <td><pre>$errstr</pre></td>
   </tr>
   <tr>
-    <th>Errno</th>
+    <th>ErrNo</th>
     <td><pre>$errno</pre></td>
   </tr>
   <tr>
@@ -131,11 +130,10 @@ function format_error( $errno, $errstr, $errfile, $errline ) {
   </tbody>
   </table>";
 
-  $content = "Something went wrong, please contact your admin!";
+  if ( !WP_DEBUG ) $content = "Something went wrong, please contact your admin!";
 
   return $content;
 }
-*/
 
 
 // RELEASE CUSTOM functions.php

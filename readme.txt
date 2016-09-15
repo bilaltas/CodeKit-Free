@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.1.5 (2016-09-08 15:05 EET) =
+* Enabled error reporting for the admin_functions.php
+
 = 0.1.4 (2016-09-08 12:57 EET) =
 * Bug fixes
 * Tested on Wordpress 4.6.1
