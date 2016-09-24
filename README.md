@@ -10,10 +10,14 @@
 	- Revisions feature (PRO FEATURE!)
 	- New Setting: Play sound when saved!
 	- Saving timeout?!
+	- Codes by person?
+	- Codes by condition! (Page, role, etc)
 	
 	Responsivity Tool (PRO FEATURE!):
-	- Add "Edit SASS/CSS on This Device" button
+	- Focus buttons
+	- Add "Edit SASS/CSS on This Device" buttons
 	- Admin Bar Menu: Open this page on responsivity tool (Might be icon?)
+	- Pull titles a little down
 	
 	Custom Fonts Feature (PRO FEATURE!):
 	- Ability to upload new fonts from the plugin

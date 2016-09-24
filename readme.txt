@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.1.6 (2016-09-24 12:32 EET) =
+* Bug fixes
+
 = 0.1.5 (2016-09-08 15:05 EET) =
 * Enabled error reporting for the admin_functions.php
 

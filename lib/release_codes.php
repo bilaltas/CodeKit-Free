@@ -130,7 +130,8 @@ function format_error( $errno, $errstr, $errfile, $errline ) {
   </tbody>
   </table>";
 
-  if ( !WP_DEBUG ) $content = "Something went wrong, please contact your admin!";
+  //if ( !WP_DEBUG ) $content = "Something went wrong, please contact your admin!"; // Produces ajax error
+  if ( !WP_DEBUG ) $content = "";
 
   return $content;
 }
