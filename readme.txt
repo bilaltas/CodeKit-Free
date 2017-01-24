@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.1.8 (2017-01-24 21:07 EET) =
+* Some optimizations
+
 = 0.1.7 (2017-01-24 14:19 EET) =
 * Fatal Error catcher is removed
 * Plugin Update Checker updated

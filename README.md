@@ -14,10 +14,8 @@
 	- Codes by condition! (Page, role, etc)
 	
 	Responsivity Tool (PRO FEATURE!):
-	- Focus a Device buttons (with side codes?)
 	- Add "Edit SASS/CSS on This Device" buttons
 	- Admin Bar Menu: Open this page on responsivity tool (Might be icon?)
-	- Pull titles a little down
 	- Night mode
 	
 	Custom Fonts Feature (PRO FEATURE!):
