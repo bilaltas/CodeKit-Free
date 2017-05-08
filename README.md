@@ -1,12 +1,26 @@
+# Custom Codes Wordpress Plugin
+
+Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! You don't even have to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
+
+
+## Installation
+
+1. Login to your website and go to the Plugins section of your admin panel.
+2. Click the Add New button.
+3. Under Install Plugins, click the Upload link.
+4. Select the plugin zip file (custom-codes.zip) from your computer then click the Install Now button.
+5. You should see a message stating that the plugin was installed successfully.
+6. Click the Activate Plugin link.
+
+
 ### New Ideas & Plan for Today ###
 
-	- Find and Add a Strict License!
+	- Update this readme file! (Description, installation, etc.)
 
 	Custom Codes Feature:
 	- "Serve minified" option
 	- Someone else is currently editing feature!? (Hartbeat API?)
 	- Current version is different than the saved version. Someone might be already edited. ( A) Open the newest version, B) Save the current one, C) Show the differences)
-	- Record how many times saved (?)
 	- Revisions feature (PRO FEATURE!)
 	- New Setting: Play sound when saved!
 	- Saving timeout?!
@@ -28,7 +42,7 @@
 	- New Setting: Activate the emmet!
 	
 	
-	PRO FEATURES:
+	PRO FEATURES(?):
 	- SASS
 	- Emmet
 	- Responsivity Tool

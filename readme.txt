@@ -19,6 +19,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Changelog ==
+= 0.2.0 (2017-05-08 17:40 EET) =
+* Moved to Github
+
 = 0.1.9 (2017-05-08 17:14 EET) =
 * Version count added
 * Bug fixes
