@@ -32,6 +32,13 @@ function cc_register_custom_codes_settings() {
 	register_setting( 'cc_responsivity_settings' , 'cc_phone_p' );
 
 	register_setting( 'cc_editor_settings' , 'cc_editor_theme' );
+	register_setting( 'cc_editor_settings' , 'cc_css_save_count' );
+	register_setting( 'cc_editor_settings' , 'cc_js_head_save_count' );
+	register_setting( 'cc_editor_settings' , 'cc_js_bottom_save_count' );
+
+	register_setting( 'cc_editor_settings' , 'cc_admin_css_save_count' );
+	register_setting( 'cc_editor_settings' , 'cc_admin_js_head_save_count' );
+	register_setting( 'cc_editor_settings' , 'cc_admin_js_bottom_save_count' );
 
 }
 add_action( 'admin_init', 'cc_register_custom_codes_settings' );

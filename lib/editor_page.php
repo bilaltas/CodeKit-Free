@@ -177,7 +177,7 @@ function cc_editor_page() {
 					<li><b>Choose Multi Line:</b> Option/Alt + Click</li>
 					<li><b>Add Multi Cursor:</b> Command/Ctrl + Click</li>
 					<li><b>Comment the Line:</b> Command/Ctrl + 7</li>
-					<li><b>Full Screen Mode:</b> Command/Ctrl + E</li>
+					<li><b>Full Screen Mode:</b> Command/Ctrl + G</li>
 					<li><b>Exit Full Screen Mode:</b> Esc</li>
 					<li><b>Arrange Space Hierarchy:</b> (Select codes, then) Shift + Tab</li>
 					<li><b>Emmet Abbreviations:</b> Write Abs. + Tab</li>
@@ -189,6 +189,16 @@ function cc_editor_page() {
 		<!-- SUBMIT BUTTON -->
 		<input type="submit" name="Submit" class="button-primary" id="cc_savethem" value="Save Changes">
 
+<?php
+/*
+	echo cc_pull_option('cc_css_save_count', 0)." ";
+	echo cc_pull_option('cc_js_head_save_count', 0)." ";
+	echo cc_pull_option('cc_js_bottom_save_count', 0)."<br/>";
+	echo cc_pull_option('cc_admin_css_save_count', 0)." ";
+	echo cc_pull_option('cc_admin_js_head_save_count', 0)." ";
+	echo cc_pull_option('cc_admin_js_bottom_save_count', 0);
+*/
+?>
 
 		<!-- RESULT SCREEN -->
 		<span class="error info-tooltip">

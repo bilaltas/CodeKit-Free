@@ -99,14 +99,28 @@ if ( !function_exists('cc_include_custom_functions') ) { // Both
 
 	//Remove the plugin's settings
 	if ( get_option( 'cc_permission_roles' ) ) delete_option( 'cc_permission_roles' );
+
 	if ( get_option( 'cc_admin_roles' ) ) delete_option( 'cc_admin_roles' );
+
 	if ( get_option( 'cc_admin_notes' ) ) delete_option( 'cc_admin_notes' );
+
 	if ( get_option( 'cc_style_mode' ) ) delete_option( 'cc_style_mode' );
 	if ( get_option( 'cc_store_files' ) ) delete_option( 'cc_store_files' );
+
 	if ( get_option( 'cc_tablet_l' ) ) delete_option( 'cc_tablet_l' );
 	if ( get_option( 'cc_tablet_p' ) ) delete_option( 'cc_tablet_p' );
 	if ( get_option( 'cc_phone_l' ) ) delete_option( 'cc_phone_l' );
 	if ( get_option( 'cc_phone_p' ) ) delete_option( 'cc_phone_p' );
+
+	if ( get_option( 'cc_editor_theme' ) ) delete_option( 'cc_editor_theme' );
+	if ( get_option( 'cc_css_save_count' ) ) delete_option( 'cc_css_save_count' );
+	if ( get_option( 'cc_js_head_save_count' ) ) delete_option( 'cc_js_head_save_count' );
+	if ( get_option( 'cc_js_bottom_save_count' ) ) delete_option( 'cc_js_bottom_save_count' );
+
+	if ( get_option( 'cc_admin_css_save_count' ) ) delete_option( 'cc_admin_css_save_count' );
+	if ( get_option( 'cc_admin_js_head_save_count' ) ) delete_option( 'cc_admin_js_head_save_count' );
+	if ( get_option( 'cc_admin_js_bottom_save_count' ) ) delete_option( 'cc_admin_js_bottom_save_count' );
+
 
 
 	// Remove the capability

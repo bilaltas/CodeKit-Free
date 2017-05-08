@@ -5,6 +5,12 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 if ( !is_admin() ) { // Front-End
 
+	// Option caller
+	function cc_pull_option($setting_name, $default_value) {
+		$option = get_option( $setting_name, $default_value );
+		return !isset($option) || $option == "" ? $default_value : $option;
+	}
+
 
 	// RELEASE CUSTOM CSS AND JS FILES
 	if ( !function_exists('cc_public_codes') ) {
@@ -13,18 +19,18 @@ if ( !is_admin() ) { // Front-End
 
 			// CSS File
 			if( file_exists(WP_CONTENT_DIR .'/custom_codes/custom_public.css') )
-				wp_enqueue_style( 'custom', WP_CONTENT_URL .'/custom_codes/custom_public.css' );
+				wp_enqueue_style( 'custom', WP_CONTENT_URL .'/custom_codes/custom_public.css', array(), cc_pull_option('cc_css_save_count', 0) );
 
 			// Call jQuery
 			wp_enqueue_script('jquery');
 
 			// JS File Head
 			if( file_exists(WP_CONTENT_DIR .'/custom_codes/custom_public_head.js') )
-				wp_enqueue_script( 'custom-head', WP_CONTENT_URL .'/custom_codes/custom_public_head.js', array( 'jquery' ), '1.0.0');
+				wp_enqueue_script( 'custom-head', WP_CONTENT_URL .'/custom_codes/custom_public_head.js', array( 'jquery' ), cc_pull_option('cc_js_head_save_count', 0));
 
 			// JS File Bottom
 			if( file_exists(WP_CONTENT_DIR .'/custom_codes/custom_public.js') )
-				wp_enqueue_script( 'custom-bottom', WP_CONTENT_URL .'/custom_codes/custom_public.js', array( 'jquery' ), '1.0.0', true);
+				wp_enqueue_script( 'custom-bottom', WP_CONTENT_URL .'/custom_codes/custom_public.js', array( 'jquery' ), cc_pull_option('cc_js_bottom_save_count', 0), true);
 
 		}
 		add_action( 'wp_enqueue_scripts', 'cc_public_codes', 99999 );
@@ -55,18 +61,18 @@ if ( !is_admin() ) { // Front-End
 
 				// CSS File
 				if( file_exists(WP_CONTENT_DIR .'/custom_codes/admin_panel.css') )
-					wp_enqueue_style( 'custom-admin', WP_CONTENT_URL .'/custom_codes/admin_panel.css' );
+					wp_enqueue_style( 'custom-admin', WP_CONTENT_URL .'/custom_codes/admin_panel.css', array(), cc_pull_option('cc_admin_css_save_count', 0) );
 
 				// Call jQuery
 				wp_enqueue_script('jquery');
 
 				// JS File Head
 				if( file_exists(WP_CONTENT_DIR .'/custom_codes/admin_panel_head.js') )
-					wp_enqueue_script( 'custom-admin-head', WP_CONTENT_URL .'/custom_codes/admin_panel_head.js', array( 'jquery' ), '1.0.0');
+					wp_enqueue_script( 'custom-admin-head', WP_CONTENT_URL .'/custom_codes/admin_panel_head.js', array( 'jquery' ), cc_pull_option('cc_admin_js_head_save_count', 0));
 
 				// JS File Bottom
 				if( file_exists(WP_CONTENT_DIR .'/custom_codes/admin_panel.js') )
-					wp_enqueue_script( 'custom-admin-bottom', WP_CONTENT_URL .'/custom_codes/admin_panel.js', array( 'jquery' ), '1.0.0', true);
+					wp_enqueue_script( 'custom-admin-bottom', WP_CONTENT_URL .'/custom_codes/admin_panel.js', array( 'jquery' ), cc_pull_option('cc_admin_js_bottom_save_count', 0), true);
 
 			}
 

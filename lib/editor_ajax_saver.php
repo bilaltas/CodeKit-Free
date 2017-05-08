@@ -8,7 +8,7 @@ require_once( dirname(__file__).'/editor_defaults.php' );
 
 
 // SASS
-require_once( dirname(__file__).'/includes/scssphp/scss.inc.php' );
+require_once( dirname(__file__).'/vendor/scssphp/scss.inc.php' );
 use Leafo\ScssPhp\Compiler;
 
 if ($cc_sass) {
@@ -178,6 +178,11 @@ function cc_saver_ajax() {
 					cc_process_timer_start();
 						$css_output_content = $cc_scss->compile( $data_to_compile );
 						$css_output_done = file_put_contents($file_main_css_output, $css_output_content, FILE_TEXT );
+
+						// Increase the version number
+						$css_version = cc_pull_option('cc_'.($cc_admin ? 'admin_' : '').'css_save_count', 0);
+						update_option( 'cc_'.($cc_admin ? 'admin_' : '').'css_save_count', $css_version+1 );
+
 					$css_output_end = cc_process_timer_finish();
 
 				}
@@ -231,6 +236,11 @@ function cc_saver_ajax() {
 
 			cc_process_timer_start();
 				$css_done = file_put_contents($file_css, $css_content, FILE_TEXT );
+
+				// Increase the version number
+				$css_version = cc_pull_option('cc_'.($cc_admin ? 'admin_' : '').'css_save_count', 0);
+				update_option( 'cc_'.($cc_admin ? 'admin_' : '').'css_save_count', $css_version+1 );
+
 			$css_end = cc_process_timer_finish();
 
 
@@ -247,10 +257,27 @@ function cc_saver_ajax() {
 		} else {
 
 			// SAVE
-			$file_other = CC_DIR."$custom_codes_file_name.$custom_codes_file_lang";
+			$file_name = "$custom_codes_file_name.$custom_codes_file_lang";
+			$file_other = CC_DIR.$file_name;
 
 			cc_process_timer_start();
 				$other_done = file_put_contents($file_other, $custom_codes_file_content, FILE_TEXT );
+
+				if ( $file_name == "custom_public.js" || $file_name == "admin_panel.js" ) {
+
+					// Increase the version number
+					$js_bottom_version = cc_pull_option('cc_'.($cc_admin ? 'admin_' : '').'js_bottom_save_count', 0);
+					update_option( 'cc_'.($cc_admin ? 'admin_' : '').'js_bottom_save_count', $js_bottom_version+1 );
+
+				} elseif ( $file_name == "custom_public_head.js" || $file_name == "admin_panel_head.js" ) {
+
+					// Increase the version number
+					$js_head_version = cc_pull_option('cc_'.($cc_admin ? 'admin_' : '').'js_head_save_count', 0);
+					update_option( 'cc_'.($cc_admin ? 'admin_' : '').'js_head_save_count', $js_head_version+1 );
+
+				}
+
+
 			$other_end = cc_process_timer_finish();
 
 			// ERROR CATCHING
