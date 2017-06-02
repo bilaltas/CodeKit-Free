@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 
 == Description ==
-Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! Just \"Command + S\" to save and more. You don\'t even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
+Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! Just "Command + S" to save and more. You don't even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
 
 = Main Features =
 1. Custom SASS or CSS editors (Including separate mobile devices and retina display devices SASS/CSS editors)
@@ -33,9 +33,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 
 == Frequently Asked Questions ==
 = Will my custom codes be deleted after uninstalling the plugin? =
-- No, it won\'t if you uncheck the \"Store custom CSS/JS after uninstall\" option on settings.
+- No, it won't if you uncheck the "Store custom CSS/JS after uninstall" option on settings.
 
-= A red cross appeared when I try to save. It doesn\'t look save the files, what\'s the problem? =
+= A red cross appeared when I try to save. It doesn't look save the files, what's the problem? =
 - Just mouseover the cross and see the error message.
 
 == Screenshots ==
@@ -44,6 +44,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 3. Admin side editor look
 
 == Changelog ==
+= 0.2.2 (2017-06-02 11:40 EET) =
+* Removed slashes from the readme file
+
 = 0.2.1 (2017-06-02 03:32 EET) =
 * Readme files corrections
 
@@ -106,7 +109,7 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 
 = 0.0.2 (2016-08-13 20:29 EET) =
 * Bug fixes
-* \"Saving..\" overlay added
+* "Saving.." overlay added
 
 = 0.0.1 (2016-06-27 14:36 EET) =
 * Initial commit

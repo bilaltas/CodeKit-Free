@@ -7,7 +7,7 @@ Author: Bilal TAS
 Author URI: http://www.bilaltas.net
 License: GNU GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-Version: 0.2.1
+Version: 0.2.2
 
 Custom Codes is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
