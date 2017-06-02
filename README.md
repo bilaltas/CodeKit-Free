@@ -1,6 +1,6 @@
 # Custom Codes Wordpress Plugin
 
-Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! You don't even have to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
+Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! Just "Command + S" to save and more. You don't even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
 
 
 ## Installation
@@ -17,15 +17,23 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 
 	- Update this readme file! (Description, installation, etc.)
 
-	Custom Codes Feature:
+	New Features:
 	- "Serve minified" option
-	- Someone else is currently editing feature!? (Hartbeat API?)
-	- Current version is different than the saved version. Someone might be already edited. ( A) Open the newest version, B) Save the current one, C) Show the differences)
 	- Revisions feature (PRO FEATURE!)
 	- New Setting: Play sound when saved!
 	- Saving timeout?!
 	- Codes by person?
 	- Codes by condition! (Page, role, etc)
+	- New themes
+	
+	Emmet:
+	- New Setting: Activate the emmet!
+	
+	Someone else is currently editing!? (Hartbeat API?):
+	- "Current version is different than the version saved here. It might be already edited by someone. 
+		- A) Open the newest version
+		- B) Save the current one
+		- C) Show the differences
 	
 	Responsivity Tool (PRO FEATURE!):
 	- Add "Edit SASS/CSS on This Device" buttons
@@ -35,23 +43,14 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 	Custom Fonts Feature (PRO FEATURE!):
 	- Ability to upload new fonts from the plugin
 	
-	Debugger Tool (PRO FEATURE!):
-	- New Setting: Activate the debugger for an user?
-	
-	Emmet (PRO FEATURE!):
-	- New Setting: Activate the emmet!
+	Revisions Feature (PRO FEATURE!):
+	- New Setting: How many revisions should be stored? (10)
 	
 	
-	PRO FEATURES(?):
+	ALL PRO FEATURES:
 	- SASS
 	- Emmet
 	- Responsivity Tool
-	- Debugger Tool
 	- Revisions
 	- Custom Fonts
-	- New Themes
 	- Codes by URL/Page
-	
-	
-	Known Bugs:
-	- Saving... timeout!?

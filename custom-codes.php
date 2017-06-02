@@ -1,11 +1,26 @@
 <?php
 /*
-Plugin Name: Custom SASS, CSS, JS and PHP
+Plugin Name: Custom Codes
 Plugin URI: http://www.bilaltas.net/
 Description: Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 Author: Bilal TAS
-Author URI: http://bilaltas.net
-Version: 0.2.0
+Author URI: http://www.bilaltas.net
+License: GNU GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+Version: 0.2.1
+
+Custom Codes is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+any later version.
+
+Custom Codes is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Custom Codes. If not, see http://www.gnu.org/licenses/gpl-3.0.txt.
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );

@@ -1,16 +1,29 @@
-=== Custom SASS, CSS, JS and PHP ===
+=== Custom Codes ===
 Contributors: bilaltas
-Tags: custom, codes, custom codes, development, developer, sass, css, js, php
+Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity
+Donate link: https://paypal.me/bilaltas
 Requires at least: 4.0
-Tested up to: 4.7.4
+Tested up to: 4.7.5
+Stable tag: trunk
+License: GNU GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
 Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 
 == Description ==
-Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! You don't even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
+Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! Just \"Command + S\" to save and more. You don\'t even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
+
+= Main Features =
+1. Custom SASS or CSS editors (Including separate mobile devices and retina display devices SASS/CSS editors)
+2. Custom JavaScript editors (Head and footer)
+3. Emmet (Code abbreviations on CSS)
+4. Full Screen Mode
+5. Plays a sound when saved
+6. Permission settings
+7. Admin notes section
+8. Dark and light themes
 
 == Installation ==
-=For Installation=
 1. Login to your website and go to the Plugins section of your admin panel.
 2. Click the Add New button.
 3. Under Install Plugins, click the Upload link.
@@ -18,7 +31,22 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 5. You should see a message stating that the plugin was installed successfully.
 6. Click the Activate Plugin link.
 
+== Frequently Asked Questions ==
+= Will my custom codes be deleted after uninstalling the plugin? =
+- No, it won\'t if you uncheck the \"Store custom CSS/JS after uninstall\" option on settings.
+
+= A red cross appeared when I try to save. It doesn\'t look save the files, what\'s the problem? =
+- Just mouseover the cross and see the error message.
+
+== Screenshots ==
+1. General look
+2. Options and Shortcuts
+3. Admin side editor look
+
 == Changelog ==
+= 0.2.1 (2017-06-02 03:32 EET) =
+* Readme files corrections
+
 = 0.2.0 (2017-05-08 17:40 EET) =
 * Moved to Github
 
@@ -78,7 +106,10 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 
 = 0.0.2 (2016-08-13 20:29 EET) =
 * Bug fixes
-* "Saving.." overlay added
+* \"Saving..\" overlay added
 
 = 0.0.1 (2016-06-27 14:36 EET) =
 * Initial commit
+
+== Upgrade Notice ==
+Bug fixes related to browser caching.
