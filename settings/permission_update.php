@@ -4,14 +4,14 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
 // PERMISSION UPDATES
-function cc_update_permissions() {
+function cstm_cds_update_permissions() {
 	global $wp_roles;
 
 
 	// Call the settings
-	$cc_permission_roles = cc_pull_option(
-		'cc_permission_roles',
-		array('cc_admin', 'administrator') // Default settings
+	$cstm_cds_permission_roles = cstm_cds_pull_option(
+		'cstm_cds_permission_roles',
+		array('cstm_cds_admin', 'administrator') // Default settings
 	);
 
 
@@ -19,14 +19,14 @@ function cc_update_permissions() {
 	foreach ( $wp_roles->roles as $role_name => $role_details) {
 
 			$role = get_role( $role_name );
-			if ( in_array($role_name, $cc_permission_roles) || $role_name == 'cc_admin' )
-				$role->add_cap( 'cc_full_access' );
+			if ( in_array($role_name, $cstm_cds_permission_roles) || $role_name == 'cstm_cds_admin' )
+				$role->add_cap( 'cstm_cds_full_access' );
 
 			else
-				$role->remove_cap( 'cc_full_access' );
+				$role->remove_cap( 'cstm_cds_full_access' );
 
 	}
 
 
 }
-add_action('admin_init', 'cc_update_permissions');
+add_action('admin_init', 'cstm_cds_update_permissions');

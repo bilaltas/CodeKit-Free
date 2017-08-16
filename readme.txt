@@ -1,9 +1,9 @@
 === Custom Codes ===
 Contributors: bilaltas
-Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity
+Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity, mobile
 Donate link: https://paypal.me/bilaltas
 Requires at least: 4.0
-Tested up to: 4.7.5
+Tested up to: 4.8.1
 Stable tag: trunk
 License: GNU GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 
 == Description ==
-Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! Just "Command + S" to save and more. You don't even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
+Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! Just "Command + S" to save, and much more. You don't even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
 
 = Main Features =
 1. Custom SASS or CSS editors (Including separate mobile devices and retina display devices SASS/CSS editors)
@@ -44,6 +44,22 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 3. Admin side editor look
 
 == Changelog ==
+= 0.3.4 (2017-08-10 14:04 EET) =
+* A small bug fix related to CSS output editor's read-only state after saving.
+
+= 0.3.3 (2017-08-03 18:53 EET) =
+* Old version plugin settings, roles, capabilities changes (Bug fix).
+
+= 0.3.2 (2017-08-03 18:12 EET) =
+* Old version plugin settings, roles, capabilities changes.
+* Small corrections.
+
+= 0.3.1 (2017-07-07 15:51 EET) =
+* Prefix added to enquee IDs.
+
+= 0.3.0 (2017-06-09 13:36 EET) =
+* Plugin moved to the Wordpress.org plugin repository
+
 = 0.2.2 (2017-06-02 11:40 EET) =
 * Removed slashes from the readme file
 

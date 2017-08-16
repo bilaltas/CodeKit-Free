@@ -5,13 +5,13 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
 // DEFAULT CONTENTS
-function cc_empty_codes($lang, $file_name = "") {
-	global $cc_result_level;
+function cstm_cds_empty_codes($lang, $file_name = "") {
+	global $cstm_cds_result_level;
 
 
 	// SASS/CSS SAMPLE CONTENT
 	if ( $lang == "sass" || $lang == "css" )
-		return '/* Write your '.$cc_result_level.' '.strtoupper($lang).' '.$file_name.' here! */';
+		return '/* Write your '.$cstm_cds_result_level.' '.strtoupper($lang).' '.$file_name.' here! */';
 
 
 
@@ -19,7 +19,7 @@ function cc_empty_codes($lang, $file_name = "") {
 	elseif ( $lang == "js" )
 		return
 'jQuery(document).ready(function($){
-    /* Write your '.$cc_result_level.' '.$file_name.' jQuery here! */
+    /* Write your '.$cstm_cds_result_level.' '.$file_name.' jQuery here! */
 
 }); // document ready';
 
@@ -41,12 +41,12 @@ defined( "ABSPATH" ) or die( "No script kiddies please!" );
    If you see a BLANK PAGE when you open the site, please fix the
    /wp-content/custom_codes/admin_functions.php file\'s errors manually! */
 
-/* Write your '.$cc_result_level.' '.strtoupper($lang).' '.$file_name.' down here! */';
+/* Write your '.$cstm_cds_result_level.' '.strtoupper($lang).' '.$file_name.' down here! */';
 
 
 
 	// OTHER FILE SAMPLE CONTENT
 	else
-		return '/* Write your '.$cc_result_level.' '.strtoupper($lang).' '.$file_name.' here! */';
+		return '/* Write your '.$cstm_cds_result_level.' '.strtoupper($lang).' '.$file_name.' here! */';
 
 }

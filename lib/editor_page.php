@@ -3,12 +3,12 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
-require_once( dirname( CC_FILE ).'/lib/editor_functions.php' );
-require_once( dirname( CC_FILE ).'/lib/editor_includes.php' );
+require_once( dirname( CSTM_CDS_FILE ).'/lib/editor_functions.php' );
+require_once( dirname( CSTM_CDS_FILE ).'/lib/editor_includes.php' );
 
 
-function cc_editor_page() {
-	global $cc_sass, $cc_scss, $cc_admin, $cc_editor_theme;
+function cstm_cds_editor_page() {
+	global $cstm_cds_sass, $cstm_cds_scss, $cstm_cds_admin, $cstm_cds_editor_theme;
 ?>
 
 <!-- SAVING OVERLAY -->
@@ -20,10 +20,10 @@ function cc_editor_page() {
 
 	<?php
 
-		if ( current_user_can('cc_full_access') ) {
+		if ( current_user_can('cstm_cds_full_access') ) {
 
 			// ADMIN PANEL SWITCHER LINK
-			if ( $cc_admin ) {
+			if ( $cstm_cds_admin ) {
 				echo '<a href="'.admin_url('admin.php?page=custom-codes').'" class="switch-link">Switch to Public Custom CSS and JS Codes</a>';
 			} else {
 				echo '<a href="'.admin_url('admin.php?page=custom-codes&admin_panel=true').'" class="switch-link">Switch to Admin Panel Custom CSS and JS Codes</a>';
@@ -49,7 +49,7 @@ function cc_editor_page() {
 
 
 <!-- SASS/CSS SIDE -->
-<div class="css-side sides theme-<?=$cc_editor_theme?>">
+<div class="css-side sides theme-<?=$cstm_cds_editor_theme?>">
 
 
 
@@ -58,11 +58,11 @@ function cc_editor_page() {
 	<h2>
 		<span class="dynamic-title">
 		<?php
-			$cc_css_title = $cc_sass ? "Custom SASS" : "Custom CSS";
-			$cc_css_admin_title = $cc_sass ? "Custom Admin SASS" : "Custom Admin CSS";
-			$cc_current_css_title = $cc_admin ? $cc_css_admin_title : $cc_css_title;
+			$cstm_cds_css_title = $cstm_cds_sass ? "Custom SASS" : "Custom CSS";
+			$cstm_cds_css_admin_title = $cstm_cds_sass ? "Custom Admin SASS" : "Custom Admin CSS";
+			$cstm_cds_current_css_title = $cstm_cds_admin ? $cstm_cds_css_admin_title : $cstm_cds_css_title;
 
-			 _e( $cc_current_css_title, 'custom-codes' );
+			 _e( $cstm_cds_current_css_title, 'custom-codes' );
 		?>
 		</span>
 		<span class="hider">(<a href="#" class="hider-css">Hide this</a><span class="show-both"> | <a href="#"> Show Both</a></span>)</span>
@@ -86,21 +86,21 @@ function cc_editor_page() {
 	<?php
 
 		// Responsivity Editors
-		cc_add_custom_editor($cc_sass ? "sass" : "css", "desktop" , "mousetrap");
-		cc_add_custom_editor($cc_sass ? "sass" : "css", "tablet-l", "mousetrap");
-		cc_add_custom_editor($cc_sass ? "sass" : "css", "tablet-p", "mousetrap");
-		cc_add_custom_editor($cc_sass ? "sass" : "css", "mobile-l", "mousetrap");
-		cc_add_custom_editor($cc_sass ? "sass" : "css", "mobile-p", "mousetrap");
-		cc_add_custom_editor($cc_sass ? "sass" : "css", "retina"  , "mousetrap");
+		cstm_cds_add_custom_editor($cstm_cds_sass ? "sass" : "css", "desktop" , "mousetrap");
+		cstm_cds_add_custom_editor($cstm_cds_sass ? "sass" : "css", "tablet-l", "mousetrap");
+		cstm_cds_add_custom_editor($cstm_cds_sass ? "sass" : "css", "tablet-p", "mousetrap");
+		cstm_cds_add_custom_editor($cstm_cds_sass ? "sass" : "css", "mobile-l", "mousetrap");
+		cstm_cds_add_custom_editor($cstm_cds_sass ? "sass" : "css", "mobile-p", "mousetrap");
+		cstm_cds_add_custom_editor($cstm_cds_sass ? "sass" : "css", "retina"  , "mousetrap");
 
 		// functions.php Editor
-		if ( $cc_admin && current_user_can('cc_full_access') ) cc_add_custom_editor("php", "functions", "functions-php");
+		if ( $cstm_cds_admin && current_user_can('cstm_cds_full_access') ) cstm_cds_add_custom_editor("php", "functions", "functions-php");
 
 		// Mixins
-		if ($cc_sass) cc_add_custom_editor("sass", "mixins", "mousetrap");
+		if ($cstm_cds_sass) cstm_cds_add_custom_editor("sass", "mixins", "mousetrap");
 
 		// SASS - CSS Output
-		cc_add_custom_editor("css", $cc_admin ? "panel" : "custom_public", "css-output read-only", false);
+		cstm_cds_add_custom_editor("css", $cstm_cds_admin ? "panel" : "custom_public", "css-output read-only", false);
 
 	?>
 
@@ -108,14 +108,14 @@ function cc_editor_page() {
 	<!-- BOTTOM TABS -->
 	<div class="custom-tabs bottom-tabs css-tabs">
 
-		<?php if ( $cc_admin && current_user_can('cc_full_access') ) { ?>
+		<?php if ( $cstm_cds_admin && current_user_can('cstm_cds_full_access') ) { ?>
 		<a href="#" class="functions-php" data-select-file="functions"><i class="fa fa-code"></i> Theme Functions</a>
 		<?php } ?>
 
-		<?php if ($cc_sass) { ?>
+		<?php if ($cstm_cds_sass) { ?>
 		<a href="#" class="mixins" data-select-file="mixins"><i class="fa fa-codepen"></i> Mixins</a>
 		<?php } ?>
-		<a href="#" class="css-output-tab" data-select-file="<?=$cc_admin ? "panel" : "custom_public"?>"><i class="fa fa-css3"></i> CSS Output</a>
+		<a href="#" class="css-output-tab" data-select-file="<?=$cstm_cds_admin ? "panel" : "custom_public"?>"><i class="fa fa-css3"></i> CSS Output</a>
 
 	</div>
 	<!-- BOTTOM TABS END -->
@@ -126,20 +126,20 @@ function cc_editor_page() {
 
 
 <!-- JS SIDE -->
-<div class="js-side sides theme-<?=$cc_editor_theme?>">
+<div class="js-side sides theme-<?=$cstm_cds_editor_theme?>">
 
 
 	<!-- JS Side Title -->
 	<h2>
-		<span class="dynamic-title"><?php _e( $cc_admin ? 'Custom Admin JS' : 'Custom JS', 'custom-codes' ); ?></span>
+		<span class="dynamic-title"><?php _e( $cstm_cds_admin ? 'Custom Admin JS' : 'Custom JS', 'custom-codes' ); ?></span>
 	    <span class="hider">(<a href="#" class="hider-js">Hide this</a><span class="show-both"> | <a href="#"> Show Both</a></span>)</span>
 	</h2>
 
 
 	<!-- TOP JS TABS -->
 	<div class="custom-tabs top-tabs js-tabs">
-		<a href="#" data-select-file="<?= $cc_admin ? "panel_head" : "custom_public_head" ?>">Head</a>
-		<a href="#" class="active" data-select-file="<?= $cc_admin ? "panel" : "custom_public" ?>">Bottom</a>
+		<a href="#" data-select-file="<?= $cstm_cds_admin ? "panel_head" : "custom_public_head" ?>">Head</a>
+		<a href="#" class="active" data-select-file="<?= $cstm_cds_admin ? "panel" : "custom_public" ?>">Bottom</a>
 	</div>
 	<!-- TOP JS TABS END -->
 
@@ -147,8 +147,8 @@ function cc_editor_page() {
 	<?php
 
 		// JS Editors
-		cc_add_custom_editor("js", $cc_admin ? "panel_head" : "custom_public_head", "mousetrap");
-		cc_add_custom_editor("js", $cc_admin ? "panel" : "custom_public", "mousetrap");
+		cstm_cds_add_custom_editor("js", $cstm_cds_admin ? "panel_head" : "custom_public_head", "mousetrap");
+		cstm_cds_add_custom_editor("js", $cstm_cds_admin ? "panel" : "custom_public", "mousetrap");
 
 	?>
 
@@ -163,8 +163,8 @@ function cc_editor_page() {
 
 
 		<!-- ADDITIONAL DATA -->
-		<input type="hidden" name="action" value="cc_save" />
-		<input type="hidden" name="custom_type" id="custom_type" value="<?= $cc_admin ? "admin" : "public" ?>" />
+		<input type="hidden" name="action" value="cstm_cds_save" />
+		<input type="hidden" name="custom_type" id="custom_type" value="<?= $cstm_cds_admin ? "admin" : "public" ?>" />
 
 
 		<!-- INFORMATION -->
@@ -187,16 +187,16 @@ function cc_editor_page() {
 
 
 		<!-- SUBMIT BUTTON -->
-		<input type="submit" name="Submit" class="button-primary" id="cc_savethem" value="Save Changes">
+		<input type="submit" name="Submit" class="button-primary" id="cstm_cds_savethem" value="Save Changes">
 
 <?php
 /*
-	echo cc_pull_option('cc_css_save_count', 0)." ";
-	echo cc_pull_option('cc_js_head_save_count', 0)." ";
-	echo cc_pull_option('cc_js_bottom_save_count', 0)."<br/>";
-	echo cc_pull_option('cc_admin_css_save_count', 0)." ";
-	echo cc_pull_option('cc_admin_js_head_save_count', 0)." ";
-	echo cc_pull_option('cc_admin_js_bottom_save_count', 0);
+	echo cstm_cds_pull_option('cstm_cds_css_save_count', 0)." ";
+	echo cstm_cds_pull_option('cstm_cds_js_head_save_count', 0)." ";
+	echo cstm_cds_pull_option('cstm_cds_js_bottom_save_count', 0)."<br/>";
+	echo cstm_cds_pull_option('cstm_cds_admin_css_save_count', 0)." ";
+	echo cstm_cds_pull_option('cstm_cds_admin_js_head_save_count', 0)." ";
+	echo cstm_cds_pull_option('cstm_cds_admin_js_bottom_save_count', 0);
 */
 ?>
 
@@ -218,5 +218,5 @@ function cc_editor_page() {
 </div> <!-- PAGE WRAP END -->
 
 <?php
-} // END cc_editor_page
+} // END cstm_cds_editor_page
 ?>

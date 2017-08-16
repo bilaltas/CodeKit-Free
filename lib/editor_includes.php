@@ -4,8 +4,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
 // CUSTOM CODES ADMIN STYLES AND SCRIPTS
-function cc_load() {
-	global $cc_result_level;
+function cstm_cds_load() {
+	global $cstm_cds_result_level;
 
 		// CODE MIRROR
 		wp_enqueue_style ( 'cc-codemirror-css', plugin_dir_url( __FILE__ ) .'vendor/codemirror/lib/codemirror.css' );
@@ -60,16 +60,16 @@ function cc_load() {
 
 		wp_enqueue_style ( 'cc-custom-codes-css', plugin_dir_url( __FILE__ ) .'css/custom_codes.css' );
 		wp_enqueue_script( 'cc-custom-codes-js', plugin_dir_url( __FILE__ ) .'js/custom_codes.js', array('jquery'), '20150913', true );
-		wp_localize_script( 'cc-custom-codes-js', 'cc_vars', array(
-				'cc_nonce' => wp_create_nonce('cc-nonce'),
-				'cc_plugin_dir_url' => plugin_dir_url( __FILE__ ),
-				'cc_admin' => $cc_result_level
+		wp_localize_script( 'cc-custom-codes-js', 'cstm_cds_vars', array(
+				'cstm_cds_nonce' => wp_create_nonce('cc-nonce'),
+				'cstm_cds_plugin_dir_url' => plugin_dir_url( __FILE__ ),
+				'cstm_cds_admin' => $cstm_cds_result_level
 			)
 		);
 
 		wp_enqueue_script( 'cc-saver-js', plugin_dir_url( __FILE__ ) .'vendor/mousetrap/mousetrap.min.js', array(), '20150913', false );
 
 }
-add_action( 'admin_enqueue_scripts', 'cc_load' );
+add_action( 'admin_enqueue_scripts', 'cstm_cds_load' );
 
 ?>

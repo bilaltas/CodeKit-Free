@@ -4,51 +4,51 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
 // Public/Admin Side?
-$custom_codes_public = $cc_admin = false;
+$custom_codes_public = $cstm_cds_admin = false;
 if ( isset($_GET['admin_panel']) && $_GET['admin_panel'] == true ) {
-	$cc_admin = true;
+	$cstm_cds_admin = true;
 } else {
 	$custom_codes_public = true;
 }
-$cc_result_level = $custom_codes_public ? "Public" : "Admin";
+$cstm_cds_result_level = $custom_codes_public ? "Public" : "Admin";
 
 
 
 // REGISTER SETTINGS
-function cc_register_custom_codes_settings() {
+function cstm_cds_register_custom_codes_settings() {
 
-	register_setting( 'cc_permission_settings' , 'cc_permission_roles' );
+	register_setting( 'cstm_cds_permission_settings' , 'cstm_cds_permission_roles' );
 
-	register_setting( 'cc_admin_settings' , 'cc_admin_roles' );
+	register_setting( 'cstm_cds_admin_settings' , 'cstm_cds_admin_roles' );
 
-	register_setting( 'cc_notes_settings' , 'cc_admin_notes' );
+	register_setting( 'cstm_cds_notes_settings' , 'cstm_cds_admin_notes' );
 
-	register_setting( 'cc_general_settings' , 'cc_style_mode' );
-	register_setting( 'cc_general_settings' , 'cc_store_files' );
+	register_setting( 'cstm_cds_general_settings' , 'cstm_cds_style_mode' );
+	register_setting( 'cstm_cds_general_settings' , 'cstm_cds_store_files' );
 
-	register_setting( 'cc_responsivity_settings' , 'cc_tablet_l' );
-	register_setting( 'cc_responsivity_settings' , 'cc_tablet_p' );
-	register_setting( 'cc_responsivity_settings' , 'cc_phone_l' );
-	register_setting( 'cc_responsivity_settings' , 'cc_phone_p' );
+	register_setting( 'cstm_cds_responsivity_settings' , 'cstm_cds_tablet_l' );
+	register_setting( 'cstm_cds_responsivity_settings' , 'cstm_cds_tablet_p' );
+	register_setting( 'cstm_cds_responsivity_settings' , 'cstm_cds_phone_l' );
+	register_setting( 'cstm_cds_responsivity_settings' , 'cstm_cds_phone_p' );
 
-	register_setting( 'cc_editor_settings' , 'cc_editor_theme' );
-	register_setting( 'cc_editor_settings' , 'cc_css_save_count' );
-	register_setting( 'cc_editor_settings' , 'cc_js_head_save_count' );
-	register_setting( 'cc_editor_settings' , 'cc_js_bottom_save_count' );
+	register_setting( 'cstm_cds_editor_settings' , 'cstm_cds_editor_theme' );
+	register_setting( 'cstm_cds_editor_settings' , 'cstm_cds_css_save_count' );
+	register_setting( 'cstm_cds_editor_settings' , 'cstm_cds_js_head_save_count' );
+	register_setting( 'cstm_cds_editor_settings' , 'cstm_cds_js_bottom_save_count' );
 
-	register_setting( 'cc_editor_settings' , 'cc_admin_css_save_count' );
-	register_setting( 'cc_editor_settings' , 'cc_admin_js_head_save_count' );
-	register_setting( 'cc_editor_settings' , 'cc_admin_js_bottom_save_count' );
+	register_setting( 'cstm_cds_editor_settings' , 'cstm_cds_admin_css_save_count' );
+	register_setting( 'cstm_cds_editor_settings' , 'cstm_cds_admin_js_head_save_count' );
+	register_setting( 'cstm_cds_editor_settings' , 'cstm_cds_admin_js_bottom_save_count' );
 
 }
-add_action( 'admin_init', 'cc_register_custom_codes_settings' );
+add_action( 'admin_init', 'cstm_cds_register_custom_codes_settings' );
 
 
 
 
 // Calls
-$cc_style_mode = cc_pull_option( 'cc_style_mode', 'sass' );
-$cc_sass = $cc_style_mode == "sass" ? true : false;
+$cstm_cds_style_mode = cstm_cds_pull_option( 'cstm_cds_style_mode', 'sass' );
+$cstm_cds_sass = $cstm_cds_style_mode == "sass" ? true : false;
 
 
 if (
@@ -56,15 +56,15 @@ if (
 	( isset($_GET['page']) && $_GET['page'] == "custom-codes" )
 ) {
 
-	$cc_permission_roles = cc_pull_option( 'cc_permission_roles', array('cc_admin', 'administrator') );
-	$cc_admin_roles = cc_pull_option( 'cc_admin_roles', array() );
-	$cc_admin_notes = cc_pull_option( 'cc_admin_notes', '' );
-	$cc_store_custom_files = cc_pull_option( 'cc_store_files', 'true' ) == 'true' ? true : false;
-	$cc_tablet_l = cc_pull_option( 'cc_tablet_l', '1199' );
-	$cc_tablet_p = cc_pull_option( 'cc_tablet_p', '991' );
-	$cc_phone_l = cc_pull_option( 'cc_phone_l', '767' );
-	$cc_phone_p = cc_pull_option( 'cc_phone_p', '479' );
-	$cc_editor_theme = cc_pull_option( 'cc_editor_theme', 'dark' );
+	$cstm_cds_permission_roles = cstm_cds_pull_option( 'cstm_cds_permission_roles', array('cstm_cds_admin', 'administrator') );
+	$cstm_cds_admin_roles = cstm_cds_pull_option( 'cstm_cds_admin_roles', array() );
+	$cstm_cds_admin_notes = cstm_cds_pull_option( 'cstm_cds_admin_notes', '' );
+	$cstm_cds_store_custom_files = cstm_cds_pull_option( 'cstm_cds_store_files', '' );
+	$cstm_cds_tablet_l = cstm_cds_pull_option( 'cstm_cds_tablet_l', '1199' );
+	$cstm_cds_tablet_p = cstm_cds_pull_option( 'cstm_cds_tablet_p', '991' );
+	$cstm_cds_phone_l = cstm_cds_pull_option( 'cstm_cds_phone_l', '767' );
+	$cstm_cds_phone_p = cstm_cds_pull_option( 'cstm_cds_phone_p', '479' );
+	$cstm_cds_editor_theme = cstm_cds_pull_option( 'cstm_cds_editor_theme', 'dark' );
 
 }
 
@@ -73,66 +73,66 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 	// SETTINGS TAB
-	function cc_settings() {
-		global $cc_admin;
+	function cstm_cds_settings() {
+		global $cstm_cds_admin;
 
 	    $screen = get_current_screen();
 
-		if ($cc_admin) {
+		if ($cstm_cds_admin) {
 		    $screen -> add_help_tab( array(
 		        'id'      => 'custom-codes-admin-permissions', // This should be unique for the screen.
 		        'title'   => 'Admin Side Code Permissions',
-		        'callback' => 'cc_admin_permissions_tab'
+		        'callback' => 'cstm_cds_admin_permissions_tab'
 		    ) );
 	    }
 
 	    $screen -> add_help_tab( array(
 	        'id'      => 'custom-codes-admin-notes', // This should be unique for the screen.
 	        'title'   => 'Admin Notes',
-	        'callback' => 'cc_admin_notes_tab'
+	        'callback' => 'cstm_cds_admin_notes_tab'
 	    ) );
 
 	    $screen->add_help_tab( array(
 	        'id'      => 'custom-codes-editor-settings', // This should be unique for the screen.
 	        'title'   => 'Editor Settings',
-	        'callback' => 'cc_editor_settings_tab'
+	        'callback' => 'cstm_cds_editor_settings_tab'
 	        // Use 'callback' instead of 'content' for a function callback that renders the tab content.
 	    ) );
 
 	    $screen->add_help_tab( array(
 	        'id'      => 'custom-codes-general-settings', // This should be unique for the screen.
 	        'title'   => 'General Settings',
-	        'callback' => 'cc_general_settings_tab'
+	        'callback' => 'cstm_cds_general_settings_tab'
 	    ) );
 
 	    $screen -> add_help_tab( array(
 	        'id'      => 'custom-codes-responsivity-settings', // This should be unique for the screen.
 	        'title'   => 'Responsivity Settings',
-	        'callback' => 'cc_responsivity_settings_tab'
+	        'callback' => 'cstm_cds_responsivity_settings_tab'
 	    ) );
 
 	    $screen -> add_help_tab( array(
 	        'id'      => 'custom-codes-permission-settings', // This should be unique for the screen.
 	        'title'   => 'Permission Settings',
-	        'callback' => 'cc_permissions_tab'
+	        'callback' => 'cstm_cds_permissions_tab'
 	    ) );
 
 	}
 
 
 	// EDITOR SETTINGS
-	function cc_editor_settings_tab() {
-		global $cc_editor_theme;
+	function cstm_cds_editor_settings_tab() {
+		global $cstm_cds_editor_theme;
 		?>
 
 		<form method="post" action="options.php" id="custom-codes-editor-settings-form" enctype="multipart/form-data">
-			<?php settings_fields( 'cc_editor_settings' ); ?>
-			<?php do_settings_sections( 'cc_editor_settings' ); ?>
+			<?php settings_fields( 'cstm_cds_editor_settings' ); ?>
+			<?php do_settings_sections( 'cstm_cds_editor_settings' ); ?>
 
 			<p>
 				<b>Editor Theme:</b><br>
-				<label><input class="es-inputs" type="radio" name="cc_editor_theme" value="dark" <?=$cc_editor_theme == "dark" ? "checked" : ""?>> Dark</label>
-				<label><input class="es-inputs" type="radio" name="cc_editor_theme" value="light" <?=$cc_editor_theme == "light" ? "checked" : ""?>> Light</label>
+				<label><input class="es-inputs" type="radio" name="cstm_cds_editor_theme" value="dark" <?=$cstm_cds_editor_theme == "dark" ? "checked" : ""?>> Dark</label>
+				<label><input class="es-inputs" type="radio" name="cstm_cds_editor_theme" value="light" <?=$cstm_cds_editor_theme == "light" ? "checked" : ""?>> Light</label>
 			</p>
 
 
@@ -153,23 +153,23 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 	// GENERAL SETTINGS
-	function cc_general_settings_tab() {
-		global $cc_style_mode, $cc_store_custom_files;
+	function cstm_cds_general_settings_tab() {
+		global $cstm_cds_style_mode, $cstm_cds_store_custom_files;
 		?>
 
 		<form method="post" action="options.php" id="custom-codes-general-settings-form" enctype="multipart/form-data">
-			<?php settings_fields( 'cc_general_settings' ); ?>
-			<?php do_settings_sections( 'cc_general_settings' ); ?>
+			<?php settings_fields( 'cstm_cds_general_settings' ); ?>
+			<?php do_settings_sections( 'cstm_cds_general_settings' ); ?>
 
 			<p>
 				<b>Style Mode:</b><br>
-				<label><input class="gs-inputs" type="radio" name="cc_style_mode" value="sass" <?=$cc_style_mode == "sass" ? "checked" : ""?>> SASS (Recommended, but slower)</label>
-				<label><input class="gs-inputs" type="radio" name="cc_style_mode" value="css" <?=$cc_style_mode == "css" ? "checked" : ""?>> CSS (Faster, but less feature)</label>
+				<label><input class="gs-inputs" type="radio" name="cstm_cds_style_mode" value="sass" <?=$cstm_cds_style_mode == "sass" ? "checked" : ""?>> SASS (Recommended, but slower)</label>
+				<label><input class="gs-inputs" type="radio" name="cstm_cds_style_mode" value="css" <?=$cstm_cds_style_mode == "css" ? "checked" : ""?>> CSS (Faster, but less feature)</label>
 			</p>
 
 			<p>
 				<b>Store custom CSS/JS after uninstall:</b><br>
-				<label><input class="gs-inputs" type="checkbox" name="cc_store_files" value="true" <?=$cc_store_custom_files ? "checked" : ""?>> Yes, please</label>
+				<label><input class="gs-inputs" type="checkbox" name="cstm_cds_store_files" value="yes" <?=$cstm_cds_store_custom_files == 'yes' ? "checked" : ""?>> Yes, please</label>
 			</p><br>
 
 
@@ -200,7 +200,7 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 		                alert('An error occured. Please try again.');
 		            }).success( function() {
 
-		                if ( $('input[name="cc_style_mode"]:checked').val() != "<?=$cc_style_mode?>" ) {
+		                if ( $('input[name="cstm_cds_style_mode"]:checked').val() != "<?=$cstm_cds_style_mode?>" ) {
 		                	button_gs.val('Refresh the page to apply settings');
 		                } else {
 							button_gs.prop("disabled", false).val('Saved!');
@@ -220,38 +220,38 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 	// RESPONSIVITY SETTINGS
-	function cc_responsivity_settings_tab() {
+	function cstm_cds_responsivity_settings_tab() {
 		global
-			$cc_tablet_l,
-			$cc_tablet_p,
-			$cc_phone_l,
-			$cc_phone_p;
+			$cstm_cds_tablet_l,
+			$cstm_cds_tablet_p,
+			$cstm_cds_phone_l,
+			$cstm_cds_phone_p;
 		?>
 
 		<form method="post" action="options.php" id="custom-codes-responsivity-settings-form" enctype="multipart/form-data">
-			<?php settings_fields( 'cc_responsivity_settings' ); ?>
-			<?php do_settings_sections( 'cc_responsivity_settings' ); ?>
+			<?php settings_fields( 'cstm_cds_responsivity_settings' ); ?>
+			<?php do_settings_sections( 'cstm_cds_responsivity_settings' ); ?>
 
 			<p>Making change is not recommended here. These are the best breakpoints.</p>
 
 			<p>
 				<b>Tablet Landscape Max Width:</b><br>
-				<input class="rs-inputs" type="number" name="cc_tablet_l" value="<?=$cc_tablet_l?>" style="width: 60px;">px (<b>Default</b> @media (max-width: 1199px) {} )
+				<input class="rs-inputs" type="number" name="cstm_cds_tablet_l" value="<?=$cstm_cds_tablet_l?>" style="width: 60px;">px (<b>Default</b> @media (max-width: 1199px) {} )
 			</p>
 
 			<p>
 				<b>Tablet Portrait Max Width:</b><br>
-				<input class="rs-inputs" type="number" name="cc_tablet_p" value="<?=$cc_tablet_p?>" style="width: 60px;">px (<b>Default</b> @media (max-width: 991px) {} )
+				<input class="rs-inputs" type="number" name="cstm_cds_tablet_p" value="<?=$cstm_cds_tablet_p?>" style="width: 60px;">px (<b>Default</b> @media (max-width: 991px) {} )
 			</p>
 
 			<p>
 				<b>Phone Landscape Max Width:</b><br>
-				<input class="rs-inputs" type="number" name="cc_phone_l" value="<?=$cc_phone_l?>" style="width: 60px;">px (<b>Default</b> @media (max-width: 767px) {} )
+				<input class="rs-inputs" type="number" name="cstm_cds_phone_l" value="<?=$cstm_cds_phone_l?>" style="width: 60px;">px (<b>Default</b> @media (max-width: 767px) {} )
 			</p>
 
 			<p>
 				<b>Phone Portrait Max Width:</b><br>
-				<input class="rs-inputs" type="number" name="cc_phone_p" value="<?=$cc_phone_p?>" style="width: 60px;">px (<b>Default</b> @media (max-width: 479px) {} )
+				<input class="rs-inputs" type="number" name="cstm_cds_phone_p" value="<?=$cstm_cds_phone_p?>" style="width: 60px;">px (<b>Default</b> @media (max-width: 479px) {} )
 			</p>
 
 
@@ -299,17 +299,17 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 	// ADMIN NOTES
-	function cc_admin_notes_tab() {
-		global $cc_admin_notes;
+	function cstm_cds_admin_notes_tab() {
+		global $cstm_cds_admin_notes;
 		?>
 
 		<p>Take your notes here:</p>
 
 		<form method="post" action="options.php" id="custom-codes-admin-notes-form" enctype="multipart/form-data">
-			<?php settings_fields( 'cc_notes_settings' ); ?>
-			<?php do_settings_sections( 'cc_notes_settings' ); ?>
+			<?php settings_fields( 'cstm_cds_notes_settings' ); ?>
+			<?php do_settings_sections( 'cstm_cds_notes_settings' ); ?>
 
-			<textarea id="custom-codes-admin-notes" name="cc_admin_notes[<?=get_current_user_id()?>]" rows="10" placeholder="Write something you shouldn't forget..."><?=is_array($cc_admin_notes) && isset($cc_admin_notes[get_current_user_id()]) ? $cc_admin_notes[get_current_user_id()] : ""?></textarea>
+			<textarea id="custom-codes-admin-notes" name="cstm_cds_admin_notes[<?=get_current_user_id()?>]" rows="10" placeholder="Write something you shouldn't forget..."><?=is_array($cstm_cds_admin_notes) && isset($cstm_cds_admin_notes[get_current_user_id()]) ? $cstm_cds_admin_notes[get_current_user_id()] : ""?></textarea>
 			<input id="custom-codes-admin-notes-saver" value="Save" type="submit" class="button-primary">
 		</form>
 
@@ -353,8 +353,8 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 	// ADMIN PERMISSIONS
-	function cc_permissions_tab() {
-		global $wp_roles, $cc_permission_roles;
+	function cstm_cds_permissions_tab() {
+		global $wp_roles, $cstm_cds_permission_roles;
 		?>
 
 		<p>Select roles to allow users editing Custom Codes:<br/>
@@ -363,38 +363,38 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 		<form method="post" action="options.php" id="custom-codes-permissions-form" enctype="multipart/form-data">
-			<?php settings_fields( 'cc_permission_settings' ); ?>
-			<?php do_settings_sections( 'cc_permission_roles' ); ?>
+			<?php settings_fields( 'cstm_cds_permission_settings' ); ?>
+			<?php do_settings_sections( 'cstm_cds_permission_roles' ); ?>
 
 			<?php
 
 
-	$cc_roles_list = array();
-	$cc_current_user_roles = array();
-	$cc_selected_roles = array();
+	$cstm_cds_roles_list = array();
+	$cstm_cds_current_user_roles = array();
+	$cstm_cds_selected_roles = array();
 	foreach ( $wp_roles->roles as $role => $role_details ) {
 
 		// Extract the Custom Codes Admin
-		if ( $role == "cc_admin" ) continue;
+		if ( $role == "cstm_cds_admin" ) continue;
 
 		// Already recorded?
-		$selected = in_array($role, $cc_permission_roles) ? "selected" : "";
+		$selected = in_array($role, $cstm_cds_permission_roles) ? "selected" : "";
 		if ( $selected == "selected" ) {
-			$cc_selected_roles[$role] = array(
+			$cstm_cds_selected_roles[$role] = array(
 				'name' => $role_details['name']
 			);
 		}
 
 		// Extract the current and selected roles
-		if ( !current_user_can('cc_admin') && current_user_can($role) ) {
-			$cc_current_user_roles[$role] = array(
+		if ( !current_user_can('cstm_cds_admin') && current_user_can($role) ) {
+			$cstm_cds_current_user_roles[$role] = array(
 				'name' => $role_details['name'],
 				'selected' => $selected
 			);
 			continue;
 		}
 
-		$cc_roles_list[$role] = array(
+		$cstm_cds_roles_list[$role] = array(
 			'name' => $role_details['name'],
 			'selected' => $selected
 		);
@@ -403,19 +403,19 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 	// INCLUDE THE CURRENT USER SELECTED ROLES AS HIDDEN
-	foreach ( $cc_current_user_roles as $role => $role_details ) {
+	foreach ( $cstm_cds_current_user_roles as $role => $role_details ) {
 
 		// Include the current and selected roles
-		if ( !current_user_can('cc_admin') && $role_details['selected'] == "selected" ) echo '<input type="hidden" name="cc_permission_roles[]" value="'.$role.'">';
+		if ( !current_user_can('cstm_cds_admin') && $role_details['selected'] == "selected" ) echo '<input type="hidden" name="cstm_cds_permission_roles[]" value="'.$role.'">';
 
 
 	}
 
 
 	// SHOW THE ROLE SELECTOR
-	echo '<p><select id="cc_permission_roles" name="cc_permission_roles[]" size="'.(count($cc_roles_list)+1).'" multiple>';
+	echo '<p><select id="cstm_cds_permission_roles" name="cstm_cds_permission_roles[]" size="'.(count($cstm_cds_roles_list)+1).'" multiple>';
 		echo '<option class="mandatory-option" disabled="" selected="">Custom Codes Admin</option>';
-		foreach ( $cc_roles_list as $role => $role_details ) {
+		foreach ( $cstm_cds_roles_list as $role => $role_details ) {
 
 			$role_name = $role_details['name'];
 
@@ -438,7 +438,7 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 				var button_nt = $('#custom-codes-permissions-saver');
 
-				$('#cc_permission_roles').on('change', function() {
+				$('#cstm_cds_permission_roles').on('change', function() {
 
 					$(this).children('option.mandatory-option').prop('selected', true);
 
@@ -454,7 +454,7 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 				$('#custom-codes-permissions-form').submit(function() {
 					var form = $(this);
-					var roles = $('#cc_permission_roles');
+					var roles = $('#cstm_cds_permission_roles');
 					var data =  form.serialize();
 
 					roles.prop("disabled", true);
@@ -480,39 +480,39 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 	// ADMIN CODES ROLES
-	function cc_admin_permissions_tab() {
-		global $wp_roles, $cc_admin_roles;
+	function cstm_cds_admin_permissions_tab() {
+		global $wp_roles, $cstm_cds_admin_roles;
 		?>
 
 		<p>Select roles to activate the admin side CSS and JS codes:</p>
 
 		<form method="post" action="options.php" id="custom-codes-admin-permissions-form" enctype="multipart/form-data">
-			<?php settings_fields( 'cc_admin_settings' ); ?>
-			<?php do_settings_sections( 'cc_admin_roles' ); ?>
+			<?php settings_fields( 'cstm_cds_admin_settings' ); ?>
+			<?php do_settings_sections( 'cstm_cds_admin_roles' ); ?>
 
 			<?php
 
 
-	$cc_roles_list = array();
-	$cc_current_user_roles = array();
-	$cc_selected_roles = array();
+	$cstm_cds_roles_list = array();
+	$cstm_cds_current_user_roles = array();
+	$cstm_cds_selected_roles = array();
 	foreach ( $wp_roles->roles as $role => $role_details ) {
 
 		// Extract the current roles
 		if ( current_user_can($role) ) {
-			$cc_current_user_roles[] = $role; // Record current roles
+			$cstm_cds_current_user_roles[] = $role; // Record current roles
 			continue;
 		}
 
 		// Already recorded?
-		$selected = in_array($role, $cc_admin_roles) ? "selected" : "";
+		$selected = in_array($role, $cstm_cds_admin_roles) ? "selected" : "";
 		if ( $selected == "selected" ) {
-			$cc_selected_roles[$role] = array(
+			$cstm_cds_selected_roles[$role] = array(
 				'name' => $role_details['name']
 			);
 		}
 
-		$cc_roles_list[$role] = array(
+		$cstm_cds_roles_list[$role] = array(
 			'name' => $role_details['name'],
 			'selected' => $selected
 		);
@@ -522,8 +522,8 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 
 	// SHOW THE ROLE SELECTOR
-	echo '<p><select id="cc_admin_roles" name="cc_admin_roles[]" size="'.count($cc_roles_list).'" multiple>';
-		foreach ( $cc_roles_list as $role => $role_details ) {
+	echo '<p><select id="cstm_cds_admin_roles" name="cstm_cds_admin_roles[]" size="'.count($cstm_cds_roles_list).'" multiple>';
+		foreach ( $cstm_cds_roles_list as $role => $role_details ) {
 
 			$role_name = $role_details['name'];
 
@@ -542,7 +542,7 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 				var button_nt = $('#custom-codes-admin-permissions-saver');
 
-				$('#cc_admin_roles').on('change', function() {
+				$('#cstm_cds_admin_roles').on('change', function() {
 
 					if ( !button_nt.prop('disabled') )
 						button_nt.val('Save');
@@ -551,7 +551,7 @@ if ( isset($_GET['page']) && $_GET['page'] == "custom-codes" ) {
 
 				$('#custom-codes-admin-permissions-form').submit(function() {
 					var form = $(this);
-					var roles = $('#cc_admin_roles');
+					var roles = $('#cstm_cds_admin_roles');
 					var data =  form.serialize();
 
 					roles.prop("disabled", true);

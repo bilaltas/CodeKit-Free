@@ -3,55 +3,55 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
 // ADMIN MENU
-function cc_admin_menu() {
-    global $cc_page, $cc_sass;
+function cstm_cds_admin_menu() {
+    global $cstm_cds_page, $cstm_cds_sass;
 
 
-	    $cc_page_main = add_menu_page (
+	    $cstm_cds_page_main = add_menu_page (
 	        'Custom Codes',
 	        'Custom Codes',
-	        'cc_full_access',
+	        'cstm_cds_full_access',
 	        'custom-codes',
-	        'cc_editor_page',
-	        plugin_dir_url( CC_FILE ).'lib/images/cc_dev_icon.png',
+	        'cstm_cds_editor_page',
+	        plugin_dir_url( CSTM_CDS_FILE ).'lib/images/cstm_cds_dev_icon.png',
 	        '500'
 	    );
 
-	    	$cc_page = add_submenu_page(
+	    	$cstm_cds_page = add_submenu_page(
 		    	'custom-codes',
-		    	'Custom '.($cc_sass ? 'SASS' : 'CSS').' & JS',
+		    	'Custom '.($cstm_cds_sass ? 'SASS' : 'CSS').' & JS',
 		    	'Public Side Codes',
-		    	'cc_full_access',
+		    	'cstm_cds_full_access',
 		    	'custom-codes',
-		    	'cc_editor_page'
+		    	'cstm_cds_editor_page'
 		    );
-		    add_action( 'load-' . $cc_page, 'cc_settings' );
+		    add_action( 'load-' . $cstm_cds_page, 'cstm_cds_settings' );
 
 
-			$cc_admin_page = add_submenu_page(
+			$cstm_cds_admin_page = add_submenu_page(
 				'custom-codes',									// admin page slug
-				'Custom '.($cc_sass ? 'SASS' : 'CSS').' & JS',  // page title
+				'Custom '.($cstm_cds_sass ? 'SASS' : 'CSS').' & JS',  // page title
 				'Admin Side Codes', 							// menu title
-				'cc_full_access',               					// capability required to see the page
-				'custom-codes&admin_panel=true',           		// admin page slug, e.g. options-general.php?page=cc_options
-				'cc_editor_page'             					// callback function to display the options page
+				'cstm_cds_full_access',               					// capability required to see the page
+				'custom-codes&admin_panel=true',           		// admin page slug, e.g. options-general.php?page=cstm_cds_options
+				'cstm_cds_editor_page'             					// callback function to display the options page
 			);
 
 
 }
-add_action( 'admin_menu', 'cc_admin_menu' );
+add_action( 'admin_menu', 'cstm_cds_admin_menu' );
 
 
 
 // ADMIN BAR MENU
-function cc_wp_toolbar( $wp_admin_bar ) {
-	global $cc_sass;
+function cstm_cds_wp_toolbar( $wp_admin_bar ) {
+	global $cstm_cds_sass;
 
-	if ( current_user_can('cc_full_access') ) {
+	if ( current_user_can('cstm_cds_full_access') ) {
 
 		$args = array(
-			'id'    => 'cc_toolbar_custom_codes',
-			'title' => '<span class="ab-icon"><img src="'.plugin_dir_url( CC_FILE ).'lib/images/cc_dev_icon.png"></span>
+			'id'    => 'cstm_cds_toolbar_custom_codes',
+			'title' => '<span class="ab-icon"><img src="'.plugin_dir_url( CSTM_CDS_FILE ).'lib/images/cstm_cds_dev_icon.png"></span>
 						<span class="ab-label">Custom Codes</span>',
 			'href'  => admin_url('admin.php?page=custom-codes'),
 			'meta'  => array( 'class' => 'cc-toolbar-custom-codes' )
@@ -59,39 +59,39 @@ function cc_wp_toolbar( $wp_admin_bar ) {
 		$wp_admin_bar->add_node( $args );
 
 			$args = array(
-				'id'		=>	'cc_toolbar_custom_codes_public',
+				'id'		=>	'cstm_cds_toolbar_custom_codes_public',
 				'title'		=>	'Public Side Codes',
 				'href'		=>	admin_url('admin.php?page=custom-codes'),
-				'parent'	=>	'cc_toolbar_custom_codes',
+				'parent'	=>	'cstm_cds_toolbar_custom_codes',
 			);
-			if ( current_user_can('cc_full_access') ) $wp_admin_bar->add_node($args);
+			if ( current_user_can('cstm_cds_full_access') ) $wp_admin_bar->add_node($args);
 
 			$args = array(
-				'id'		=>	'cc_toolbar_custom_codes_admin',
+				'id'		=>	'cstm_cds_toolbar_custom_codes_admin',
 				'title'		=>	'Admin Side Codes',
 				'href'		=>	admin_url('admin.php?page=custom-codes&admin_panel=true'),
-				'parent'	=>	'cc_toolbar_custom_codes',
+				'parent'	=>	'cstm_cds_toolbar_custom_codes',
 			);
-			if ( current_user_can('cc_full_access') ) $wp_admin_bar->add_node($args);
+			if ( current_user_can('cstm_cds_full_access') ) $wp_admin_bar->add_node($args);
 
 	}
 
 }
-add_action( 'admin_bar_menu', 'cc_wp_toolbar', 9999 );
+add_action( 'admin_bar_menu', 'cstm_cds_wp_toolbar', 9999 );
 
 // Toolbar Style
-function cc_toolbar_custom_codes_style() {
+function cstm_cds_toolbar_custom_codes_style() {
 
-	if ( current_user_can('cc_full_access') ) {
+	if ( current_user_can('cstm_cds_full_access') ) {
 
 		echo "
 			<style type='text/css'>
 
-				#wp-admin-bar-cc_toolbar_custom_codes .ab-item .ab-icon {
+				#wp-admin-bar-cstm_cds_toolbar_custom_codes .ab-item .ab-icon {
 					-webkit-filter: grayscale(80%);
 					filter: grayscale(80%);
 				}
-				#wp-admin-bar-cc_toolbar_custom_codes .ab-item:hover .ab-icon {
+				#wp-admin-bar-cstm_cds_toolbar_custom_codes .ab-item:hover .ab-icon {
 					-webkit-filter: grayscale(0%);
 					filter: grayscale(0%);
 				}
@@ -101,8 +101,8 @@ function cc_toolbar_custom_codes_style() {
 
 	}
 }
-add_action( 'wp_head', 'cc_toolbar_custom_codes_style' );
-add_action( 'admin_head', 'cc_toolbar_custom_codes_style' );
+add_action( 'wp_head', 'cstm_cds_toolbar_custom_codes_style' );
+add_action( 'admin_head', 'cstm_cds_toolbar_custom_codes_style' );
 
 
 ?>
