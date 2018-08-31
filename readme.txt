@@ -3,7 +3,7 @@ Contributors: bilaltas
 Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity, mobile
 Donate link: https://paypal.me/bilaltas
 Requires at least: 4.0
-Tested up to: 4.8.1
+Tested up to: 4.9.5
 Stable tag: trunk
 License: GNU GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -44,6 +44,12 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 3. Admin side editor look
 
 == Changelog ==
+= 0.3.6 (2018-04-17 17:51 EET) =
+* Tested on Wordpress 4.9.5
+
+= 0.3.5 (2018-01-05 19:16 EET) =
+* Bug fix related to empty desktop sass file template.
+
 = 0.3.4 (2017-08-10 14:04 EET) =
 * A small bug fix related to CSS output editor's read-only state after saving.
 
@@ -131,4 +137,4 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 * Initial commit
 
 == Upgrade Notice ==
-Bug fixes related to browser caching.
+A small bug fix.

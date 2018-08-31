@@ -25,6 +25,7 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 	- Codes by person?
 	- Codes by condition! (Page, role, etc)
 	- New themes
+	- AutoPrefixer
 	
 	Emmet:
 	- New Setting: Activate the emmet!

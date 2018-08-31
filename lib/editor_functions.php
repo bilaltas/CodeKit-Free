@@ -41,17 +41,7 @@ function cstm_cds_add_custom_editor($lang, $file_name, $extra_classes="", $putsa
 
 	// EXCEPTIONS
 	$file_empty = false;
-	if ( ($file_name == "desktop" || $file_name == "admin_desktop") && $file_content == "" ) {
-
-		if ( ($lang == "sass" || $lang == "css" ) && !file_exists($file) && file_exists($main_file_css) ) {
-			$file_content = @file_get_contents( $main_file_css );
-		} else {
-			$file_content = cstm_cds_empty_codes($lang, $file_name);
-			$file_empty = true;
-		}
-
-
-	} elseif ( $file_content == "" && $putsample ) {
+	if ( $file_content == "" && $putsample ) {
 		$file_content = cstm_cds_empty_codes($lang, $file_name);
 		$file_empty = true;
 	} elseif ( $file_content == "" && !$putsample ) {
