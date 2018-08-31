@@ -3,10 +3,10 @@ Contributors: bilaltas
 Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity, mobile
 Donate link: https://paypal.me/bilaltas
 Requires at least: 4.0
-Tested up to: 4.9.5
+Tested up to: 4.9.8
 Stable tag: trunk
-License: GNU GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+License: MIT
+License URI: https://opensource.org/licenses/MIT
 
 Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
 
@@ -44,6 +44,11 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 3. Admin side editor look
 
 == Changelog ==
+= 0.3.7 (2018-08-31 15:15 EET) =
+* Tested on Wordpress 4.9.8
+* Open source license type changed
+* Plugin URL updated
+
 = 0.3.6 (2018-04-17 17:51 EET) =
 * Tested on Wordpress 4.9.5
 

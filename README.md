@@ -30,7 +30,7 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 	Emmet:
 	- New Setting: Activate the emmet!
 	
-	Someone else is currently editing!? (Hartbeat API?):
+	Someone else is currently editing!? (Heartbeat API?):
 	- "Current version is different than the version saved here. It might be already edited by someone. 
 		- A) Open the newest version
 		- B) Save the current one
