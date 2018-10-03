@@ -55,3 +55,8 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 	- Revisions
 	- Custom Fonts
 	- Codes by URL/Page
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
