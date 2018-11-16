@@ -3,30 +3,33 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
+// Composer
+require_once( WP_PLUGIN_DIR.'/custom-codes/vendor/autoload.php' );
+
+
+// SASS
+$cstm_cds_scss = new scssc();
+$cstm_cds_scss->setFormatter("scss_formatter");
+//$cstm_cds_scss->setLineNumberStyle(Compiler::LINE_COMMENTS);
+$cstm_cds_scss->addImportPath(function($path) {
+    if (!file_exists(CSTM_CDS_DIR.$path)) return null;
+    return CSTM_CDS_DIR.$path;
+});
+
+
+// AutoPrefixer
+$cstm_cds_autoprefixer = new Autoprefixer(['ff > 2', '> 2%', 'ie 8']);
+
+
+
 // Sample Content
 require_once( dirname(__file__).'/editor_defaults.php' );
 
 
-// SASS
-require_once( dirname(__file__).'/vendor/scssphp/scss.inc.php' );
-use Leafo\ScssPhp\Compiler;
-
-if ($cstm_cds_sass) {
-
-	$cstm_cds_scss = new Compiler();
-	$cstm_cds_scss->setFormatter('Leafo\ScssPhp\Formatter\Expanded');
-	//$cstm_cds_scss->setLineNumberStyle(Compiler::LINE_COMMENTS);
-	$cstm_cds_scss->addImportPath(function($path) {
-	    if (!file_exists(CSTM_CDS_DIR.$path)) return null;
-	    return CSTM_CDS_DIR.$path;
-	});
-
-}
-
 
 // SAVE THE FILES WITH AJAX
 function cstm_cds_saver_ajax() {
-	global $cstm_cds_sass, $cstm_cds_scss, $cstm_cds_sass_responsivity_codes, $cstm_cds_result_level;
+	global $cstm_cds_sass, $cstm_cds_scss, $cstm_cds_autoprefixer, $cstm_cds_sass_responsivity_codes, $cstm_cds_result_level;
 
 	// THE DATA
 	$data = $_POST;
@@ -170,6 +173,7 @@ function cstm_cds_saver_ajax() {
 
 					cstm_cds_process_timer_start();
 						$css_output_content = $cstm_cds_scss->compile( $data_to_compile );
+						$css_output_content = $cstm_cds_autoprefixer->compile($css_output_content);
 						$css_output_done = file_put_contents($file_css_output, $css_output_content, FILE_TEXT );
 					$css_output_end = cstm_cds_process_timer_finish();
 
@@ -177,6 +181,7 @@ function cstm_cds_saver_ajax() {
 
 					cstm_cds_process_timer_start();
 						$css_output_content = $cstm_cds_scss->compile( $data_to_compile );
+						$css_output_content = $cstm_cds_autoprefixer->compile($css_output_content);
 						$css_output_done = file_put_contents($file_main_css_output, $css_output_content, FILE_TEXT );
 
 						// Increase the version number

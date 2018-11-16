@@ -199,6 +199,7 @@ body.folded .fixedthis {
     z-index: 999999;
     border: 1px solid #BBBBBB;
     border-top-left-radius: 30px;
+    /*width: 165px;*/
 }
 
 #wpfooter { z-index: -1; }
@@ -211,27 +212,18 @@ span.info-tooltip {
     font-weight: bold;
     cursor: help;
     white-space: nowrap;
-}
-
-span.info-tooltip.error {
-    width: 16px;
-    height: 16px;
-    margin-bottom: -3px;
-    padding: 0;
+    position: relative;
+    display: inline-block;
 }
 
 span.info-tooltip:hover {
     cursor: help;
-    position: relative;
 }
 span.info-tooltip span {
-    display: none;
-}
-span.info-tooltip:hover span {
-    border: #c0c0c0 1px dotted;
+	border: #c0c0c0 1px dotted;
     background-color: white;
     padding: 10px;
-    display: block;
+	visibility: hidden;
     z-index: 100;
     right: 0px;
     margin: 10px;
@@ -241,6 +233,9 @@ span.info-tooltip:hover span {
     opacity: 0.9;
     font-weight: normal;
     border-radius: 5px;
+}
+span.info-tooltip:hover span {
+	visibility: visible;
 }
 /* Tooltip End */
 

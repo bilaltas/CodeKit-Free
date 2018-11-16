@@ -7,7 +7,7 @@ Author: Bilal TAS
 Author URI: https://www.bilaltas.net
 License: MIT
 License URI: https://opensource.org/licenses/MIT
-Version: 0.3.7
+Version: 1.0.0
 
 Copyright (c) 2018 Custom Codes
 

@@ -5,9 +5,9 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 // SHORTCUT IN THE PLUGINS PAGE
 function cstm_cds_settings_link($actions, $file) {
-if(false !== strpos($file, 'custom-codes') && current_user_can('cstm_cds_full_access'))
- $actions['settings'] = '<a href="'.admin_url('admin.php?page=custom-codes').'">Custom Codes</a>';
-return $actions;
+	if( false !== strpos($file, 'custom-codes') && current_user_can('cstm_cds_full_access') )
+		$actions['settings'] = '<a href="'.admin_url('admin.php?page=custom-codes').'">Custom Codes</a>';
+	return $actions;
 }
 add_filter('plugin_action_links', 'cstm_cds_settings_link', 2, 2);
 
@@ -37,6 +37,7 @@ function cstm_cds_process_timer_start() {
     //MULTIPLY BY 1000 TO GET MILLISECONDS
     $starttime = 1000*($starttime['sec'] + ($starttime['usec'] / 1000000));
 }
+
 function cstm_cds_process_timer_finish() {
 	global $starttime;
 

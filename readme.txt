@@ -1,9 +1,9 @@
 === Custom Codes ===
 Contributors: bilaltas
-Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity, mobile
+Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity, mobile, emmet, autoprefixer
 Donate link: https://paypal.me/bilaltas
 Requires at least: 4.0
-Tested up to: 4.9.8
+Tested up to: 5.0
 Stable tag: trunk
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -17,11 +17,12 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 1. Custom SASS or CSS editors (Including separate mobile devices and retina display devices SASS/CSS editors)
 2. Custom JavaScript editors (Head and footer)
 3. Emmet (Code abbreviations on CSS)
-4. Full Screen Mode
-5. Plays a sound when saved
-6. Permission settings
-7. Admin notes section
-8. Dark and light themes
+4. AutoPrefixer
+5. Full Screen Mode
+6. Plays a sound when saved
+7. Permission settings
+8. Admin notes section
+9. Dark and light themes
 
 == Installation ==
 1. Login to your website and go to the Plugins section of your admin panel.
@@ -44,6 +45,14 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 3. Admin side editor look
 
 == Changelog ==
+= 1.0.0 (2018-11-16 14:53 EET) =
+* Tested on Wordpress 5.0
+* AutoPrefixer feature added!
+* SASS updated
+* CodeMirror updated
+* Some optimizations has been made
+* Minor bug fixes
+
 = 0.3.7 (2018-08-31 15:15 EET) =
 * Tested on Wordpress 4.9.8
 * Open source license type changed

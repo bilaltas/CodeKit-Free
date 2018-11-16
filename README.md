@@ -15,48 +15,48 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 
 ### New Ideas & Plan for Today ###
 
-	- Update this readme file! (Description, installation, etc.)
+#### New Features:
+- "Serve minified" option
+- Revisions feature (PRO FEATURE!)
+- New Setting: P lay sound when saved!
+- Saving timeout?!
+- Codes by person?
+- Codes by condition! (Page, role, etc)
+- New themes
 
-	New Features:
-	- "Serve minified" option
-	- Revisions feature (PRO FEATURE!)
-	- New Setting: Play sound when saved!
-	- Saving timeout?!
-	- Codes by person?
-	- Codes by condition! (Page, role, etc)
-	- New themes
-	- AutoPrefixer
-	
-	Emmet:
-	- New Setting: Activate the emmet!
-	
-	Someone else is currently editing!? (Heartbeat API?):
-	- "Current version is different than the version saved here. It might be already edited by someone. 
-		- A) Open the newest version
-		- B) Save the current one
-		- C) Show the differences
-	
-	Responsivity Tool (PRO FEATURE!):
-	- Add "Edit SASS/CSS on This Device" buttons
-	- Admin Bar Menu: Open this page on responsivity tool (Might be icon?)
-	- Night mode
-	
-	Custom Fonts Feature (PRO FEATURE!):
-	- Ability to upload new fonts from the plugin
-	
-	Revisions Feature (PRO FEATURE!):
-	- New Setting: How many revisions should be stored? (10)
-	
-	
-	ALL PRO FEATURES:
-	- SASS
-	- Emmet
-	- Responsivity Tool
-	- Revisions
-	- Custom Fonts
-	- Codes by URL/Page
+#### Emmet:
+- New Setting: Activate the emmet!
+
+#### AutoPrefixer:
+- New Setting: Activate the AutoPrefixer!
+
+#### Someone else is currently editing!? (Heartbeat API?):
+- "Current version is different than the version saved here. It might be already edited by someone. 
+	- A) Open the newest version
+	- B) Save the current one
+	- C) Show the differences
+
+#### Responsivity Tool (PRO FEATURE!):
+- Add "Edit SASS/CSS on This Device" buttons
+- Admin Bar Menu: Open this page on responsivity tool (Might be icon?)
+- Night mode
+
+#### Custom Fonts Feature (PRO FEATURE!):
+- Ability to upload new fonts from the plugin
+
+#### Revisions Feature (PRO FEATURE!):
+- New Setting: How many revisions should be stored? (10)
+
+
+#### ALL PRO FEATURES:
+- SASS
+- Emmet
+- AutoPrefixer
+- Responsivity Tool
+- Revisions
+- Custom Fonts
+- Codes by URL/Page
+
 
 ### License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-

@@ -7,9 +7,13 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 function cstm_cds_load() {
 	global $cstm_cds_result_level;
 
+
+		$codemirror_dir = plugin_dir_url( CSTM_CDS_FILE ) .'node_modules/codemirror';
+
+
 		// CODE MIRROR
-		wp_enqueue_style ( 'cc-codemirror-css', plugin_dir_url( __FILE__ ) .'vendor/codemirror/lib/codemirror.css' );
-		wp_enqueue_script( 'cc-codemirror-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/lib/codemirror.js', array(), '20150913', true );
+		wp_enqueue_style ( 'cc-codemirror-css', $codemirror_dir.'/lib/codemirror.css' );
+		wp_enqueue_script( 'cc-codemirror-js', $codemirror_dir.'/lib/codemirror.js', array(), '20150913', true );
 
 
 		// EMMET
@@ -17,42 +21,42 @@ function cstm_cds_load() {
 
 
 		// MODES
-		wp_enqueue_script( 'cc-codemirror-htmlmixed-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/mode/htmlmixed/htmlmixed.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-codemirror-xml-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/mode/xml/xml.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-codemirror-css-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/mode/css/css.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-codemirror-sass-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/mode/sass/sass.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-codemirror-js-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/mode/javascript/javascript.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-codemirror-php-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/mode/php/php.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-codemirror-clike-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/mode/clike/clike.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-codemirror-htmlmixed-js', $codemirror_dir.'/mode/htmlmixed/htmlmixed.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-codemirror-xml-js', $codemirror_dir.'/mode/xml/xml.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-codemirror-css-js', $codemirror_dir.'/mode/css/css.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-codemirror-sass-js', $codemirror_dir.'/mode/sass/sass.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-codemirror-js-js', $codemirror_dir.'/mode/javascript/javascript.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-codemirror-php-js', $codemirror_dir.'/mode/php/php.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-codemirror-clike-js', $codemirror_dir.'/mode/clike/clike.js', array(), '20150913', true );
 
 
 		// THEMES
-		wp_enqueue_style ( 'cc-monokai-css', plugin_dir_url( __FILE__ ) .'vendor/codemirror/theme/monokai.css' );
+		wp_enqueue_style ( 'cc-monokai-css', $codemirror_dir.'/theme/monokai.css' );
 
 
 		// ADDONS
-		wp_enqueue_script( 'cc-active-line-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/selection/active-line.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-active-line-js', $codemirror_dir.'/addon/selection/active-line.js', array(), '20150913', true );
 
-		wp_enqueue_script( 'cc-closebrackets-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/edit/closebrackets.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-matchbrackets-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/edit/matchbrackets.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-trailingspace-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/edit/trailingspace.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-closebrackets-js', $codemirror_dir.'/addon/edit/closebrackets.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-matchbrackets-js', $codemirror_dir.'/addon/edit/matchbrackets.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-trailingspace-js', $codemirror_dir.'/addon/edit/trailingspace.js', array(), '20150913', true );
 
-		wp_enqueue_script( 'cc-foldcode-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/fold/foldcode.js', array(), '20150913', true );
-		wp_enqueue_style ( 'cc-foldgutter-css', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/fold/foldgutter.css' );
-		wp_enqueue_script( 'cc-foldgutter-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/fold/foldgutter.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-brace-fold-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/fold/brace-fold.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-foldcode-js', $codemirror_dir.'/addon/fold/foldcode.js', array(), '20150913', true );
+		wp_enqueue_style ( 'cc-foldgutter-css', $codemirror_dir.'/addon/fold/foldgutter.css' );
+		wp_enqueue_script( 'cc-foldgutter-js', $codemirror_dir.'/addon/fold/foldgutter.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-brace-fold-js', $codemirror_dir.'/addon/fold/brace-fold.js', array(), '20150913', true );
 
-		wp_enqueue_script( 'cc-match-highlighter-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/search/match-highlighter.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-search-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/search/search.js', array(), '20150913', true );
-		wp_enqueue_script( 'cc-searchcursor-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/search/searchcursor.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-match-highlighter-js', $codemirror_dir.'/addon/search/match-highlighter.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-search-js', $codemirror_dir.'/addon/search/search.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-searchcursor-js', $codemirror_dir.'/addon/search/searchcursor.js', array(), '20150913', true );
 
-		wp_enqueue_script( 'cc-dialog-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/dialog/dialog.js', array(), '20150913', true );
-		wp_enqueue_style ( 'cc-dialog-css', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/dialog/dialog.css' );
+		wp_enqueue_script( 'cc-dialog-js', $codemirror_dir.'/addon/dialog/dialog.js', array(), '20150913', true );
+		wp_enqueue_style ( 'cc-dialog-css', $codemirror_dir.'/addon/dialog/dialog.css' );
 
-		wp_enqueue_script( 'cc-fullscreen-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/display/fullscreen.js', array(), '20150913', true );
-		wp_enqueue_style ( 'cc-fullscreen-css', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/display/fullscreen.css' );
+		wp_enqueue_script( 'cc-fullscreen-js', $codemirror_dir.'/addon/display/fullscreen.js', array(), '20150913', true );
+		wp_enqueue_style ( 'cc-fullscreen-css', $codemirror_dir.'/addon/display/fullscreen.css' );
 
-		wp_enqueue_script( 'cc-comment-js', plugin_dir_url( __FILE__ ) .'vendor/codemirror/addon/comment/comment.js', array(), '20150913', true );
+		wp_enqueue_script( 'cc-comment-js', $codemirror_dir.'/addon/comment/comment.js', array(), '20150913', true );
 
 
 		wp_enqueue_style ( 'cc-font-awesome-css', plugin_dir_url( __FILE__ ) .'vendor/font-awesome/css/font-awesome.min.css' );
