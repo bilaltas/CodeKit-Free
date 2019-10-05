@@ -45,6 +45,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 3. Admin side editor look
 
 == Changelog ==
+= 1.0.1 (2018-11-16 16:49 EET) =
+* AutoPrefixer feature disabled for now..
+
 = 1.0.0 (2018-11-16 14:53 EET) =
 * Tested on Wordpress 5.0
 * AutoPrefixer feature added!

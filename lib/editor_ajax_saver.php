@@ -173,7 +173,7 @@ function cstm_cds_saver_ajax() {
 
 					cstm_cds_process_timer_start();
 						$css_output_content = $cstm_cds_scss->compile( $data_to_compile );
-						$css_output_content = $cstm_cds_autoprefixer->compile($css_output_content);
+						//$css_output_content = $cstm_cds_autoprefixer->compile($css_output_content);
 						$css_output_done = file_put_contents($file_css_output, $css_output_content, FILE_TEXT );
 					$css_output_end = cstm_cds_process_timer_finish();
 
@@ -181,7 +181,7 @@ function cstm_cds_saver_ajax() {
 
 					cstm_cds_process_timer_start();
 						$css_output_content = $cstm_cds_scss->compile( $data_to_compile );
-						$css_output_content = $cstm_cds_autoprefixer->compile($css_output_content);
+						//$css_output_content = $cstm_cds_autoprefixer->compile($css_output_content);
 						$css_output_done = file_put_contents($file_main_css_output, $css_output_content, FILE_TEXT );
 
 						// Increase the version number
