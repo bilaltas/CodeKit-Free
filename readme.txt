@@ -3,7 +3,7 @@ Contributors: bilaltas
 Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity, mobile, emmet, autoprefixer
 Donate link: https://paypal.me/bilaltas
 Requires at least: 4.0
-Tested up to: 5.0
+Tested up to: 5.3
 Stable tag: trunk
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -45,6 +45,9 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 3. Admin side editor look
 
 == Changelog ==
+= 1.0.2 (2019-11-7 12:02 EET) =
+* Tested on Wordpress 5.3
+
 = 1.0.1 (2018-11-16 16:49 EET) =
 * AutoPrefixer feature disabled for now..
 
