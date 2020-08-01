@@ -3,7 +3,7 @@ Contributors: bilaltas
 Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity, mobile, emmet, autoprefixer
 Donate link: https://paypal.me/bilaltas
 Requires at least: 4.0
-Tested up to: 5.3
+Tested up to: 5.5
 Stable tag: trunk
 License: MIT
 License URI: https://opensource.org/licenses/MIT
