@@ -1,75 +1,95 @@
 <?php
+/**
+ *
+ * Runs when plugin has been removed.
+ *
+ * @since   2.0.0
+ * @package Custom_Codes
+ */
 
-if( defined( 'ABSPATH') && defined('WP_UNINSTALL_PLUGIN') ) {
-
-	// STORE FILES?
-	$cstm_cds_store_custom_files = get_option( 'cstm_cds_store_files', '' ) == "yes" ? true : false;
-
-	// Delete all the files if requested
-	function deleteDirectory($dir) {
-	    if (!file_exists($dir)) {
-	        return true;
-	    }
-
-	    if (!is_dir($dir)) {
-	        return unlink($dir);
-	    }
-
-	    foreach (scandir($dir) as $item) {
-	        if ($item == '.' || $item == '..') {
-	            continue;
-	        }
-
-	        if (!deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
-	            return false;
-	        }
-
-	    }
-
-	    return rmdir($dir);
-	}
-	if (!$cstm_cds_store_custom_files) deleteDirectory(WP_CONTENT_DIR .'/custom_codes');
+defined( 'WP_UNINSTALL_PLUGIN' ) || die( 'No script kiddies please!' );
 
 
+/**
+ *
+ * Folder deleter function.
+ *
+ * @param string $dir Directory path to delete.
+ */
+function codes_delete_directory( $dir ) {
 
-	//Remove the plugin's settings
-	if ( get_option( 'cstm_cds_permission_roles' ) ) delete_option( 'cstm_cds_permission_roles' );
-
-	if ( get_option( 'cstm_cds_admin_roles' ) ) delete_option( 'cstm_cds_admin_roles' );
-
-	if ( get_option( 'cstm_cds_admin_notes' ) ) delete_option( 'cstm_cds_admin_notes' );
-
-	if ( get_option( 'cstm_cds_style_mode' ) ) delete_option( 'cstm_cds_style_mode' );
-	if ( get_option( 'cstm_cds_store_files' ) ) delete_option( 'cstm_cds_store_files' );
-
-	if ( get_option( 'cstm_cds_tablet_l' ) ) delete_option( 'cstm_cds_tablet_l' );
-	if ( get_option( 'cstm_cds_tablet_p' ) ) delete_option( 'cstm_cds_tablet_p' );
-	if ( get_option( 'cstm_cds_phone_l' ) ) delete_option( 'cstm_cds_phone_l' );
-	if ( get_option( 'cstm_cds_phone_p' ) ) delete_option( 'cstm_cds_phone_p' );
-
-	if ( get_option( 'cstm_cds_editor_theme' ) ) delete_option( 'cstm_cds_editor_theme' );
-	if ( get_option( 'cstm_cds_css_save_count' ) ) delete_option( 'cstm_cds_css_save_count' );
-	if ( get_option( 'cstm_cds_js_head_save_count' ) ) delete_option( 'cstm_cds_js_head_save_count' );
-	if ( get_option( 'cstm_cds_js_bottom_save_count' ) ) delete_option( 'cstm_cds_js_bottom_save_count' );
-
-	if ( get_option( 'cstm_cds_admin_css_save_count' ) ) delete_option( 'cstm_cds_admin_css_save_count' );
-	if ( get_option( 'cstm_cds_admin_js_head_save_count' ) ) delete_option( 'cstm_cds_admin_js_head_save_count' );
-	if ( get_option( 'cstm_cds_admin_js_bottom_save_count' ) ) delete_option( 'cstm_cds_admin_js_bottom_save_count' );
-
-
-
-	// Remove the capability
-	foreach ( $wp_roles->roles as $role_name => $role_details ) {
-
-		$role = get_role( $role_name );
-		$role->remove_cap( 'cstm_cds_full_access' );
-
+	if ( ! file_exists( $dir ) ) {
+		return true;
 	}
 
+	if ( ! is_dir( $dir ) ) {
+		return unlink( $dir );
+	}
 
-	// Remove the new role
-	remove_role( 'cstm_cds_admin' );
+	foreach ( scandir( $dir ) as $item ) {
+		if ( '.' === $item || '..' === $item ) {
+			continue;
+		}
+
+		if ( ! codes_delete_directory( $dir . DIRECTORY_SEPARATOR . $item ) ) {
+			return false;
+		}
+	}
+
+	return rmdir( $dir );
+}
+
+
+// Delete all the codes if requested.
+if ( ! get_option( '_codes_store' ) ) {
+
+
+	// DELETE THE MEDIA QUERIES.
+	delete_option( '_codes_output_order' );
+	delete_option( '_codes_desktop' );
+	delete_option( '_codes_tablet_l' );
+	delete_option( '_codes_tablet_p' );
+	delete_option( '_codes_phone_l' );
+	delete_option( '_codes_phone_p' );
+	delete_option( '_codes_retina' );
+	delete_option( '_codes_store' );
+
+
+	// DELETE POSTS.
+	$codes_posts = get_posts(
+		array(
+			'numberposts' => -1,
+			'post_type'   => 'custom-code',
+			'post_status' => 'any',
+		)
+	);
+
+	foreach ( $codes_posts as $codes_post ) {
+		wp_delete_post( $codes_post->ID, true );
+	}
+
+
+	// DELETE THE CODES DIRECTORY.
+	codes_delete_directory( WP_CONTENT_DIR . '/custom_codes' );
+
 
 }
 
-?>
+
+
+
+// DELETE USER META.
+delete_metadata( 'user', 0, '_codes_theme', '', true );
+delete_metadata( 'user', 0, '_codes_fontsize', '', true );
+delete_metadata( 'user', 0, '_codes_indent', '', true );
+
+
+
+
+// DELETE GLOBAL OPTIONS.
+delete_option( '_codes_ajax' );
+delete_option( '_codes_sound' );
+delete_option( '_codes_shortcut' );
+delete_option( '_codes_emmet' );
+delete_option( '_codes_version' );
+delete_option( '_codes_admin_bar' );

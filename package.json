@@ -1,44 +1,27 @@
 {
   "name": "custom-codes",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-cli": "latest",
+    "gulp-sass": "latest",
+    "gulp-sass-lint": "latest",
+    "gulp-sourcemaps": "latest"
   },
-  "dependencies": {
-    "codemirror": "^5.41.0"
-  },
-  "devDependencies": {},
+  "keywords": [],
+  "author": "PressX",
+  "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm install --unsafe-perm=true --allow-root && rm -f style/style.css && rm -f style/style.css.map && gulp build",
+    "start": "rm -f style/style.css && rm -f style/style.css.map && gulp"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bilaltas/custom-codes.git"
-  },
-  "keywords": [
-    "custom",
-    "codes",
-    "custom",
-    "codes",
-    "custom",
-    "css",
-    "development",
-    "developer",
-    "sass",
-    "css",
-    "js",
-    "php",
-    "responsivity",
-    "mobile",
-    "emmet",
-    "autoprefixer"
-  ],
-  "author": "Bilal TAŞ",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bilaltas/custom-codes/issues"
-  },
-  "homepage": "https://github.com/bilaltas/custom-codes#readme"
+  "browserslist": [
+    "ff > 2",
+    "> 2%",
+    "ie 8"
+  ]
 }

@@ -1,6 +1,10 @@
 {
+	"name": "pressx/custom-codes",
+    "description": "Composer for Custom Codes",
     "require": {
-	    "leafo/scssphp": "0.0.12",
-        "vladkens/autoprefixer": "dev-master"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "wp-coding-standards/wpcs": "^2.3"
     }
 }

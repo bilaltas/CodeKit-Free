@@ -1,6 +1,8 @@
 # Custom Codes Wordpress Plugin
 
-Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! Just "Command + S" to save and more. You don't even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
+Add custom **SASS, CSS, JS, PHP and HTML** codes to your WordPress websites with the most advanced, yet simple custom code editor ever. Changing the look of your website and adding new functions have never been easier.
+
+By using Custom Codes plugin, you can **create code blocks for different languages** and maintain them in separate blocks just like you do with your posts. With the power of our integrated IDE, you can add codes with syntax highlighting, emmet feature and autocomplete. The features also provide continuous development and urgent deployment of **codes without effort.** It is actually just like your favorite code editor.
 
 
 ## Installation
@@ -11,51 +13,6 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 4. Select the plugin zip file (custom-codes.zip) from your computer then click the Install Now button.
 5. You should see a message stating that the plugin was installed successfully.
 6. Click the Activate Plugin link.
-
-
-### New Ideas & Plan for Today ###
-
-#### New Features:
-- "Serve minified" option
-- Revisions feature (PRO FEATURE!)
-- New Setting: P lay sound when saved!
-- Saving timeout?!
-- Codes by person?
-- Codes by condition! (Page, role, etc)
-- New themes
-
-#### Emmet:
-- New Setting: Activate the emmet!
-
-#### AutoPrefixer:
-- New Setting: Activate the AutoPrefixer!
-
-#### Someone else is currently editing!? (Heartbeat API?):
-- "Current version is different than the version saved here. It might be already edited by someone. 
-	- A) Open the newest version
-	- B) Save the current one
-	- C) Show the differences
-
-#### Responsivity Tool (PRO FEATURE!):
-- Add "Edit SASS/CSS on This Device" buttons
-- Admin Bar Menu: Open this page on responsivity tool (Might be icon?)
-- Night mode
-
-#### Custom Fonts Feature (PRO FEATURE!):
-- Ability to upload new fonts from the plugin
-
-#### Revisions Feature (PRO FEATURE!):
-- New Setting: How many revisions should be stored? (10)
-
-
-#### ALL PRO FEATURES:
-- SASS
-- Emmet
-- AutoPrefixer
-- Responsivity Tool
-- Revisions
-- Custom Fonts
-- Codes by URL/Page
 
 
 ### License

@@ -1,28 +1,85 @@
 === Custom Codes ===
-Contributors: bilaltas
-Tags: custom, codes, custom codes, custom css, development, developer, sass, css, js, php, responsivity, mobile, emmet, autoprefixer
-Donate link: https://paypal.me/bilaltas
-Requires at least: 4.0
-Tested up to: 5.5
+Contributors: bilaltas, atakanoz
+Tags: custom, codes, custom codes, custom css, development, developer, scss, sass, css, js, html, php, responsivity, mobile, emmet, autoprefixer, ga code, gtm code, tag manger code, analytics code, pressx
+Requires at least: 4.9.8
+Donate link: https://pressx.co
+Requires PHP: 5.6
+Tested up to: 5.6
 Stable tag: trunk
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
-Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.
+Your custom SASS, CSS, JS, PHP and HTML customizations in same directory.
 
 == Description ==
-Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror! Just "Command + S" to save, and much more. You don't even need to enable the child-theme of your themes if you use this plugin. It also has responsive breakpoints to write specific CSS for each mobile device.
+Add custom **SASS, CSS, JS, PHP and HTML** codes to your WordPress websites with the most advanced, yet simple custom code editor ever. Changing the look of your website and adding new functions have never been easier.
 
-= Main Features =
-1. Custom SASS or CSS editors (Including separate mobile devices and retina display devices SASS/CSS editors)
-2. Custom JavaScript editors (Head and footer)
-3. Emmet (Code abbreviations on CSS)
-4. AutoPrefixer
-5. Full Screen Mode
-6. Plays a sound when saved
-7. Permission settings
-8. Admin notes section
-9. Dark and light themes
+By using Custom Codes plugin, you can **create code blocks for different languages** and maintain them in separate blocks just like you do with your posts. With the power of our integrated IDE, you can add codes with syntax highlighting, emmet feature and autocomplete. The features also provide continuous development and urgent deployment of **codes without effort.** It is actually just like your favorite code editor.
+
+
+== Endless Possibilities ==
+Custom Codes is one of the most versatile and functional custom codes plugin in the market. It supports various languages as well as providing options to deploy your code in different WordPress hooks by default. The core IDE functions also provide a smooth transition from your code editor and allow you to create and maintain different codes with ease.
+
+If you want to:
+
+* Add **Google Analytics (GA)** code to your website
+* Add **Google Tag Manager (GTM)** code to your website
+* Add **custom JavaScript** codes to your website
+* Add **custom CSS or SCSS codes** to your website
+* Change the overall style of your website
+* Customize the style of your website for different mobile devices
+* Add **static HTML blocks** on your website
+* Add **new PHP functions** in your functions.php
+* Implement instant code changes in case of an urgency
+
+Then, Custom Codes is just what you need. Install in a few minutes, develop and deploy in a few seconds.
+
+== Robust Code Editor ==
+Custom Codes is intended for novice as well as professional users, and it allows you to add simple code blocks alongside helping you with development or deployment in case of an urgency.
+
+== LANGUAGE BASED FEATURES: ==
+
+== CSS/SCSS/SASS ==
+* Add custom styles for specific pages and posts
+* Add custom styles for specific devices and resolutions
+* Styles for Desktop
+* Styles for Tablet (Landscape)
+* Styles for Tablet (Portrait)
+* Styles for Phone (Landscape)
+* Styles for Phone (Portrait)
+* Styles for Retina Displays
+
+== JavaScript ==
+* Add custom JavaScript for specific pages and posts
+* Add custom JavaScript to wp_head
+* Add custom JavaScript to after wp_body
+* Add custom JavaScript to before wp_body
+
+== HTML ==
+* Add custom HTML to wp_head
+* Add custom HTML to after wp_body tag
+* Add custom HTML to before wp_body tag
+
+== PHP ==
+*  Add custom PHP codes directly to functions.php
+
+
+== CORE FEATURES: ==
+* Separated tabs to keep everything clean and manageable
+* Amazing syntax highlighting
+* `Command + S` to save
+* Emmet abbreviations autocomplete with `Tab` key
+* Supports tabs, spaces and line numbers just like your IDE
+* Shows output for you to see the code after the compilation process
+* 4+ theme options including Dark Theme and Light Theme
+* Adjust font size and spaces
+* Save your code without refresh (with AJAX)
+* Cache-proof code release each time you save
+* Play notification sound when saved
+* Access all the codes through Toolbar
+* Full-Screen Editor mode
+* Shortcuts (such as Find Code and Comment Line)
+
 
 == Installation ==
 1. Login to your website and go to the Plugins section of your admin panel.
@@ -33,18 +90,107 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 6. Click the Activate Plugin link.
 
 == Frequently Asked Questions ==
-= Will my custom codes be deleted after uninstalling the plugin? =
-- No, it won't if you uncheck the "Store custom CSS/JS after uninstall" option on settings.
 
-= A red cross appeared when I try to save. It doesn't look save the files, what's the problem? =
-- Just mouseover the cross and see the error message.
+= Can I change the language of the editor while I am writing codes in another language?
+Yes, you can change the language of the editor. Previous editor contents will be stored to be able to switch back.
+
+= How can I see the output of my codes?
+You can use the Output function. The Output button is at the bottom-right side of the IDE.
+
+= How do I get more information about the shortcuts?
+Simply hover over the “?” icon while adding/editing your code blocks.
+
+= Will my custom codes be deleted after uninstalling the plugin? =
+No, it will not unless you uncheck the "Store custom CSS/JS after uninstall" option on settings.
+
+= A red cross appears when I try to save. What is the problem? =
+Just mouseover the cross sign and see the error message.
+
+= I am experiencing a different issue that is not covered here. How can I reach you? =
+We highly recommend you to create a ticket on the support forum where we are trying to solve problems as quickly as possible.
+For further inquiries and feedbacks, feel free to contact us at info@pressx.co.
 
 == Screenshots ==
 1. General look
-2. Options and Shortcuts
-3. Admin side editor look
+2. Admin side editor look
+3. Settings page
 
 == Changelog ==
+= 2.1.5 (2020-12-09 16:26 EET) =
+* Tested on WordPress 5.6
+* Code title text on full screen
+* Minor fixes
+
+= 2.1.4 (2020-12-08 12:16 EET) =
+* Minor bug fixes
+
+= 2.1.3 (2020-12-07 16:10 EET) =
+* Allow BRs on setting descriptions
+
+= 2.1.2 (2020-12-07 15:28 EET) =
+* Bug that prevents saving admin roles has been fixed
+* Bug fixes related to WordPress 5.4.x default option issue
+
+= 2.1.1 (2020-12-07 12:57 EET) =
+* Quick fix
+
+= 2.1.0 (2020-12-07 08:44 EET) =
+* Minor bug fixes
+* WP Filesystem API is now being used
+* WPCS Coding standards applied to all the files
+* More security updates
+* Performance improvements
+
+= 2.0.9 (2020-12-02 17:08 EET) =
+* Bug fix related to the code orders
+
+= 2.0.8 (2020-11-30 17:41 EET) =
+* Minor fixes
+* New Style Setting: Initial Editor Tab
+* Translation updates
+
+= 2.0.7 (2020-11-25 17:59 EET) =
+* Bug fix that prevents plugin to be removed
+
+= 2.0.6 (2020-11-22 16:27 EET) =
+* Editor and output file names in Location metabox
+* Click to Copy file names
+* Code Order moved into the Location metabox
+
+= 2.0.5 (2020-11-22 13:25 EET) =
+* Tidy codes in current editor with "Command/Ctrl + 8"
+* 100% Turkish translations
+
+= 2.0.4 (2020-11-21 20:15 EET) =
+* Fixes the wrong permission notifications on Windows servers
+
+= 2.0.3 (2020-11-20 15:50 EET) =
+* Different icon for global style editors
+* Import old mixins as a new custom code
+* Minor improvements
+
+= 2.0.2 (2020-11-17 17:24 EET) =
+* Overlaying codes on the shortcuts box has been fixed
+* Emmet abbreviations previews disabled, not to confuse with autocomplete
+
+= 2.0.1 (2020-11-16 21:04 EET) =
+* Fixed issue that prevents opening CSS outputs
+* Fixed the insecure content error message in some cases
+
+= 2.0.0 (2020-11-12 19:02 EET) =
+* Major performance and security improvements
+* New IDE UI & UX
+* New settings page, with more settings
+* Emmet code hints on editor
+* Ability to add custom JS into the head tag, or after the opening body tag, or just before closing body tag
+* Ability to add custom HTML into the head tag, or after the opening body tag, or just before closing body tag
+* Ability to add custom PHP for frontend as well
+* Ability to add multiple custom codes on different locations (Frontend, or Backend, or Login Page, or Everywhere)
+* Ability to add backend custom codes for all roles (If not specified)
+* Ability to disable any custom code
+* Ability to order the codes added
+* Translations are now available
+
 = 1.0.2 (2019-11-7 12:02 EET) =
 * Tested on Wordpress 5.3
 
@@ -157,4 +303,6 @@ Your custom SASS, CSS, JS and PHP customizations in same directory with the best
 * Initial commit
 
 == Upgrade Notice ==
-A small bug fix.
+
+= 2.0.0 =
+This is a major upgrade. Please backup both files and database before updating.

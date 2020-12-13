@@ -1,0 +1,148 @@
+// Settings Page Styles
+$background-color: #0a0d15;
+
+#custom-codes-settings {
+	width: auto;
+	margin: 0;
+	display: block;
+	margin: 20px 20px 0 0;
+
+	#setting-error-settings_updated {
+		margin-top: 30px;
+		margin-bottom: 0;
+	}
+
+	form {
+		padding: 5px 5px 20px 10px;
+	}
+
+	.section-title {
+		padding: 25px 0 15px 0;
+		display: block;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+
+		h3 {
+			margin: 7px 0 7px 0;
+		}
+
+		p {
+			margin: 0;
+			color: rgba(0, 0, 0, 0.6);
+		}
+
+	}
+
+	.tab-content {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	.codes-header {
+		background-color: $background-color;
+		color: #fff;
+		padding: 22px 30px 0;
+		margin: -20px -20px 0 -20px;
+
+		& > .top {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			& > * {
+				display: flex;
+				align-items: center;
+			}
+
+			.branding {
+				font-size: 21px;
+				font-weight: 600;
+
+				.logo {
+					margin-right: 12px;
+				}
+
+				.version {
+					font-size: 12px;
+					text-decoration: none;
+					color: #fff;
+					margin-top: 7px;
+					margin-left: 10px;
+				}
+
+			}
+
+			.navigation {
+
+				a {
+					color: rgba(255, 255, 255, 0.5);
+					font-size: 13px;
+					font-weight: 500;
+					text-decoration: none;
+					background-color: rgba(255, 255, 255, 0.1);
+					display: flex;
+					height: 37px;
+					align-items: center;
+					line-height: 37px;
+					border-radius: 100px;
+					padding: 0 18px;
+					margin: 0 0 0 8px;
+					transition: 0.3s all;
+
+					&.active {
+						background-color:rgba(255, 255, 255, 0.2);
+						color: #FFF;
+					}
+
+					&:hover {
+						color: #fff;
+					}
+
+					span {
+						display: inline-block;
+					}
+
+					svg {
+						margin-right: 5px;
+					}
+
+				}
+
+			}
+
+		}
+
+		& > .settings-tabs {
+			margin-top: 25px;
+
+			& > a {
+				font-size: 14px;
+				line-height: 24px;
+				font-weight: 600;
+				text-decoration: none;
+				color: rgba(255, 255, 255, 0.45);
+				padding: 6px 12px 12px 12px;
+				transition: 0.3s all;
+				display: inline-block;
+				border-bottom: 2px solid transparent;
+				box-shadow: none;
+				outline: none;
+
+				&:hover,
+				&:focus,
+				&.active {
+					color: white;
+				}
+
+				&.active {
+					border-color: white;
+				}
+
+			}
+		}
+
+	}
+
+}

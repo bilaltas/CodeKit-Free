@@ -1,0 +1,145 @@
+#custom-codes-settings {
+  width: auto;
+  margin: 0;
+  display: block;
+  margin: 20px 20px 0 0;
+}
+
+#custom-codes-settings #setting-error-settings_updated {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+#custom-codes-settings form {
+  padding: 5px 5px 20px 10px;
+}
+
+#custom-codes-settings .section-title {
+  padding: 25px 0 15px 0;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+#custom-codes-settings .section-title h3 {
+  margin: 7px 0 7px 0;
+}
+
+#custom-codes-settings .section-title p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#custom-codes-settings .tab-content {
+  display: none;
+}
+
+#custom-codes-settings .tab-content.active {
+  display: block;
+}
+
+#custom-codes-settings .codes-header {
+  background-color: #0a0d15;
+  color: #fff;
+  padding: 22px 30px 0;
+  margin: -20px -20px 0 -20px;
+}
+
+#custom-codes-settings .codes-header > .top {
+  display: -moz-box;
+  display: flex;
+  -moz-box-align: center;
+       align-items: center;
+  -moz-box-pack: justify;
+       justify-content: space-between;
+}
+
+#custom-codes-settings .codes-header > .top > * {
+  display: -moz-box;
+  display: flex;
+  -moz-box-align: center;
+       align-items: center;
+}
+
+#custom-codes-settings .codes-header > .top .branding {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+#custom-codes-settings .codes-header > .top .branding .logo {
+  margin-right: 12px;
+}
+
+#custom-codes-settings .codes-header > .top .branding .version {
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 7px;
+  margin-left: 10px;
+}
+
+#custom-codes-settings .codes-header > .top .navigation a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: -moz-box;
+  display: flex;
+  height: 37px;
+  -moz-box-align: center;
+       align-items: center;
+  line-height: 37px;
+  -moz-border-radius: 100px;
+       border-radius: 100px;
+  padding: 0 18px;
+  margin: 0 0 0 8px;
+  -moz-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+#custom-codes-settings .codes-header > .top .navigation a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+}
+
+#custom-codes-settings .codes-header > .top .navigation a:hover {
+  color: #fff;
+}
+
+#custom-codes-settings .codes-header > .top .navigation a span {
+  display: inline-block;
+}
+
+#custom-codes-settings .codes-header > .top .navigation a svg {
+  margin-right: 5px;
+}
+
+#custom-codes-settings .codes-header > .settings-tabs {
+  margin-top: 25px;
+}
+
+#custom-codes-settings .codes-header > .settings-tabs > a {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 6px 12px 12px 12px;
+  -moz-transition: 0.3s all;
+  transition: 0.3s all;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  -moz-box-shadow: none;
+       box-shadow: none;
+  outline: none;
+}
+
+#custom-codes-settings .codes-header > .settings-tabs > a:hover, #custom-codes-settings .codes-header > .settings-tabs > a:focus, #custom-codes-settings .codes-header > .settings-tabs > a.active {
+  color: white;
+}
+
+#custom-codes-settings .codes-header > .settings-tabs > a.active {
+  border-color: white;
+}
+
+/*# sourceMappingURL=settings.css.map */

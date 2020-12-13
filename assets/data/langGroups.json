@@ -1,0 +1,26 @@
+[
+	{
+		"id": "style",
+		"name": "Style",
+		"extension": "css",
+		"mode": "text/css"
+	},
+	{
+		"id": "script",
+		"name": "Script",
+		"extension": "js",
+		"mode": "text/javascript"
+	},
+	{
+		"id": "html",
+		"name": "HTML",
+		"extension": "html",
+		"mode": "text/html"
+	},
+	{
+		"id": "php",
+		"name": "PHP",
+		"extension": "php",
+		"mode": "application/x-httpd-php"
+	}
+]
