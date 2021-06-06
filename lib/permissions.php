@@ -35,7 +35,7 @@ function codes_folder_access_notice() {
 
 	?>
 	<div class="notice notice-error is-dismissible">
-		<p><b>Custom Codes:</b> <?php esc_html_e( '"wp-content/custom_codes" folder does not have correct permissions. Please update its permissions to be able to use the plugin.', 'custom-codes' ); ?> (CHMOD <?php echo esc_html( codes_chmod_check( CODES_FOLDER_DIR ) ); ?> -> 755) <br>
+		<p><b>CodeKit:</b> <?php esc_html_e( '"wp-content/custom_codes" folder does not have correct permissions. Please update its permissions to be able to use the plugin.', 'custom-codes' ); ?> (CHMOD <?php echo esc_html( codes_chmod_check( CODES_FOLDER_DIR ) ); ?> -> 755) <br>
 		<span class="codes-debug"><?php esc_html_e( 'Exists:', 'custom-codes' ); ?> <?php echo file_exists( CODES_FOLDER_DIR ) ? 'Yes' : 'No'; ?> | <?php esc_html_e( 'Readable:', 'custom-codes' ); ?> <?php echo codes_is_readable( CODES_FOLDER_DIR ) ? 'Yes' : 'No'; ?> | <?php esc_html_e( 'Writable:', 'custom-codes' ); ?> <?php echo codes_is_writable( CODES_FOLDER_DIR ) ? 'Yes' : 'No'; ?> | <?php esc_html_e( 'Executable:', 'custom-codes' ); ?> <?php echo codes_is_executable( CODES_FOLDER_DIR ) ? 'Yes' : 'No'; ?></span></p>
 	</div>
 	<?php

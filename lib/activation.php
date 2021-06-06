@@ -42,7 +42,6 @@ function codes_plugins_page_link( $actions, $file ) {
 	if ( strpos( $file, 'custom-codes' ) !== false ) {
 
 		$actions['settings'] = '<a href="' . admin_url( 'edit.php?post_type=custom-code&page=settings' ) . '">' . __( 'Settings', 'custom-codes' ) . '</a>';
-		// <b>Pro Features</b></a>'; // !!!PRO
 
 	}
 

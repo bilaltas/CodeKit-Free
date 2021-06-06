@@ -1,9 +1,8 @@
 {
   "name": "custom-codes",
   "version": "2.0.0",
-  "description": "Your custom SASS, CSS, JS and PHP customizations in same directory with the best advanced code editor CodeMirror.",
+  "description": "Your custom SASS, CSS, JS, PHP and HTML customizations in same directory.",
   "main": "gulpfile.js",
-  "dependencies": {},
   "devDependencies": {
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -16,8 +15,8 @@
   "author": "PressX",
   "license": "ISC",
   "scripts": {
-    "build": "npm install --unsafe-perm=true --allow-root && rm -f style/style.css && rm -f style/style.css.map && gulp build",
-    "start": "rm -f style/style.css && rm -f style/style.css.map && gulp"
+    "build": "gulp build",
+    "start": "gulp"
   },
   "browserslist": [
     "ff > 2",

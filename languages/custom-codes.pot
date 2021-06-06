@@ -1,23 +1,21 @@
-# Copyright (C) 2020 PressX
-# This file is distributed under the same license as the Custom Codes plugin.
+# Copyright (C) 2021 PressX
+# This file is distributed under the same license as the CodeKit - Custom Codes Editor plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Custom Codes 2.1.3\n"
+"Project-Id-Version: CodeKit - Custom Codes Editor 2.2.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/custom-codes\n"
 "Last-Translator: Bilal TAS <bilal@pressx.co>\n"
 "Language-Team: PressX <info@pressx.co>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-12-07T13:13:12+00:00\n"
+"POT-Creation-Date: 2021-05-23T15:05:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: custom-codes\n"
 
 #. Plugin Name of the plugin
-#: lib/post-type.php:21
-#: lib/post-type.php:29
-msgid "Custom Codes"
+msgid "CodeKit - Custom Codes Editor"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -33,12 +31,17 @@ msgid "PressX"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://pressx.co"
+msgid "https://www.codekitwp.com"
+msgstr ""
+
+#. translators: 1: WP Filesystem Method
+#: custom-codes.php:109
+msgid "Your WordPress filesystem method \"%1$s\" is not configured correctly. Please configure it, or use another method like \"direct\" to be able to continue using the plugin."
 msgstr ""
 
 #: lib/activation.php:44
-#: lib/views/settings-area.php:20
-#: lib/views/settings-area.php:21
+#: lib/views/settings-area.php:18
+#: lib/views/settings-area.php:19
 msgid "Settings"
 msgstr ""
 
@@ -47,92 +50,160 @@ msgid "Language"
 msgstr ""
 
 #: lib/admin-columns.php:24
-#: lib/views/locations-area.php:22
+#: lib/views/locations-area.php:21
 msgid "Location"
 msgstr ""
 
 #: lib/admin-columns.php:25
-msgid "Order"
+msgid "Release Order"
 msgstr ""
 
 #: lib/admin-columns.php:26
 msgid "Author"
 msgstr ""
 
-#: lib/admin-columns.php:49
+#: lib/admin-columns.php:47
 msgid "Not selected"
 msgstr ""
 
-#: lib/admin-columns.php:59
+#: lib/admin-columns.php:67
 msgid "Other"
 msgstr ""
 
-#: lib/admin-columns.php:64
-#: lib/views/locations-area.php:54
+#: lib/admin-columns.php:73
+#: lib/views/locations-area.php:52
 msgid "Frontend"
 msgstr ""
 
-#: lib/admin-columns.php:68
-#: lib/views/locations-area.php:56
+#: lib/admin-columns.php:79
+#: lib/views/locations-area.php:184
 msgid "Backend"
 msgstr ""
 
-#: lib/admin-columns.php:72
-msgid "Login"
-msgstr ""
-
-#: lib/admin-columns.php:76
-#: lib/views/locations-area.php:69
-msgid "Everywhere"
-msgstr ""
-
-#: lib/admin-columns.php:86
+#: lib/admin-columns.php:82
 msgid "All roles"
 msgstr ""
 
-#: lib/editor-saver.php:152
+#: lib/admin-columns.php:100
+msgid "Login"
+msgstr ""
+
+#: lib/admin-columns.php:105
+#: lib/views/locations-area.php:197
+msgid "Everywhere"
+msgstr ""
+
+#: lib/admin-columns.php:110
+#: lib/views/locations-area.php:199
+msgid "Nowhere"
+msgstr ""
+
+#: lib/admin-columns.php:118
+msgid "Page"
+msgstr ""
+
+#: lib/admin-columns.php:121
+msgid "All pages"
+msgstr ""
+
+#: lib/admin-columns.php:140
+msgid "Post"
+msgstr ""
+
+#: lib/admin-columns.php:143
+msgid "All posts"
+msgstr ""
+
+#: lib/admin-columns.php:162
+msgid "Post Type"
+msgstr ""
+
+#: lib/admin-columns.php:165
+msgid "All post types"
+msgstr ""
+
+#: lib/admin-columns.php:185
+#: lib/views/locations-area.php:131
+msgid "Categories / Terms"
+msgstr ""
+
+#: lib/admin-columns.php:188
+msgid "All terms"
+msgstr ""
+
+#: lib/admin-columns.php:209
+#: lib/views/locations-area.php:147
+msgid "Archives / Taxonomies"
+msgstr ""
+
+#: lib/admin-columns.php:212
+msgid "All taxonomies"
+msgstr ""
+
+#: lib/admin-columns.php:231
+msgid "Template"
+msgstr ""
+
+#: lib/admin-columns.php:234
+msgid "All templates"
+msgstr ""
+
+#: lib/editor-saver.php:236
 msgid "DESKTOP STYLES"
 msgstr ""
 
-#: lib/editor-saver.php:153
+#: lib/editor-saver.php:237
 msgid "TABLET LANDSCAPE STYLES"
 msgstr ""
 
-#: lib/editor-saver.php:154
+#: lib/editor-saver.php:238
 msgid "TABLET PORTRAIT STYLES"
 msgstr ""
 
-#: lib/editor-saver.php:155
+#: lib/editor-saver.php:239
 msgid "SMARTPHONE LANDSCAPE STYLES"
 msgstr ""
 
-#: lib/editor-saver.php:156
+#: lib/editor-saver.php:240
 msgid "SMARTPHONE PORTRAIT STYLES"
 msgstr ""
 
-#: lib/editor-saver.php:157
+#: lib/editor-saver.php:241
 msgid "RETINA DISPLAY STYLES"
 msgstr ""
 
-#: lib/editor-saver.php:191
+#: lib/editor-saver.php:285
 msgid "Could not be written to the file."
 msgstr ""
 
-#: lib/editor-saver.php:200
+#: lib/editor-saver.php:302
+msgid "Could not be written to the bundle file."
+msgstr ""
+
+#: lib/editor-saver.php:311
+#: lib/editor-saver.php:350
+msgid "Bundle file could not be deleted."
+msgstr ""
+
+#: lib/editor-saver.php:321
 msgid "File could not be deleted."
 msgstr ""
 
-#: lib/editor-saver.php:214
-#: lib/editor-saver.php:293
+#: lib/editor-saver.php:338
+msgid "File output could not be deleted."
+msgstr ""
+
+#: lib/editor-saver.php:367
+#: lib/editor-saver.php:466
 msgid "No compiler found"
 msgstr ""
 
-#: lib/editor-saver.php:240
-#: lib/editor-saver.php:318
+#: lib/editor-saver.php:393
+#: lib/editor-saver.php:491
 msgid "Compiled output could not be written to the file."
 msgstr ""
 
-#: lib/editor-saver.php:286
+#: lib/editor-saver.php:459
 msgid "Output could not be written to the file."
 msgstr ""
 
@@ -165,6 +236,11 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
+#: lib/post-type.php:21
+#: lib/post-type.php:29
+msgid "Custom Codes"
+msgstr ""
+
 #: lib/post-type.php:22
 msgid "Edit Code"
 msgstr ""
@@ -190,80 +266,158 @@ msgid "Location of the code"
 msgstr ""
 
 #: lib/register-data.php:49
-msgid "Roles that the code will be applied"
+msgid "Whether or not using breakpoints."
 msgstr ""
 
-#: lib/register-data.php:61
-msgid "Save count of each code post"
+#: lib/register-data.php:63
+msgid "Pages that the code will be applied"
 msgstr ""
 
-#: lib/register-data.php:74
-msgid "User defined editor theme"
+#: lib/register-data.php:75
+msgid "Posts that the code will be applied"
 msgstr ""
 
-#: lib/register-data.php:86
-msgid "User defined editor font size"
+#: lib/register-data.php:87
+msgid "Post types that the code will be applied"
 msgstr ""
 
-#: lib/register-data.php:98
-msgid "User defined editor indent option"
+#: lib/register-data.php:99
+msgid "Terms that the code will be applied"
 msgstr ""
 
 #: lib/register-data.php:111
-msgid "AJAX Saver"
+msgid "Taxonomies that the code will be applied"
 msgstr ""
 
 #: lib/register-data.php:123
-msgid "Play sound when saved"
+msgid "Templates that the code will be applied"
 msgstr ""
 
 #: lib/register-data.php:135
+msgid "Code includes list."
+msgstr ""
+
+#: lib/register-data.php:149
+msgid "Roles that the code will be applied"
+msgstr ""
+
+#: lib/register-data.php:161
+msgid "Save count of each code post"
+msgstr ""
+
+#: lib/register-data.php:174
+msgid "User defined editor theme"
+msgstr ""
+
+#: lib/register-data.php:186
+msgid "User defined editor font size"
+msgstr ""
+
+#: lib/register-data.php:198
+msgid "User defined editor indent option"
+msgstr ""
+
+#: lib/register-data.php:211
+msgid "AJAX Saver"
+msgstr ""
+
+#: lib/register-data.php:223
+msgid "Play sound when saved"
+msgstr ""
+
+#: lib/register-data.php:235
 msgid "Save with \"Cmd/Ctrl S\""
 msgstr ""
 
-#: lib/register-data.php:147
+#: lib/register-data.php:247
 msgid "Emmet Feature"
 msgstr ""
 
-#: lib/register-data.php:160
-#: lib/views/settings-area.php:151
+#: lib/register-data.php:260
+#: lib/views/settings-area.php:158
 msgid "Initial Editor Tab"
 msgstr ""
 
-#: lib/register-data.php:172
+#: lib/register-data.php:272
 msgid "Output Order"
 msgstr ""
 
-#: lib/register-data.php:184
+#: lib/register-data.php:284
 msgid "Desktop <br> Media Query"
 msgstr ""
 
-#: lib/register-data.php:196
+#: lib/register-data.php:296
 msgid "Tablet Landscape <br> Media Query"
 msgstr ""
 
-#: lib/register-data.php:208
+#: lib/register-data.php:308
 msgid "Tablet Portrait <br> Media Query"
 msgstr ""
 
-#: lib/register-data.php:220
+#: lib/register-data.php:320
 msgid "Smartphone Landscape <br> Media Query"
 msgstr ""
 
-#: lib/register-data.php:232
+#: lib/register-data.php:332
 msgid "Smartphone Portrait <br> Media Query"
 msgstr ""
 
-#: lib/register-data.php:244
+#: lib/register-data.php:344
 msgid "Retina Displays <br> Media Query"
 msgstr ""
 
-#: lib/register-data.php:257
+#: lib/register-data.php:357
 msgid "Show admin bar menu"
 msgstr ""
 
-#: lib/register-data.php:269
+#: lib/register-data.php:369
 msgid "Store codes after uninstallation"
+msgstr ""
+
+#: lib/taxonomy.php:19
+msgctxt "taxonomy general name"
+msgid "Code Groups"
+msgstr ""
+
+#: lib/taxonomy.php:20
+msgctxt "taxonomy singular name"
+msgid "Group"
+msgstr ""
+
+#: lib/taxonomy.php:21
+msgid "Search Groups"
+msgstr ""
+
+#: lib/taxonomy.php:22
+msgid "All Groups"
+msgstr ""
+
+#: lib/taxonomy.php:23
+msgid "Parent Group"
+msgstr ""
+
+#: lib/taxonomy.php:24
+msgid "Parent Group:"
+msgstr ""
+
+#: lib/taxonomy.php:25
+msgid "Edit Group"
+msgstr ""
+
+#: lib/taxonomy.php:26
+msgid "Update Group"
+msgstr ""
+
+#: lib/taxonomy.php:27
+msgid "Add New Group"
+msgstr ""
+
+#: lib/taxonomy.php:28
+msgid "New Group Name"
+msgstr ""
+
+#: lib/taxonomy.php:29
+msgid "Code Groups"
 msgstr ""
 
 #: lib/upgrade.php:59
@@ -314,332 +468,596 @@ msgstr ""
 msgid "All Codes"
 msgstr ""
 
-#: lib/views/editor-area.php:42
+#: lib/views/admin-bar.php:70
+msgid "+ New Code"
+msgstr ""
+
+#: lib/views/editor-area.php:39
 msgid "SELECT EDITOR TYPE"
 msgstr ""
 
-#: lib/views/editor-area.php:49
+#: lib/views/editor-area.php:48
 msgid "Saving..."
 msgstr ""
 
-#: lib/views/editor-area.php:72
+#: lib/views/editor-area.php:74
 msgid "SHORTCUTS"
 msgstr ""
 
-#: lib/views/editor-area.php:74
+#: lib/views/editor-area.php:76
 msgid "Save"
 msgstr ""
 
-#: lib/views/editor-area.php:75
+#: lib/views/editor-area.php:77
 msgid "Find"
 msgstr ""
 
-#: lib/views/editor-area.php:76
-msgid "Multiple Lines"
-msgstr ""
-
-#: lib/views/editor-area.php:76
-msgid "Option/Alt + Click and Drag"
-msgstr ""
-
-#: lib/views/editor-area.php:77
-msgid "Add Multi Cursor"
-msgstr ""
-
-#: lib/views/editor-area.php:77
-msgid "Command/Ctrl + Click"
-msgstr ""
-
 #: lib/views/editor-area.php:78
-msgid "Comment the Line"
+msgid "Find & Replace"
 msgstr ""
 
 #: lib/views/editor-area.php:79
-msgid "Tidy Codes"
+msgid "Multiple Lines"
+msgstr ""
+
+#: lib/views/editor-area.php:79
+msgid "Option/Alt + Click and Drag"
 msgstr ""
 
 #: lib/views/editor-area.php:80
+msgid "Add Multi Cursor"
+msgstr ""
+
+#: lib/views/editor-area.php:80
+msgid "Command/Ctrl + Click"
+msgstr ""
+
+#: lib/views/editor-area.php:81
+msgid "Comment the Line"
+msgstr ""
+
+#: lib/views/editor-area.php:82
+msgid "Tidy Codes"
+msgstr ""
+
+#: lib/views/editor-area.php:83
 msgid "Toggle Fullscreen Mode"
 msgstr ""
 
-#: lib/views/editor-area.php:81
+#: lib/views/editor-area.php:84
 msgid "Space Hierarchy"
 msgstr ""
 
-#: lib/views/editor-area.php:81
+#: lib/views/editor-area.php:84
 msgid "(Select) + Shift + Tab"
 msgstr ""
 
-#: lib/views/editor-area.php:82
+#: lib/views/editor-area.php:85
 msgid "Emmet Abbreviations"
 msgstr ""
 
-#: lib/views/editor-area.php:82
+#: lib/views/editor-area.php:85
 msgid "Write Abbs. + Tab"
 msgstr ""
 
+#: lib/views/editor-area.php:88
+msgid "Code Folding"
+msgstr ""
+
+#: lib/views/editor-area.php:89
+msgid "Autocomplete"
+msgstr ""
+
 #. translators: 1: Editor Name 2: Language name
-#: lib/views/editor-area.php:153
+#: lib/views/editor-area.php:174
 msgid "Write your custom %1$s %2$s"
 msgstr ""
 
-#: lib/views/editor-area.php:159
+#: lib/views/editor-area.php:180
 msgid "Insufficient permissions to write this editor"
 msgstr ""
 
-#: lib/views/editor-area.php:162
+#: lib/views/editor-area.php:183
 msgid "Editor file might exist but content is not readable and writable"
 msgstr ""
 
-#: lib/views/editor-area.php:197
+#: lib/views/editor-area.php:218
 msgid "Please click \"Update\" to confirm the new language."
 msgstr ""
 
-#: lib/views/editor-area.php:205
+#: lib/views/editor-area.php:226
 msgid "Dark Theme"
 msgstr ""
 
-#: lib/views/editor-area.php:206
+#: lib/views/editor-area.php:227
 msgid "Light Theme"
 msgstr ""
 
-#: lib/views/editor-area.php:213
+#: lib/views/editor-area.php:234
 msgid "Font Size:"
 msgstr ""
 
-#: lib/views/editor-area.php:259
+#: lib/views/editor-area.php:280
 msgid "OUTPUT"
 msgstr ""
 
-#: lib/views/editor-area.php:260
+#: lib/views/editor-area.php:281
 msgid "SAVE"
 msgstr ""
 
+#: lib/views/includes-area.php:26
+msgid "PRO Feature"
+msgstr ""
+
+#: lib/views/includes-area.php:30
+msgid "Includes"
+msgstr ""
+
+#: lib/views/includes-area.php:92
+msgid "You can simply include a file or URL to this code instead of writing snippets inside of the editor."
+msgstr ""
+
+#: lib/views/includes-area.php:98
+msgid "Type"
+msgstr ""
+
+#: lib/views/includes-area.php:101
+msgid "Code or URL"
+msgstr ""
+
+#: lib/views/includes-area.php:104
+#: lib/views/settings-area.php:67
+msgid "Editor"
+msgstr ""
+
+#: lib/views/includes-area.php:107
+msgid "Placement"
+msgstr ""
+
+#: lib/views/includes-area.php:110
+msgid "Order"
+msgstr ""
+
+#: lib/views/includes-area.php:113
+msgid "Delete"
+msgstr ""
+
+#: lib/views/includes-area.php:122
+msgid "Custom Code"
+msgstr ""
+
+#: lib/views/includes-area.php:123
+msgid "URL"
+msgstr ""
+
+#: lib/views/includes-area.php:133
+msgid "There's no code that can be included"
+msgstr ""
+
+#: lib/views/includes-area.php:135
+msgid "Select a Custom Code"
+msgstr ""
+
+#: lib/views/includes-area.php:154
+msgid "Output"
+msgstr ""
+
+#: lib/views/includes-area.php:155
+msgid "Default Editor"
+msgstr ""
+
+#: lib/views/includes-area.php:156
+msgid "Desktop"
+msgstr ""
+
+#: lib/views/includes-area.php:157
+msgid "Tablet Landscape"
+msgstr ""
+
+#: lib/views/includes-area.php:158
+msgid "Tablet Portrait"
+msgstr ""
+
+#: lib/views/includes-area.php:159
+msgid "Mobile Landscape"
+msgstr ""
+
+#: lib/views/includes-area.php:160
+msgid "Mobile Portrait"
+msgstr ""
+
+#: lib/views/includes-area.php:161
+msgid "Retina"
+msgstr ""
+
+#: lib/views/includes-area.php:166
+msgid "Head"
+msgstr ""
+
+#: lib/views/includes-area.php:167
+msgid "Opening Body"
+msgstr ""
+
+#: lib/views/includes-area.php:168
+msgid "Closing Body"
+msgstr ""
+
+#: lib/views/includes-area.php:173
+msgid "N/A"
+msgstr ""
+
+#: lib/views/includes-area.php:179
+msgid "Top"
+msgstr ""
+
+#: lib/views/includes-area.php:180
+msgid "Bottom"
+msgstr ""
+
+#: lib/views/includes-area.php:193
+msgid "No file or URL has been included yet."
+msgstr ""
+
+#: lib/views/includes-area.php:201
+#: lib/views/includes-area.php:203
+msgid "+ Include a File or URL"
+msgstr ""
+
+#: lib/views/includes-area.php:205
+msgid "Upgrade Now"
+msgstr ""
+
+#: lib/views/locations-area.php:55
+msgid "Pages"
+msgstr ""
+
 #: lib/views/locations-area.php:58
+#: lib/views/locations-area.php:84
+#: lib/views/locations-area.php:119
+#: lib/views/locations-area.php:134
+#: lib/views/locations-area.php:150
+#: lib/views/locations-area.php:162
+#: lib/views/locations-area.php:186
 msgid "Optional"
 msgstr ""
 
 #: lib/views/locations-area.php:58
+msgid "Select specific page(s):"
+msgstr ""
+
+#: lib/views/locations-area.php:77
+msgid "If none of them selected, codes will be applied all pages."
+msgstr ""
+
+#: lib/views/locations-area.php:81
+msgid "Posts"
+msgstr ""
+
+#: lib/views/locations-area.php:84
+msgid "Select specific post(s):"
+msgstr ""
+
+#: lib/views/locations-area.php:112
+#: lib/views/locations-area.php:127
+msgid "If none of them selected, codes will be applied all single posts."
+msgstr ""
+
+#: lib/views/locations-area.php:116
+msgid "Post Types"
+msgstr ""
+
+#: lib/views/locations-area.php:119
+msgid "Select specific post type(s):"
+msgstr ""
+
+#: lib/views/locations-area.php:134
+msgid "Select specific term(s):"
+msgstr ""
+
+#: lib/views/locations-area.php:150
+msgid "Select specific taxonomy(s):"
+msgstr ""
+
+#: lib/views/locations-area.php:159
+msgid "Templates"
+msgstr ""
+
+#: lib/views/locations-area.php:162
+msgid "Select specific template(s):"
+msgstr ""
+
+#: lib/views/locations-area.php:179
+msgid "If none of them selected, codes will be applied all the pages that have any assigned custom template."
+msgstr ""
+
+#: lib/views/locations-area.php:186
 msgid "Select specific role(s):"
 msgstr ""
 
-#: lib/views/locations-area.php:64
+#: lib/views/locations-area.php:192
 msgid "If none of them selected, codes will be applied all roles."
 msgstr ""
 
-#: lib/views/locations-area.php:67
+#: lib/views/locations-area.php:195
 msgid "Login Screen"
 msgstr ""
 
-#: lib/views/locations-area.php:83
+#: lib/views/locations-area.php:207
 msgid "Current Editor File:"
 msgstr ""
 
-#: lib/views/locations-area.php:84
-#: lib/views/locations-area.php:91
-#: lib/views/locations-area.php:93
+#: lib/views/locations-area.php:208
+#: lib/views/locations-area.php:210
+#: lib/views/locations-area.php:217
+#: lib/views/locations-area.php:219
 msgid "Copied!"
 msgstr ""
 
-#: lib/views/locations-area.php:84
-#: lib/views/locations-area.php:91
-#: lib/views/locations-area.php:93
+#: lib/views/locations-area.php:208
+#: lib/views/locations-area.php:210
+#: lib/views/locations-area.php:217
+#: lib/views/locations-area.php:219
 msgid "Click to Copy"
 msgstr ""
 
-#: lib/views/locations-area.php:90
-msgid "Output File:"
-msgstr ""
-
-#: lib/views/locations-area.php:93
+#: lib/views/locations-area.php:210
+#: lib/views/locations-area.php:219
 msgid "Compiled"
 msgstr ""
 
-#: lib/views/locations-area.php:105
-msgid "Code Order:"
+#: lib/views/locations-area.php:216
+msgid "Output File:"
 msgstr ""
 
-#: lib/views/settings-area.php:48
-msgid "Custom Codes Settings"
-msgstr ""
-
-#: lib/views/settings-area.php:53
-msgid "Support"
-msgstr ""
-
-#: lib/views/settings-area.php:54
-msgid "Feedback"
+#: lib/views/locations-area.php:230
+msgid "Release Order:"
 msgstr ""
 
 #: lib/views/settings-area.php:59
-msgid "Editor"
+msgid "Premium Support"
+msgstr ""
+
+#: lib/views/settings-area.php:59
+msgid "Support"
 msgstr ""
 
 #: lib/views/settings-area.php:60
+msgid "Feedback"
+msgstr ""
+
+#: lib/views/settings-area.php:68
 msgid "Style"
 msgstr ""
 
-#: lib/views/settings-area.php:61
+#: lib/views/settings-area.php:69
 msgid "Plugin"
 msgstr ""
 
-#: lib/views/settings-area.php:72
+#: lib/views/settings-area.php:70
+msgid "PRO Version"
+msgstr ""
+
+#: lib/views/settings-area.php:79
 msgid "Settings saved."
 msgstr ""
 
-#: lib/views/settings-area.php:72
+#: lib/views/settings-area.php:79
 msgid "Note: If you just update the media queries, you need to update the style codes to apply new ones."
 msgstr ""
 
-#: lib/views/settings-area.php:73
+#: lib/views/settings-area.php:80
 msgid "Dismiss this notice."
 msgstr ""
 
-#: lib/views/settings-area.php:85
+#: lib/views/settings-area.php:92
 msgid "Editor Settings"
 msgstr ""
 
-#: lib/views/settings-area.php:86
+#: lib/views/settings-area.php:93
 msgid "Change the general settings"
 msgstr ""
 
-#: lib/views/settings-area.php:95
-#: lib/views/settings-area.php:109
-#: lib/views/settings-area.php:307
+#: lib/views/settings-area.php:102
+#: lib/views/settings-area.php:116
+#: lib/views/settings-area.php:314
 msgid "Yes, please"
 msgstr ""
 
-#: lib/views/settings-area.php:95
-#: lib/views/settings-area.php:109
-#: lib/views/settings-area.php:120
+#: lib/views/settings-area.php:102
+#: lib/views/settings-area.php:116
+#: lib/views/settings-area.php:127
 msgid "Recommended for better experience"
 msgstr ""
 
-#: lib/views/settings-area.php:96
+#: lib/views/settings-area.php:103
 msgid "No, use default WP post saver"
 msgstr ""
 
-#: lib/views/settings-area.php:104
+#: lib/views/settings-area.php:111
 msgid "Only works if AJAX saver enabled"
 msgstr ""
 
-#: lib/views/settings-area.php:110
+#: lib/views/settings-area.php:117
 msgid "No sound"
 msgstr ""
 
-#: lib/views/settings-area.php:120
+#: lib/views/settings-area.php:127
 msgid "Yes, use keyboard shortcut"
 msgstr ""
 
-#: lib/views/settings-area.php:121
+#: lib/views/settings-area.php:128
 msgid "No keyboard shortcut"
 msgstr ""
 
-#: lib/views/settings-area.php:131
+#: lib/views/settings-area.php:138
 msgid "Active"
 msgstr ""
 
-#: lib/views/settings-area.php:131
+#: lib/views/settings-area.php:138
 msgid "Recommended"
 msgstr ""
 
-#: lib/views/settings-area.php:132
+#: lib/views/settings-area.php:139
 msgid "Deactive"
 msgstr ""
 
-#: lib/views/settings-area.php:145
+#: lib/views/settings-area.php:152
 msgid "Style Settings"
 msgstr ""
 
-#: lib/views/settings-area.php:146
+#: lib/views/settings-area.php:153
 msgid "Change the settings related to styles"
 msgstr ""
 
-#: lib/views/settings-area.php:157
+#: lib/views/settings-area.php:164
 msgid "First Editor"
 msgstr ""
 
-#: lib/views/settings-area.php:157
-#: lib/views/settings-area.php:192
-#: lib/views/settings-area.php:206
-#: lib/views/settings-area.php:220
-#: lib/views/settings-area.php:234
-#: lib/views/settings-area.php:248
-#: lib/views/settings-area.php:262
+#: lib/views/settings-area.php:164
+#: lib/views/settings-area.php:199
+#: lib/views/settings-area.php:213
+#: lib/views/settings-area.php:227
+#: lib/views/settings-area.php:241
+#: lib/views/settings-area.php:255
+#: lib/views/settings-area.php:269
 msgid "Default"
 msgstr ""
 
-#: lib/views/settings-area.php:161
+#: lib/views/settings-area.php:168
 msgid "Global Editor"
 msgstr ""
 
-#: lib/views/settings-area.php:161
+#: lib/views/settings-area.php:168
 msgid "Editor without Media Query"
 msgstr ""
 
-#: lib/views/settings-area.php:174
+#: lib/views/settings-area.php:181
 msgid "Mobile First"
 msgstr ""
 
-#: lib/views/settings-area.php:175
+#: lib/views/settings-area.php:182
 msgid "Recommended for mobile performance"
 msgstr ""
 
-#: lib/views/settings-area.php:179
+#: lib/views/settings-area.php:186
 msgid "Desktop First"
 msgstr ""
 
-#: lib/views/settings-area.php:191
-#: lib/views/settings-area.php:194
-#: lib/views/settings-area.php:205
-#: lib/views/settings-area.php:219
-#: lib/views/settings-area.php:233
-#: lib/views/settings-area.php:247
-#: lib/views/settings-area.php:249
-#: lib/views/settings-area.php:261
+#: lib/views/settings-area.php:198
+#: lib/views/settings-area.php:201
+#: lib/views/settings-area.php:212
+#: lib/views/settings-area.php:226
+#: lib/views/settings-area.php:240
+#: lib/views/settings-area.php:254
+#: lib/views/settings-area.php:256
+#: lib/views/settings-area.php:268
 msgid "No media query"
 msgstr ""
 
-#: lib/views/settings-area.php:270
+#: lib/views/settings-area.php:277
 msgid "Reset Media Queries as"
 msgstr ""
 
-#: lib/views/settings-area.php:273
+#: lib/views/settings-area.php:280
 msgid "Mobile First (Min Width)"
 msgstr ""
 
-#: lib/views/settings-area.php:274
+#: lib/views/settings-area.php:281
 msgid "Desktop First (Max Width)"
 msgstr ""
 
-#: lib/views/settings-area.php:286
+#: lib/views/settings-area.php:293
 msgid "Plugin Settings"
 msgstr ""
 
-#: lib/views/settings-area.php:287
+#: lib/views/settings-area.php:294
 msgid "Change the core plugin settings"
 msgstr ""
 
-#: lib/views/settings-area.php:296
+#: lib/views/settings-area.php:303
 msgid "Yes, show the menu"
 msgstr ""
 
-#: lib/views/settings-area.php:296
+#: lib/views/settings-area.php:303
 msgid "Recommended for easy access"
 msgstr ""
 
-#: lib/views/settings-area.php:297
+#: lib/views/settings-area.php:304
 msgid "Hide the menu on admin bar"
 msgstr ""
 
-#: lib/views/settings-area.php:307
+#: lib/views/settings-area.php:314
 msgid "Recommended for later use"
 msgstr ""
 
-#: lib/views/settings-area.php:308
+#: lib/views/settings-area.php:315
 msgid "Delete the codes"
 msgstr ""
 
-#: lib/views/settings-area.php:319
+#: lib/views/settings-area.php:328
+msgid "CodeKit PRO"
+msgstr ""
+
+#: lib/views/settings-area.php:329
+msgid "Here are all the additional professional features available:"
+msgstr ""
+
+#: lib/views/settings-area.php:333
+msgid "Priority support"
+msgstr ""
+
+#: lib/views/settings-area.php:334
+msgid "LESS Editor"
+msgstr ""
+
+#: lib/views/settings-area.php:335
+msgid "Stylus Editor"
+msgstr ""
+
+#: lib/views/settings-area.php:336
+msgid "CoffeeScript Editor"
+msgstr ""
+
+#: lib/views/settings-area.php:337
+msgid "PUG Editor"
+msgstr ""
+
+#: lib/views/settings-area.php:338
+msgid "Editor Code Folding"
+msgstr ""
+
+#: lib/views/settings-area.php:339
+msgid "Editor Code Hints"
+msgstr ""
+
+#: lib/views/settings-area.php:340
+msgid "Custom Code Groups/Categories"
+msgstr ""
+
+#: lib/views/settings-area.php:341
+msgid "Custom Code Includes"
+msgstr ""
+
+#: lib/views/settings-area.php:342
+msgid "Advanced Code Release Locations"
+msgstr ""
+
+#: lib/views/settings-area.php:343
+msgid "And, much more coming soon..."
+msgstr ""
+
+#: lib/views/settings-area.php:348
+msgid "Thank you for purchasing CodeKit PRO!"
+msgstr ""
+
+#: lib/views/settings-area.php:349
+msgid "Share Us Your Feedback"
+msgstr ""
+
+#: lib/views/settings-area.php:351
+msgid "UPGRADE NOW"
+msgstr ""
+
+#: lib/views/settings-area.php:358
 msgid "Save Changes"
 msgstr ""

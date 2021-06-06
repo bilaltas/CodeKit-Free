@@ -48,7 +48,20 @@
 				"icon": "dashicons-laptop",
 				"placeholder": "",
 				"description": "Retina Displays"
+			},
+			{
+				"id": "css-default",
+				"name": "Default",
+				"icon": null,
+				"placeholder": "",
+				"description": "Default"
 			}
+		],
+		"includables": [
+			"scss",
+			"less",
+			"styl",
+			"css"
 		]
 	},
 	{
@@ -57,6 +70,7 @@
 		"mode": "text/x-scss",
 		"group": "style",
 		"output": true,
+		"pro": false,
 		"editors": [
 			{
 				"id": "scss-desktop",
@@ -99,59 +113,20 @@
 				"icon": "dashicons-laptop",
 				"placeholder": "",
 				"description": "Retina Displays"
+			},
+			{
+				"id": "scss-default",
+				"name": "Default",
+				"icon": null,
+				"placeholder": "",
+				"description": "Default SCSS"
 			}
-		]
-	},
-	{
-		"id": "sass",
-		"name": "SASS",
-		"mode": "text/x-sass",
-		"group": "style",
-		"output": true,
-		"pro": true,
-		"editors": [
-			{
-				"id": "sass-desktop",
-				"name": "Desktop",
-				"icon": "dashicons-desktop",
-				"placeholder": "",
-				"description": "Desktop"
-			},
-			{
-				"id": "sass-tablet-l",
-				"name": "Tablet",
-				"icon": "dashicons-tablet l",
-				"placeholder": "",
-				"description": "Tablet Landscape"
-			},
-			{
-				"id": "sass-tablet-p",
-				"name": "Tablet",
-				"icon": "dashicons-tablet",
-				"placeholder": "",
-				"description": "Tablet Portrait"
-			},
-			{
-				"id": "sass-mobile-l",
-				"name": "Mobile",
-				"icon": "dashicons-smartphone l",
-				"placeholder": "",
-				"description": "Mobile Landscape"
-			},
-			{
-				"id": "sass-mobile-p",
-				"name": "Mobile",
-				"icon": "dashicons-smartphone",
-				"placeholder": "",
-				"description": "Mobile Portrait"
-			},
-			{
-				"id": "sass-retina",
-				"name": "Retina",
-				"icon": "dashicons-laptop",
-				"placeholder": "",
-				"description": "Retina Displays"
-			}
+		],
+		"includables": [
+			"scss",
+			"less",
+			"styl",
+			"css"
 		]
 	},
 	{
@@ -203,7 +178,85 @@
 				"icon": "dashicons-laptop",
 				"placeholder": "",
 				"description": "Retina Displays"
+			},
+			{
+				"id": "less-default",
+				"name": "Default",
+				"icon": null,
+				"placeholder": "",
+				"description": "Default"
 			}
+		],
+		"includables": [
+			"scss",
+			"less",
+			"styl",
+			"css"
+		]
+	},
+	{
+		"id": "styl",
+		"name": "Stylus",
+		"mode": "text/x-styl",
+		"group": "style",
+		"output": true,
+		"pro": true,
+		"editors": [
+			{
+				"id": "styl-desktop",
+				"name": "Desktop",
+				"icon": "dashicons-desktop",
+				"placeholder": "",
+				"description": "Desktop"
+			},
+			{
+				"id": "styl-tablet-l",
+				"name": "Tablet",
+				"icon": "dashicons-tablet l",
+				"placeholder": "",
+				"description": "Tablet Landscape"
+			},
+			{
+				"id": "styl-tablet-p",
+				"name": "Tablet",
+				"icon": "dashicons-tablet",
+				"placeholder": "",
+				"description": "Tablet Portrait"
+			},
+			{
+				"id": "styl-mobile-l",
+				"name": "Mobile",
+				"icon": "dashicons-smartphone l",
+				"placeholder": "",
+				"description": "Mobile Landscape"
+			},
+			{
+				"id": "styl-mobile-p",
+				"name": "Mobile",
+				"icon": "dashicons-smartphone",
+				"placeholder": "",
+				"description": "Mobile Portrait"
+			},
+			{
+				"id": "styl-retina",
+				"name": "Retina",
+				"icon": "dashicons-laptop",
+				"placeholder": "",
+				"description": "Retina Displays"
+			},
+			{
+				"id": "styl-default",
+				"name": "Default",
+				"icon": null,
+				"placeholder": "",
+				"description": "Default"
+			}
+		],
+		"includables": [
+			"scss",
+			"less",
+			"styl",
+			"css"
 		]
 	},
 	{
@@ -232,34 +285,41 @@
 				"icon": null,
 				"description": null
 			}
+		],
+		"includables": [
+			"js"
 		]
 	},
 	{
-		"id": "ts",
-		"name": "TypeScript",
-		"mode": "text/typescript",
+		"id": "coffee",
+		"name": "CoffeeScript",
+		"mode": "text/x-coffeescript",
 		"group": "script",
 		"output": "individual",
 		"pro": true,
 		"editors": [
 			{
-				"id": "ts-head",
+				"id": "coffee-head",
 				"name": "Head",
 				"icon": null,
 				"description": null
 			},
 			{
-				"id": "ts-body-opening",
+				"id": "coffee-body-opening",
 				"name": "Opening Body",
 				"icon": null,
 				"description": "Only works if location is Frontend"
 			},
 			{
-				"id": "ts-body-closing",
+				"id": "coffee-body-closing",
 				"name": "Closing Body",
 				"icon": null,
 				"description": null
 			}
+		],
+		"includables": [
+			"coffee",
+			"js"
 		]
 	},
 	{
@@ -288,6 +348,10 @@
 				"icon": null,
 				"description": null
 			}
+		],
+		"includables": [
+			"html",
+			"pug"
 		]
 	},
 	{
@@ -316,11 +380,15 @@
 				"icon": null,
 				"description": null
 			}
+		],
+		"includables": [
+			"html",
+			"pug"
 		]
 	},
 	{
 		"id": "php",
-		"name": "Custom Function",
+		"name": "Custom Functions",
 		"mode": "application/x-httpd-php",
 		"group": "php",
 		"output": false,
@@ -332,22 +400,9 @@
 				"icon": null,
 				"description": null
 			}
-		]
-	},
-	{
-		"id": "hook",
-		"name": "Hook",
-		"mode": "application/x-httpd-php",
-		"group": "php",
-		"output": false,
-		"pro": true,
-		"editors": [
-			{
-				"id": "php-hook",
-				"name": "Default",
-				"icon": null,
-				"description": null
-			}
+		],
+		"includables": [
+			"php"
 		]
 	}
 ]

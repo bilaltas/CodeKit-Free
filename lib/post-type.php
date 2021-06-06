@@ -35,7 +35,7 @@ function codes_register_post_type() {
 		'show_in_rest'        => true,
 		'has_archive'         => false,
 		'show_in_menu'        => true,
-		'show_in_nav_menus'   => true,
+		'show_in_nav_menus'   => false,
 		'delete_with_user'    => false,
 		'exclude_from_search' => true,
 		'capability_type'     => 'page',
@@ -93,3 +93,23 @@ function codes_delete_codes( $post_ID ) {
 
 }
 add_action( 'before_delete_post', 'codes_delete_codes' );
+
+
+
+
+/**
+ * Show premium status on admin body classes.
+ *
+ * @param int $classes Current classes list.
+ */
+function codes_body_classes( $classes ) {
+	global $post_type;
+
+	if ( 'custom-code' !== $post_type ) {
+		return;
+	}
+
+	$classes .= codes_fs()->is_premium() ? 'codes-pro' : 'codes-free';
+	return $classes;
+}
+add_filter( 'admin_body_class', 'codes_body_classes' );

@@ -1,6 +1,6 @@
 {
 	"name": "pressx/custom-codes",
-    "description": "Composer for Custom Codes",
+    "description": "Your custom SASS, CSS, JS, PHP and HTML customizations in same directory.",
     "require": {
     },
     "require-dev": {

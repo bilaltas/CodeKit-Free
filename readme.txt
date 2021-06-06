@@ -1,10 +1,10 @@
-=== Custom Codes ===
+=== CodeKit - Custom Codes Editor  ===
 Contributors: bilaltas, atakanoz
-Tags: custom, codes, custom codes, custom css, development, developer, scss, sass, css, js, html, php, responsivity, mobile, emmet, autoprefixer, ga code, gtm code, tag manger code, analytics code, pressx
+Tags: custom, codes, custom codes, custom css, development, developer, scss, sass, css, js, html, php, responsivity, mobile, emmet, autoprefixer, ga code, gtm code, tag manger code, analytics code, codekit
 Requires at least: 4.9.8
-Donate link: https://pressx.co
+Donate link: https://www.codekitwp.com/
 Requires PHP: 5.6
-Tested up to: 5.6
+Tested up to: 5.7.2
 Stable tag: trunk
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -14,11 +14,11 @@ Your custom SASS, CSS, JS, PHP and HTML customizations in same directory.
 == Description ==
 Add custom **SASS, CSS, JS, PHP and HTML** codes to your WordPress websites with the most advanced, yet simple custom code editor ever. Changing the look of your website and adding new functions have never been easier.
 
-By using Custom Codes plugin, you can **create code blocks for different languages** and maintain them in separate blocks just like you do with your posts. With the power of our integrated IDE, you can add codes with syntax highlighting, emmet feature and autocomplete. The features also provide continuous development and urgent deployment of **codes without effort.** It is actually just like your favorite code editor.
+By using CodeKit plugin, you can **create code blocks for different languages** and maintain them in separate blocks just like you do with your posts. With the power of our integrated IDE, you can add codes with syntax highlighting, emmet feature and autocomplete. The features also provide continuous development and urgent deployment of **codes without effort.** It is actually just like your favorite code editor.
 
 
 == Endless Possibilities ==
-Custom Codes is one of the most versatile and functional custom codes plugin in the market. It supports various languages as well as providing options to deploy your code in different WordPress hooks by default. The core IDE functions also provide a smooth transition from your code editor and allow you to create and maintain different codes with ease.
+CodeKit is one of the most versatile and functional custom codes plugin in the market. It supports various languages as well as providing options to deploy your code in different WordPress hooks by default. The core IDE functions also provide a smooth transition from your code editor and allow you to create and maintain different codes with ease.
 
 If you want to:
 
@@ -32,10 +32,10 @@ If you want to:
 * Add **new PHP functions** in your functions.php
 * Implement instant code changes in case of an urgency
 
-Then, Custom Codes is just what you need. Install in a few minutes, develop and deploy in a few seconds.
+Then, CodeKit is just what you need. Install in a few minutes, develop and deploy in a few seconds.
 
 == Robust Code Editor ==
-Custom Codes is intended for novice as well as professional users, and it allows you to add simple code blocks alongside helping you with development or deployment in case of an urgency.
+CodeKit is intended for novice as well as professional users, and it allows you to add simple code blocks alongside helping you with development or deployment in case of an urgency.
 
 == LANGUAGE BASED FEATURES: ==
 
@@ -80,6 +80,22 @@ Custom Codes is intended for novice as well as professional users, and it allows
 * Full-Screen Editor mode
 * Shortcuts (such as Find Code and Comment Line)
 
+=== Pro Version ===
+Do you want to expand your coding capabilities through a plugin on WordPress? Pro version of Custom Code is *now* available which perfectly satisfies any level of users and developers.
+
+== Pro Features
+* LESS Editor
+* Stylus Editor
+* CoffeeScript Editor
+* PUG Editor
+* Editor Code Folding
+* Editor Code Hints
+* Custom Code Groups/Categories
+* Custom Code Includes
+* Advanced Code Release Locations
+
+Simply install CodeKit and click the *Upgrade >* button where you can learn more about the latest Pro features and grab your license!
+
 
 == Installation ==
 1. Login to your website and go to the Plugins section of your admin panel.
@@ -106,16 +122,86 @@ No, it will not unless you uncheck the "Store custom CSS/JS after uninstall" opt
 = A red cross appears when I try to save. What is the problem? =
 Just mouseover the cross sign and see the error message.
 
+= I'm unable to access to the site because of a PHP custom code error. How can I fix it? =
+CodeKit has a "Safe Mode" feature which you can enter the site without CodeKit customizations. You can simply add "codes_safemode" query string to any URL to disable them temporarily. So, you can fix the error online.
+
 = I am experiencing a different issue that is not covered here. How can I reach you? =
 We highly recommend you to create a ticket on the support forum where we are trying to solve problems as quickly as possible.
 For further inquiries and feedbacks, feel free to contact us at info@pressx.co.
 
+= How can I see all Pro features and grab my license?
+Simply install CodeKit and click the *Upgrade >* button where you can learn more about the latest Pro features and grab your license!
+
 == Screenshots ==
-1. General look
-2. Admin side editor look
-3. Settings page
+1. Codes list
+2. Sample SCSS editor
+3. Sample HTML editor
+4. Sample PHP editor
+5. Editor settings
+6. Style settings
+7. Plugin settings
 
 == Changelog ==
+= 2.2.7 (2021-05-23 18:04 EET) =
+* UI fixes
+* Tested on WordPress 5.7.2
+* Language updates
+* Introduction website released (www.codekitwp.com)
+
+= 2.2.6 (2021-04-22 03:22 EET) =
+* Bug fixes
+
+= 2.2.5 (2021-04-22 02:58 EET) =
+* WP Filesystem API configuration error catching
+
+= 2.2.4 (2021-04-19 23:16 EET) =
+* Fix: Disable the not working PRO languages on language switch for free users
+* Tested on WordPress 5.7.1
+* Default output order is now "Desktop First"
+* Some translation updates
+
+= 2.2.3 (2021-02-25 15:16 EET) =
+* Show current media query around the style editors
+* Minor fixes
+
+= 2.2.2 (2021-02-14 16:24 EET) =
+* SCSS sourcemaps are now available
+* Minor fixes
+
+= 2.2.1 (2021-02-07 15:02 EET) =
+* Bug fix related to the includes metabox
+
+= 2.2.0 (2021-02-06 20:00 EET) =
+* Breakpoints usage switch
+* Stability improvements
+* CodeKit PRO is now available!
+
+= 2.1.91 (2021-01-30 11:35 EET) =
+* Hide Codes in nav menus
+* Custom Code title reflected to the page title
+* Use the WP default update-post nonce
+* Bug fixes and stability updates
+
+= 2.1.9 (2021-01-19 17:27 EET) =
+* Various bug fixes, security updates, and optimizations
+* Better error handling
+* PHP Safe Mode with "?codes_safemode" query string
+* "New Code" link on admin bar
+* New shortcuts
+
+= 2.1.8 (2020-12-19 00:06 EET) =
+* Bug fixes
+* Version update on SCSS compiler
+* Expanded SCSS outputs
+
+= 2.1.7 (2020-12-14 21:25 EET) =
+* Bug fixes
+* Nowhere location icon on admin columns
+
+= 2.1.6 (2020-12-13 23:23 EET) =
+* Bug fixes
+* Nowhere location for includeable codes
+
 = 2.1.5 (2020-12-09 16:26 EET) =
 * Tested on WordPress 5.6
 * Code title text on full screen

@@ -26,7 +26,7 @@ function codes_upgrade() {
 	update_option( '_codes_version', $new_version );
 
 }
-add_action( 'plugins_loaded', 'codes_upgrade' );
+add_action( 'setup_theme', 'codes_upgrade' );
 
 
 

@@ -21,7 +21,7 @@ function codes_wp_adminbar( $wp_admin_bar ) {
 
 	if (
 		! current_user_can( 'administrator' ) // Only show for admins.
-		|| ! get_option( '_codes_admin_bar' ) // If hidden from the settings.
+		|| ! boolval( get_option( '_codes_admin_bar' ) ) // If hidden from the settings.
 	) {
 		return;
 	}
@@ -60,6 +60,15 @@ function codes_wp_adminbar( $wp_admin_bar ) {
 			'id'     => 'all_codes',
 			'title'  => __( 'All Codes', 'custom-codes' ),
 			'href'   => admin_url( 'edit.php?post_type=custom-code' ),
+			'parent' => 'codes',
+		)
+	);
+
+	$wp_admin_bar->add_node(
+		array(
+			'id'     => 'new_code',
+			'title'  => __( '+ New Code', 'custom-codes' ),
+			'href'   => admin_url( 'post-new.php?post_type=custom-code' ),
 			'parent' => 'codes',
 		)
 	);

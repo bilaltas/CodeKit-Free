@@ -29,15 +29,15 @@ function codes_compile_scss( $compileable_content ) {
 
 		// Compiler.
 		$scss = new ScssPhp\ScssPhp\Compiler();
-		$scss->setImportPaths(
-			function ( $path ) {
+		$scss->setImportPaths( CODES_FOLDER_DIR );
+		$scss->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::EXPANDED );
 
-				if ( ! file_exists( CODES_FOLDER_DIR . $path ) ) {
-					return null;
-				}
-
-				return CODES_FOLDER_DIR . $path;
-			}
+		$scss->setSourceMap( ScssPhp\ScssPhp\Compiler::SOURCE_MAP_INLINE );
+		$scss->setSourceMapOptions(
+			array(
+				'sourceMapBasepath' => ABSPATH, // Partial path (server root) removed (normalized) to create a relative url.
+				'sourceRoot'        => '/',     // Prepended to 'source' field entries for relocating source files.
+			)
 		);
 
 		$compiled    = $scss->compile( $compileable_content );

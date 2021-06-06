@@ -1,3 +1,13 @@
+:root {
+  --tw-shadow: 0 0 #0000;
+  --tw-ring-inset: var(--tw-empty,);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+}
+
 #custom-codes-settings {
   width: auto;
   margin: 0;
@@ -31,6 +41,31 @@
 
 #custom-codes-settings .tab-content {
   display: none;
+  border-color: #9da4b3;
+  --tw-ring-offset-color: #fff;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  width: 100%;
+  -moz-border-radius: 0.25rem;
+       border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding: 0 1.75rem 1rem 1.75rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 -moz-calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  -moz-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+       box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: rgba(17, 24, 39, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.05;
+  -moz-transition-property: all;
+  transition-property: all;
+  -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition-duration: 150ms;
+       transition-duration: 150ms;
+  background-color: #FFF;
+  margin: 20px 0;
 }
 
 #custom-codes-settings .tab-content.active {
@@ -40,7 +75,7 @@
 #custom-codes-settings .codes-header {
   background-color: #0a0d15;
   color: #fff;
-  padding: 22px 30px 0;
+  padding: 18px 30px;
   margin: -20px -20px 0 -20px;
 }
 
@@ -65,16 +100,16 @@
   font-weight: 600;
 }
 
-#custom-codes-settings .codes-header > .top .branding .logo {
-  margin-right: 12px;
-}
-
 #custom-codes-settings .codes-header > .top .branding .version {
-  font-size: 12px;
   text-decoration: none;
-  color: #fff;
-  margin-top: 7px;
+  color: #FFF;
+  margin-top: 0px;
+  background: #c33030;
   margin-left: 10px;
+  -moz-border-radius: 100px;
+       border-radius: 100px;
+  padding: 2px 8px;
+  font-size: 10px;
 }
 
 #custom-codes-settings .codes-header > .top .navigation a {
@@ -114,32 +149,69 @@
   margin-right: 5px;
 }
 
-#custom-codes-settings .codes-header > .settings-tabs {
-  margin-top: 25px;
+#custom-codes-settings .settings-tabs {
+  margin: 0 -20px 0 -30px;
+  background: #FFF;
+  padding: 0 30px;
+  font-family: inherit;
+  border-width: 0;
+  border-style: solid;
+  border-color: #9da4b3;
+  --tw-ring-inset: var(--tw-empty,);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  -moz-box-flex: 0;
+       flex: none;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  font-size: .835rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 -moz-calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  -moz-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+       box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: rgba(177, 184, 199, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.05;
+  -moz-transition-property: all;
+  transition-property: all;
+  -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition-duration: 150ms;
+       transition-duration: 150ms;
+  height: 50px;
+  display: -moz-box;
+  display: flex;
+  -moz-box-align: center;
+       align-items: center;
 }
 
-#custom-codes-settings .codes-header > .settings-tabs > a {
+#custom-codes-settings .settings-tabs > a {
   font-size: 14px;
   line-height: 24px;
   font-weight: 600;
+  color: #616877;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.45);
-  padding: 6px 12px 12px 12px;
-  -moz-transition: 0.3s all;
-  transition: 0.3s all;
-  display: inline-block;
-  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  padding: 15px 12px;
+  display: -moz-inline-box;
+  display: inline-flex;
+  font-weight: 500;
+}
+
+#custom-codes-settings .settings-tabs > a:hover, #custom-codes-settings .settings-tabs > a:focus, #custom-codes-settings .settings-tabs > a.active {
+  color: #010101;
+  outline: none;
   -moz-box-shadow: none;
        box-shadow: none;
-  outline: none;
 }
 
-#custom-codes-settings .codes-header > .settings-tabs > a:hover, #custom-codes-settings .codes-header > .settings-tabs > a:focus, #custom-codes-settings .codes-header > .settings-tabs > a.active {
-  color: white;
-}
-
-#custom-codes-settings .codes-header > .settings-tabs > a.active {
-  border-color: white;
+#custom-codes-settings .settings-tabs > a.active {
+  color: #c33030;
 }
 
 /*# sourceMappingURL=settings.css.map */
