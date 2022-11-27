@@ -79,7 +79,7 @@ function codes_settings_page() {
 			<p><strong><?php esc_html_e( 'Settings saved.', 'custom-codes' ); ?></strong> <?php esc_html_e( 'Note: If you just update the media queries, you need to update the style codes to apply new ones.', 'custom-codes' ); ?></p><!-- Do this automatically ??? -->
 			<button type="button" class="notice-dismiss"><span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', 'custom-codes' ); ?></span></button>
 		</div>
-  <?php endif; ?>
+	<?php endif; ?>
 
 
 		<form id="codes-settings-form" method="post" action="options.php" autocomplete="off">

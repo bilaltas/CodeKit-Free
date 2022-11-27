@@ -351,6 +351,10 @@ $bottombar-height: 36px;
 				opacity: 0.2;
 			}
 
+			&-lines > div {
+				padding-bottom: calc(100vh - 320px);
+			}
+
 			&-sizer {
 				margin-top: 10px;
 			}

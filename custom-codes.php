@@ -16,18 +16,19 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: custom-codes
  * Domain Path: /languages
- * Version: 2.2.7
+ * Version: 2.3.2
  *
  */
 defined( 'ABSPATH' ) || die( 'No script kiddies please!' );
-define( 'CODES_VERSION', '2.2.7' );
+define( 'CODES_VERSION', '2.3.2' );
 define( 'CODES_DEBUG', false );
 // Paths.
 define( 'CODES_FILE', __FILE__ );
 define( 'CODES_PLUGIN_DIR', dirname( CODES_FILE ) );
 define( 'CODES_PLUGIN_URL', plugin_dir_url( CODES_FILE ) );
-define( 'CODES_FOLDER_DIR', WP_CONTENT_DIR . '/custom_codes/' );
-define( 'CODES_FOLDER_URL', str_replace( array( 'http:', 'https:' ), '', WP_CONTENT_URL ) . '/custom_codes/' );
+define( 'CODES_FOLDER_PATH', '/custom_codes/' . (( is_multisite() ? 'site-' . get_current_blog_id() . '/' : '' )) );
+define( 'CODES_FOLDER_DIR', WP_CONTENT_DIR . CODES_FOLDER_PATH );
+define( 'CODES_FOLDER_URL', str_replace( array( 'http:', 'https:' ), '', WP_CONTENT_URL ) . CODES_FOLDER_PATH );
 // Freemius SDK.
 
 if ( function_exists( 'codes_fs' ) ) {
@@ -47,21 +48,23 @@ if ( function_exists( 'codes_fs' ) ) {
                 // Include Freemius SDK.
                 require_once dirname( __FILE__ ) . '/freemius/start.php';
                 $codes_fs = fs_dynamic_init( array(
-                    'id'             => '7183',
-                    'slug'           => 'custom-codes',
-                    'type'           => 'plugin',
-                    'public_key'     => 'pk_4c4440eed53a6dd7637b96b2b82c0',
-                    'is_premium'     => false,
-                    'premium_suffix' => 'PRO',
-                    'has_addons'     => false,
-                    'has_paid_plans' => true,
-                    'menu'           => array(
+                    'id'              => '7183',
+                    'slug'            => 'custom-codes',
+                    'premium_slug'    => 'custom-codes-pro',
+                    'type'            => 'plugin',
+                    'public_key'      => 'pk_4c4440eed53a6dd7637b96b2b82c0',
+                    'is_premium'      => false,
+                    'premium_suffix'  => 'PRO',
+                    'has_addons'      => false,
+                    'has_paid_plans'  => true,
+                    'has_affiliation' => 'selected',
+                    'menu'            => array(
                     'slug'       => 'edit.php?post_type=custom-code',
                     'first-path' => 'edit.php?post_type=custom-code',
                     'contact'    => false,
                     'support'    => false,
                 ),
-                    'is_live'        => true,
+                    'is_live'         => true,
                 ) );
             }
             
@@ -129,6 +132,7 @@ if ( function_exists( 'codes_fs' ) ) {
         require_once CODES_PLUGIN_DIR . '/lib/views/locations-area.php';
         require_once CODES_PLUGIN_DIR . '/lib/views/settings-area.php';
         require_once CODES_PLUGIN_DIR . '/lib/views/includes-area.php';
+        require_once CODES_PLUGIN_DIR . '/lib/views/description-area.php';
     }
     
     // Both frontend and backend.

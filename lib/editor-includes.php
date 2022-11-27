@@ -204,6 +204,13 @@ function codes_load_sources()
         CODES_VERSION,
         true
     );
+    wp_register_script(
+        'codes_codemirror-match-highlighter',
+        CODES_PLUGIN_URL . 'assets/script/codemirror/addon/search/match-highlighter.js',
+        array( 'codes_codemirror' ),
+        CODES_VERSION,
+        true
+    );
     // Emmet.
     wp_register_style(
         'codes_codemirror-emmet',

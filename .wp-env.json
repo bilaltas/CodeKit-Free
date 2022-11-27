@@ -1,9 +1,13 @@
 {
-    "core": null,
+    "core": "WordPress/WordPress#master",
     "plugins": [ "." ],
 	"config": {
+		"WP_CACHE" : false,
+		"WP_DEBUG" : true,
 		"WP_DEBUG_LOG" : true,
 		"WP_DEBUG_DISPLAY" : true,
-		"SAVEQUERIES" : true
+		"SAVEQUERIES" : true,
+		"WP_DISABLE_FATAL_ERROR_HANDLER" : true,
+		"SCRIPT_DEBUG" : true
     }
 }

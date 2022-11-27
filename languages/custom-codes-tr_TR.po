@@ -4,17 +4,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PressX - Custom Codes 2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/custom-codes\n"
-"POT-Creation-Date: 2021-05-23T15:05:04+00:00\n"
-"PO-Revision-Date: 2021-05-23 18:10+0300\n"
+"POT-Creation-Date: 2022-11-08T19:02:47+00:00\n"
+"PO-Revision-Date: 2022-11-08 22:04+0300\n"
 "Last-Translator: Bilal Tas <bilal@pressx.co>\n"
 "Language-Team: \n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"X-Domain: custom-codes\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Domain: custom-codes\n"
 
 #. Plugin Name of the plugin
 msgid "CodeKit - Custom Codes Editor"
@@ -37,7 +37,7 @@ msgid "https://www.codekitwp.com"
 msgstr "https://www.codekitwp.com"
 
 #. translators: 1: WP Filesystem Method
-#: custom-codes.php:109
+#: custom-codes.php:112
 msgid ""
 "Your WordPress filesystem method \"%1$s\" is not configured correctly. "
 "Please configure it, or use another method like \"direct\" to be able to "
@@ -53,8 +53,8 @@ msgid "Settings"
 msgstr "Ayarlar"
 
 #: lib/admin-columns.php:23
-msgid "Language"
-msgstr "Dil"
+msgid "Language / Purpose"
+msgstr "Dil / Açıklama"
 
 #: lib/admin-columns.php:24 lib/views/locations-area.php:21
 msgid "Location"
@@ -72,81 +72,90 @@ msgstr "Oluşturan"
 msgid "Not selected"
 msgstr "Seçilmemiş"
 
-#: lib/admin-columns.php:67
+#: lib/admin-columns.php:64
+msgid "No description"
+msgstr "Açıkama yok"
+
+#: lib/admin-columns.php:77
 msgid "Other"
 msgstr "Diğer"
 
-#: lib/admin-columns.php:73 lib/views/locations-area.php:52
+#: lib/admin-columns.php:83 lib/views/locations-area.php:52
 msgid "Frontend"
 msgstr "Önyüz"
 
-#: lib/admin-columns.php:79 lib/views/locations-area.php:184
+#: lib/admin-columns.php:89 lib/views/locations-area.php:184
 msgid "Backend"
 msgstr "Arkayüz"
 
-#: lib/admin-columns.php:82
+#: lib/admin-columns.php:92
 msgid "All roles"
 msgstr "Tüm roller"
 
-#: lib/admin-columns.php:100
+#: lib/admin-columns.php:110
 msgid "Login"
 msgstr "Giriş"
 
-#: lib/admin-columns.php:105 lib/views/locations-area.php:197
+#: lib/admin-columns.php:115 lib/views/locations-area.php:197
 msgid "Everywhere"
 msgstr "Heryer"
 
-#: lib/admin-columns.php:110 lib/views/locations-area.php:199
+#: lib/admin-columns.php:120 lib/views/locations-area.php:199
 msgid "Nowhere"
 msgstr "Hiçbir yer"
 
-#: lib/admin-columns.php:118
+#: lib/admin-columns.php:128
 msgid "Page"
 msgstr "Sayfa"
 
-#: lib/admin-columns.php:121
+#: lib/admin-columns.php:131
 msgid "All pages"
 msgstr "Tüm sayfalar"
 
-#: lib/admin-columns.php:140
+#: lib/admin-columns.php:150
 msgid "Post"
 msgstr "Gönderi"
 
-#: lib/admin-columns.php:143
+#: lib/admin-columns.php:153
 msgid "All posts"
 msgstr "Tüm gönderiler"
 
-#: lib/admin-columns.php:162
+#: lib/admin-columns.php:172
 msgid "Post Type"
 msgstr "Gönderi Tipi"
 
-#: lib/admin-columns.php:165
+#: lib/admin-columns.php:175
 msgid "All post types"
 msgstr "Tüm gönderi tipleri"
 
-#: lib/admin-columns.php:185 lib/views/locations-area.php:131
+#: lib/admin-columns.php:195 lib/views/locations-area.php:131
 msgid "Categories / Terms"
 msgstr "Kategoriler"
 
-#: lib/admin-columns.php:188
+#: lib/admin-columns.php:198
 msgid "All terms"
 msgstr "Tüm kategoriler"
 
-#: lib/admin-columns.php:209 lib/views/locations-area.php:147
+#: lib/admin-columns.php:219 lib/views/locations-area.php:147
 msgid "Archives / Taxonomies"
 msgstr "Arşivler"
 
-#: lib/admin-columns.php:212
+#: lib/admin-columns.php:222
 msgid "All taxonomies"
 msgstr "Tüm arşivler"
 
-#: lib/admin-columns.php:231
+#: lib/admin-columns.php:241
 msgid "Template"
 msgstr "Şablon"
 
-#: lib/admin-columns.php:234
+#: lib/admin-columns.php:244
 msgid "All templates"
 msgstr "Tüm şablonlar"
+
+#. translators: 1: Code Title
+#: lib/admin-columns.php:394
+msgid "Copy of %1$s"
+msgstr "%1$s Kopyası"
 
 #: lib/editor-saver.php:236
 msgid "DESKTOP STYLES"
@@ -418,36 +427,36 @@ msgstr "Yeni Grup İsmi"
 msgid "Code Groups"
 msgstr "Kod Grupları"
 
-#: lib/upgrade.php:59 lib/upgrade.php:118
+#: lib/upgrade.php:115 lib/upgrade.php:174
 msgid "Public Mixins"
 msgstr "Genel Mixinler"
 
-#: lib/upgrade.php:59 lib/upgrade.php:118
+#: lib/upgrade.php:115 lib/upgrade.php:174
 msgid "Admin Mixins"
 msgstr "Yönetici Mixinleri"
 
-#: lib/upgrade.php:93 lib/upgrade.php:234
+#: lib/upgrade.php:149 lib/upgrade.php:290
 msgid "Import Mixins"
 msgstr "Mixinleri Aktar"
 
-#: lib/upgrade.php:172 lib/upgrade.php:271
+#: lib/upgrade.php:228 lib/upgrade.php:327
 msgid "Admin"
 msgstr "Yönetici"
 
-#: lib/upgrade.php:172 lib/upgrade.php:271
+#: lib/upgrade.php:228 lib/upgrade.php:327
 msgid "Public"
 msgstr "Genel"
 
 #. translators: 1: Admin or Public 2: Language selected
-#: lib/upgrade.php:191 lib/upgrade.php:290
+#: lib/upgrade.php:247 lib/upgrade.php:346
 msgid "%1$s Side %2$s"
 msgstr "%1$s %2$s"
 
-#: lib/upgrade.php:347
+#: lib/upgrade.php:403
 msgid "Custom PHP Functions"
 msgstr "PHP Fonksiyonları"
 
-#: lib/upgrade.php:391 lib/upgrade.php:405
+#: lib/upgrade.php:447 lib/upgrade.php:461
 msgid "Admin Notes"
 msgstr "Admin Notları"
 
@@ -462,6 +471,14 @@ msgstr "Tüm Kodlar"
 #: lib/views/admin-bar.php:70
 msgid "+ New Code"
 msgstr "+ Yeni Kod"
+
+#: lib/views/description-area.php:19
+msgid "Description"
+msgstr "Açıklama"
+
+#: lib/views/description-area.php:37 lib/views/description-area.php:38
+msgid "The code purpose"
+msgstr "Kodun amacı"
 
 #: lib/views/editor-area.php:39
 msgid "SELECT EDITOR TYPE"
@@ -1042,6 +1059,9 @@ msgstr "ŞİMDİ YÜKSELTİN"
 #: lib/views/settings-area.php:358
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
+
+#~ msgid "Language"
+#~ msgstr "Dil"
 
 #~ msgid "https://pressx.co"
 #~ msgstr "https://pressx.co"

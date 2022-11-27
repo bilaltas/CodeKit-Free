@@ -7,7 +7,7 @@
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-cli": "latest",
-    "gulp-sass": "latest",
+    "gulp-sass": "^4",
     "gulp-sass-lint": "latest",
     "gulp-sourcemaps": "latest"
   },
@@ -16,7 +16,7 @@
   "license": "ISC",
   "scripts": {
     "build": "gulp build",
-    "start": "gulp"
+    "dev": "gulp"
   },
   "browserslist": [
     "ff > 2",

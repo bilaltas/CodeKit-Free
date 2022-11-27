@@ -398,6 +398,7 @@
 				"id": "php-default",
 				"name": "Default",
 				"icon": null,
+				"placeholder": "Start with <?php or write your PHP codes into HTML here...",
 				"description": null
 			}
 		],

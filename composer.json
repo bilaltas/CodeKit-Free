@@ -4,7 +4,27 @@
     "require": {
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5",
         "wp-coding-standards/wpcs": "^2.3"
-    }
+    },
+	"scripts": {
+	  "post-install-cmd": [
+		"phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+		"phpcs --config-set default_standard WordPress"
+	  ],
+	  "test": [
+		"phpcs --extensions=php --ignore=./vendor,./freemius,./node_modules ./lib"
+	  ],
+	  "fix": [
+		"phpcbf --extensions=php --ignore=./vendor,./freemius,./node_modules ./lib"
+	  ],
+	  "lang-update": [
+		"wp-env run cli wp i18n make-pot wp-content/plugins/custom-codes/ wp-content/plugins/custom-codes/languages/custom-codes.pot --exclude='wp-content/plugins/custom-codes/assets, wp-content/plugins/custom-codes/node_modules, wp-content/plugins/custom-codes/vendor'"
+	  ],
+	  "prepare": [
+		"cp -rf ./ ~/Desktop/custom-codes",
+		"git -C ~/Desktop/custom-codes clean -dfx",
+		"rm -rf ~/Desktop/custom-codes/.git",
+		"cd ~/Desktop/custom-codes/ && zip -r -X ~/Desktop/custom-codes.zip ./"
+	  ]
+	}
 }

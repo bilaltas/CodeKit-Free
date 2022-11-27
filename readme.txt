@@ -4,7 +4,7 @@ Tags: custom, codes, custom codes, custom css, development, developer, scss, sas
 Requires at least: 4.9.8
 Donate link: https://www.codekitwp.com/
 Requires PHP: 5.6
-Tested up to: 5.7.2
+Tested up to: 6.1
 Stable tag: trunk
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -142,6 +142,33 @@ Simply install CodeKit and click the *Upgrade >* button where you can learn more
 7. Plugin settings
 
 == Changelog ==
+= 2.3.2 (2022-11-08 21:58 EET) =
+* Codes directory has been updated on multisite to prevent conflicts
+* Old codes in common folder will be moved automatically after the update
+
+= 2.3.1 (2022-11-05 03:44 EET) =
+* Freemius SDK updated to 2.4.5
+* Tested on WordPress 6.1
+* Description field added
+* Codes are now duplicateable
+* Bug fix related to WooCommerce Addons page issue
+* Bug fix related to saving draft codes
+
+= 2.3 (2022-03-07 00:23 EET) =
+* Freemius SDK updated to 2.4.3
+* Tested on WordPress 6.0
+
+= 2.2.9 (2021-09-25 23:24 EET) =
+* Spacing added to end of the editor
+* Yarn package manager is now being used for dev
+* Tested on WordPress 5.9
+
+= 2.2.8 (2021-06-28 01:20 EET) =
+* VueJS and CodeMirror updates
+* Bug fixes related to double curly braces in editor
+* PHP editor description placeholder updated
+* Tested on WordPress 5.8
+
 = 2.2.7 (2021-05-23 18:04 EET) =
 * UI fixes
 * Tested on WordPress 5.7.2

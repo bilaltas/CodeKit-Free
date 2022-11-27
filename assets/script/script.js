@@ -19,6 +19,7 @@ var customCodes;
 			isPremiumOnly: customCodesData.isPremiumOnly,
 
 			postID: customCodesData.postID,
+			postStatus: document.getElementById('hidden_post_status').value,
 			postName: customCodesData.postName,
 			postLanguage: customCodesData.postLanguage,
 			currentLangID: customCodesData.postLanguage,
@@ -371,6 +372,29 @@ var customCodes;
 				});
 
 			},
+			disableAttrEditors() {
+
+				Array.prototype.forEach.call(
+					this.currentLang.editors,
+					(editor) => {
+						const editorID = "editor-" + editor.id;
+						const editorElement = document.getElementById(editorID);
+
+						if ( editorElement ) {
+
+							if ( this.activeEditor.id == editor.id ) {
+								editorElement.removeAttribute("disabled");
+								//console.log('ENABLED: ', editorID);
+							} else {
+								editorElement.setAttribute("disabled", true);
+								//console.log('DISABLED: ', editorID);
+							}
+
+						}
+					}
+				);
+
+			},
 			enableEditors() {
 
 				if (!Object.values(this.editors).length) return;
@@ -488,6 +512,8 @@ var customCodes;
 
 			console.log('Submitted');
 
+			// Disable inactive editors
+			customCodes.disableAttrEditors();
 
 			// Show loading indicator
 			customCodes.loading = true;

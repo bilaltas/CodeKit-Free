@@ -356,6 +356,11 @@
   opacity: 0.2;
 }
 
+#codes_editor_area .editors .CodeMirror-lines > div {
+  padding-bottom: -moz-calc(100vh - 320px);
+  padding-bottom: calc(100vh - 320px);
+}
+
 #codes_editor_area .editors .CodeMirror-sizer {
   margin-top: 10px;
 }

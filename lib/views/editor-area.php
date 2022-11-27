@@ -244,17 +244,15 @@ function codes_editor_area()
             echo  esc_html( codes_chmod_check( $file_directory ) ) ;
             ?>)</div>
 
-				<textarea :id="'editor-' + '<?php 
+				<textarea id="editor-<?php 
             echo  esc_js( $editor_id ) ;
-            ?>'" :name="'editor-' + '<?php 
+            ?>" name="editor-<?php 
             echo  esc_js( $editor_id ) ;
-            ?>'" :disabled="editorActive('<?php 
-            echo  esc_js( $editor_id ) ;
-            ?>')" placeholder="<?php 
+            ?>" placeholder="<?php 
             echo  esc_attr( $editor_placeholder ) ;
             ?>" <?php 
             echo  ( !$editor_writable ? 'readonly' : '' ) ;
-            ?>><?php 
+            ?> disabled v-pre><?php 
             echo  esc_textarea( $editor_content ) ;
             ?></textarea>
 			</div>
@@ -291,7 +289,7 @@ function codes_editor_area()
     esc_html_e( 'Please click "Update" to confirm the new language.', 'custom-codes' );
     ?>
 		</div>
-		<input type="hidden" id="ajax-saver" name="codes_doing_ajax" :value="1" v-else-if="ajaxSave && currentLang && postName != ''">
+		<input type="hidden" id="ajax-saver" name="codes_doing_ajax" :value="1" v-else-if="ajaxSave && currentLang && postName != '' && postStatus == 'publish'">
 
 		<div id="bottombar" v-if="(currentLang && currentLang.id == '<?php 
     echo  esc_js( $current_language ) ;

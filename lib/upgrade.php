@@ -31,6 +31,62 @@ add_action( 'setup_theme', 'codes_upgrade' );
 
 
 
+// FOR BEFORE 2.3.2 =======================================================.
+/**
+ * Create mixin posts.
+ *
+ * @param string $new_version New version number.
+ * @param string $old_version Old version number.
+ */
+function codes_move_multisite_codes( $new_version, $old_version ) {
+	global $wp_filesystem;
+
+	if ( ! version_compare( $old_version, '2.3.2', '<' ) ) {
+		return;
+	}
+
+	// List all the sites.
+	if ( function_exists( 'get_sites' ) && class_exists( 'WP_Site_Query' ) ) {
+
+		$sites = get_sites();
+		foreach ( $sites as $site ) {
+			switch_to_blog( $site->blog_id );
+
+			// Get all the codes belong to current blog ID.
+			$codes = get_posts(
+				array(
+					'post_type'      => 'custom-code',
+					'posts_per_page' => -1,
+					'post_status'    => 'any',
+				)
+			);
+
+			// Early exit if posts are not ready.
+			if ( ! is_array( $codes ) ) {
+				continue;
+			}
+
+			// Process all the codes.
+			foreach ( $codes as $code ) {
+
+				// List & move all the files.
+				foreach ( glob( WP_CONTENT_DIR . "/custom_codes/$code->ID-*.*" ) as $source_file_path ) {
+					$file_name             = basename( $source_file_path );
+					$destination_file_path = WP_CONTENT_DIR . "/custom_codes/site-$site->blog_id/$file_name";
+					$wp_filesystem->move( $source_file_path, $destination_file_path );
+				}
+			}
+
+			restore_current_blog();
+		}
+	}
+}
+add_action( 'codes_upgrade', 'codes_move_multisite_codes', 13, 2 );
+
+
+
+
+
 // FOR BETWEEN 2.0.0 AND 2.0.3 =======================================================.
 
 /**

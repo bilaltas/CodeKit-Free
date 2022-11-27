@@ -106,7 +106,7 @@ function codes_body_classes( $classes ) {
 	global $post_type;
 
 	if ( 'custom-code' !== $post_type ) {
-		return;
+		return $classes;
 	}
 
 	$classes .= codes_fs()->is_premium() ? 'codes-pro' : 'codes-free';
